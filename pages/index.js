@@ -1,4 +1,4 @@
-import Nav from '../src/components/HomeNav/HomeNav';
+import HomePage from '../src/components/HomePage/HomePage';
 export default function Home() {
-  return <Nav />;
+  return <HomePage />;
 }

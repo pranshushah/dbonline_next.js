@@ -23,6 +23,10 @@
       font-size: getFontSize(4) * 1px;
       padding: getSpace(2) * 1px 28px;
     }
+    @include mobile() {
+      font-size: getFontSize(3) * 1px;
+      padding: getSpace(2) * 1px;
+    }
   }
   .darkLink:hover {
     background-color: lighten($color: $darkPrimary, $amount: 6);
