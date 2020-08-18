@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,UAAU,CAAC;EACT,MAAM,EAAE,GAAiB;CAC1B",
+    "sources": [
+        "EditTableModal.module.scss",
+        "../../utils/scss/_spaces.scss"
+    ],
+    "names": [],
+    "file": "EditTableModal.module.css"
+}

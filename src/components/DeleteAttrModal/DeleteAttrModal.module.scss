@@ -1,0 +1,39 @@
+@import '../../utils/scss/fontSize';
+@import '../../utils/scss/spaces';
+@import '../../utils/scss/fontSize';
+@import '../../utils/scss/variables';
+@import '../../utils/scss/lineHeight';
+.header {
+  color: $textColor;
+  font-weight: 500;
+  padding-bottom: getSpace(2) * 1px;
+  font-size: getFontSize(8) * 1px;
+  line-height: map-get($map: $line-height, $key: 'large') * 1px;
+}
+
+.container {
+  margin: getSpace(2) * 1px;
+}
+
+.listContainer {
+  margin-top: getSpace(2) * 1px;
+  font-size: getFontSize(6) * 1px;
+  list-style-type: none;
+}
+
+.listContainer li {
+  color: $textColor;
+  margin: getSpace(2) * 1px 0;
+  padding-left: getSpace(4) * 1px;
+  background-image: url('../../utils/img/alert.svg');
+  background-position: 0 0;
+  background-size: getSpace(3) * 1px getSpace(3) * 1px;
+  background-repeat: no-repeat;
+  &:first-child {
+    margin-top: getSpace(4) * 1px;
+  }
+}
+
+.constraintName {
+  font-weight: bold;
+}

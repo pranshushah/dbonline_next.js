@@ -1,0 +1,9 @@
+@import '../../../utils/scss/spaces';
+
+.container {
+  padding: getSpace(1) * 1px;
+}
+
+.inputContainer {
+  padding: getSpace(3) * 1px 0;
+}

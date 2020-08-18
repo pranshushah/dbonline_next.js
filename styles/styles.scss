@@ -1,0 +1,106 @@
+@import '../src/utils/scss/variables';
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Source Sans Pro', Century Gothic, CenturyGothic, AppleGothic,
+    sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  align-items: stretch;
+}
+
+.tableMenu {
+  background-color: rgb(40, 40, 40);
+  color: whitesmoke;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+
+.menu {
+  background-color: rgb(40, 40, 40);
+  color: $textColor;
+  padding-top: 8px;
+  padding-bottom: 1rem;
+  text-transform: capitalize;
+  font-size: 1rem;
+  position: relative;
+  width: 260px;
+}
+
+.menuItem {
+  padding: 8px;
+  padding-left: 24px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  background-color: rgb(100, 100, 100);
+}
+
+.shrotcut {
+  text-transform: lowercase;
+  position: absolute;
+  left: 190px;
+}
+
+.ReactVirtualized__Table {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+.ReactVirtualized__Table__Grid {
+  outline: none;
+}
+.ReactVirtualized__Table__row {
+  border-bottom: 1px solid rgb(66, 66, 66);
+  cursor: pointer;
+  outline: none;
+}
+.ReactVirtualized__Table__row:hover {
+  background-color: rgba(100, 100, 100, 0.5);
+}
+.firstColumn {
+  margin: 0 4px 0 4px !important;
+}
+.border {
+  border-left: 1px solid rgb(66, 66, 66);
+  padding-left: 3px;
+}
+.lastBorder {
+  border-left: 1px solid rgb(66, 66, 66);
+  padding-left: 4px;
+  margin: 0px !important;
+}
+.ReactVirtualized__Table__rowColumn {
+  height: 100%;
+}
+
+ul::-webkit-scrollbar {
+  width: 12px;
+  background-color: #282c34;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #191c20;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(180, 180, 180, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(180, 180, 180, 0.5);
+}
+
+svg {
+  z-index: 1;
+}

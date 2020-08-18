@@ -1,0 +1,36 @@
+@import '../../../../utils/scss/spaces';
+@import '../../../../utils/scss/lineHeight';
+@import '../../../../utils/scss/fontSize';
+@import '../../../../utils/scss/variables';
+.container {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-100vh);
+  transition: all 0.1s ease;
+  line-height: 0;
+  padding-left: getSpace(7.5) * 1px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  z-index: -1;
+  background-image: url('../../../../utils/img/a.png');
+  background-size: 14px;
+  background-position: 42px 6px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+}
+
+.show {
+  z-index: 0;
+  opacity: 1;
+  transition: all 0.2s ease;
+  pointer-events: all;
+  transform: translateY(0);
+  line-height: map-get($map: $line-height, $key: 'medium') * 1px;
+}
+
+.container:hover {
+  background-color: lighten($color: $darkPrimary, $amount: 5);
+}

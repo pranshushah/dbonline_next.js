@@ -1,0 +1,15 @@
+@import '../../utils/scss/spaces';
+@import '../../utils/scss/variables';
+@import '../../utils/scss/fontSize';
+@import '../../utils/scss/lineHeight';
+.header {
+  color: $textColor;
+  font-weight: 500;
+  padding-bottom: getSpace(2) * 1px;
+  font-size: getFontSize(8) * 1px;
+  line-height: map-get($map: $line-height, $key: 'large') * 1px;
+}
+
+.container {
+  margin: getSpace(2) * 1px;
+}

@@ -1,0 +1,51 @@
+.container {
+  position: fixed;
+  z-index: 513;
+  background-color: white;
+  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.26);
+          box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.26);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.containerHuge {
+  height: 95vh;
+  overflow-y: auto;
+}
+
+.medium {
+  width: 50%;
+  left: 25%;
+  top: 15%;
+}
+
+.large {
+  width: 70%;
+  left: 15%;
+  top: 10%;
+}
+
+.huge {
+  width: 96%;
+  left: 2%;
+  top: 2%;
+}
+
+.contentContainer {
+  padding: 8px;
+}
+
+.contentContainerHuge {
+  min-height: 70vh;
+}
+
+.action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 8px;
+}
+/*# sourceMappingURL=Modal.module.css.map */

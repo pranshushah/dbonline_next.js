@@ -1,0 +1,21 @@
+.colorContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 8px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.heading {
+  margin: 16px 0;
+  margin-bottom: 8px;
+  color: #282828;
+  line-height: 24px;
+  font-size: 22px;
+}
+/*# sourceMappingURL=TableColorPickerList.module.css.map */

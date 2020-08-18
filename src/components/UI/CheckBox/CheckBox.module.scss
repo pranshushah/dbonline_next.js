@@ -1,0 +1,94 @@
+@import '../../../utils/scss/spaces';
+@import '../../../utils/scss/variables';
+
+.inputCheckBox {
+  display: none;
+}
+
+.checkBox {
+  display: block;
+  padding: getSpace(1) * 1px;
+  cursor: pointer;
+  font-size: 16px;
+  color: $textColor;
+  &::before {
+    content: '\2713';
+    border: 1px solid $primaryColor;
+    border-radius: 2px;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 7px;
+    padding-left: 0.1em;
+    padding-bottom: 0.2em;
+    vertical-align: bottom;
+    color: transparent;
+    font-size: 16px;
+  }
+  .inputCheckBox:checked + &:before {
+    background: $primaryColor;
+    border-color: $primaryColor;
+    color: #fff;
+    transition: 0.2s;
+  }
+  .inputCheckBox + &:active:before {
+    transform: scale(0);
+  }
+  .inputCheckBox:checked:disabled + &:before {
+    transform: scale(1);
+    border-color: $primaryColor;
+    background-color: $primaryColor;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .inputCheckBox:disabled + &:before {
+    transform: scale(1);
+    border-color: $textColor;
+    background-color: $textColor;
+    pointer-events: none;
+  }
+}
+
+.checkBoxDark {
+  display: block;
+  padding: getSpace(1) * 1px;
+  cursor: pointer;
+  font-size: 16px;
+  color: $textColor;
+  &::before {
+    content: '\2713';
+    border: 1px solid $darkPrimaryColor;
+    border-radius: 2px;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 7px;
+    padding-left: 0.1em;
+    padding-bottom: 0.2em;
+    vertical-align: bottom;
+    color: transparent;
+    font-size: 16px;
+  }
+  .inputCheckBox:checked + &:before {
+    background: $darkPrimaryColor;
+    border-color: $darkPrimaryColor;
+    color: #fff;
+    transition: 0.2s;
+  }
+  .inputCheckBox + &:active:before {
+    transform: scale(0);
+  }
+  .inputCheckBox:checked:disabled + &:before {
+    transform: scale(1);
+    border-color: $darkPrimaryColor;
+    background-color: $darkPrimaryColor;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .inputCheckBox:disabled + &:before {
+    transform: scale(1);
+    border-color: $textColor;
+    background-color: $textColor;
+    pointer-events: none;
+  }
+}

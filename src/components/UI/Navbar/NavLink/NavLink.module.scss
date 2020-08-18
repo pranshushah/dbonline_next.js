@@ -1,0 +1,90 @@
+@import '../../../../utils/scss/media';
+@import '../../../../utils/scss/fontSize';
+@import '../../../../utils/scss/variables';
+@import '../../../../utils/scss/lineHeight';
+@import '../../../../utils/scss/spaces';
+.navLink {
+  position: relative;
+  .link {
+    display: inline-block;
+    text-transform: capitalize;
+    cursor: pointer;
+    color: $textColor;
+    text-decoration: none;
+    width: 100%;
+    font-size: getFontSize(6) * 1px;
+    padding: getSpace(2) * 1px getSpace(6) * 1px;
+    line-height: map-get($map: $line-height, $key: 'medium') * 1px;
+    &:hover {
+      background-color: lighten($color: $darkPrimaryLight, $amount: 6);
+      color: $textColor;
+    }
+    @include tablet() {
+      font-size: getFontSize(4) * 1px;
+      padding: getSpace(2) * 1px 28px;
+    }
+  }
+  .darkLink:hover {
+    background-color: lighten($color: $darkPrimary, $amount: 6);
+  }
+  .subMenuContainer {
+    position: absolute;
+    display: flex;
+    left: 0%;
+    top: 95%;
+    width: 250px;
+    z-index: 1;
+    flex-direction: column;
+    padding: 0;
+    background-color: lighten($color: $darkPrimaryLight, $amount: 2);
+    .subNavLink {
+      display: none;
+      .subLink {
+        display: block;
+        cursor: pointer;
+        position: relative;
+        text-align: center;
+        width: 250px;
+        text-transform: capitalize;
+        color: $textColor;
+        text-decoration: none;
+        width: 100%;
+        line-height: map-get($map: $line-height, $key: 'medium') * 1px;
+        padding: getSpace(2) * 1px 16px;
+        text-align: left;
+        font-size: getFontSize(3) * 1px;
+        .shortcut {
+          position: absolute;
+          left: 170px;
+          text-transform: lowercase;
+          @include tablet {
+            left: 150px;
+          }
+        }
+        &:hover {
+          background-color: lighten($color: $darkPrimaryLight, $amount: 6);
+          color: $textColor;
+        }
+        @include tablet() {
+          width: 220px;
+          padding: getSpace(2) * 1px getSpace(1) * 1px;
+        }
+      }
+    }
+    @include tablet() {
+      width: 220px;
+    }
+  }
+  &:hover .subMenuContainer .subNavLink {
+    display: block;
+  }
+}
+.downArrow {
+  background: url('../../../../utils/scss/down/down.svg');
+  background-repeat: no-repeat;
+  background-position: 90% 45%;
+  transition: 0.2s background ease-in;
+  @include tablet() {
+    background-position: 106% 45%;
+  }
+}

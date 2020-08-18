@@ -1,0 +1,118 @@
+@import '../../../utils/scss/fontSize';
+@import '../../../utils/scss/variables';
+@import './inputMixin';
+@import '../../../utils/scss/media';
+
+.inputContainerMediumPrimary {
+  @include input(50%, $primaryColor, 6);
+  @include mobile() {
+    @include input(50%, $primaryColor, 5);
+  }
+}
+.inputContainerMediumSecondary {
+  @include input(50%, $secondaryColor, 6);
+  @include mobile() {
+    @include input(50%, $secondaryColor, 5);
+  }
+}
+.inputContainerMediumError {
+  @include input(50%, $dangerColor, 6);
+  @include mobile() {
+    @include input(50%, $dangerColor, 5);
+  }
+}
+
+.inputContainerLargePrimary {
+  @include input(75%, $primaryColor, 6);
+  @include mobile() {
+    @include input(75%, $primaryColor, 5);
+  }
+}
+.inputContainerLargeSecondary {
+  @include input(75%, $secondaryColor, 6);
+  @include mobile() {
+    @include input(75%, $secondaryColor, 5);
+  }
+}
+.inputContainerLargeError {
+  @include input(75%, $dangerColor, 6);
+  @include mobile() {
+    @include input(75%, $dangerColor, 5);
+  }
+}
+
+.inputContainerSmallPrimary {
+  @include input(30%, $primaryColor, 6);
+  @include mobile() {
+    @include input(30%, $primaryColor, 5);
+  }
+}
+.inputContainerSmallSecondary {
+  @include input(30%, $secondaryColor, 6);
+  @include mobile() {
+    @include input(30%, $secondaryColor, 5);
+  }
+}
+.inputContainerSmallError {
+  @include input(30%, $dangerColor, 6);
+  @include mobile() {
+    @include input(30%, $dangerColor, 5);
+  }
+}
+
+.inputContainerHugePrimary {
+  @include input(95%, $primaryColor, 6);
+  @include mobile() {
+    @include input(95%, $primaryColor, 5);
+  }
+}
+.inputContainerHugeSecondary {
+  @include input(95%, $secondaryColor, 6);
+  @include mobile() {
+    @include input(95%, $secondaryColor, 5);
+  }
+}
+.inputContainerHugeError {
+  @include input(95%, $dangerColor, 6);
+  @include mobile() {
+    @include input(95%, $dangerColor, 5);
+  }
+}
+
+.errorMessage {
+  margin-top: 4px;
+  margin-left: 2px;
+  color: $dangerColor;
+  text-align: left;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.errorMessageHuge {
+  @extend .errorMessage;
+  font-size: getFontSize(4) * 1px;
+  @include mobile() {
+    font-size: getFontSize(3) * 1px;
+  }
+}
+
+.errorMessageLarge {
+  @extend .errorMessage;
+  font-size: getFontSize(3) * 1px;
+  @include mobile() {
+    font-size: getFontSize(2) * 1px;
+  }
+}
+
+.errorMessageMedium {
+  @extend .errorMessage;
+  font-size: getFontSize(3) * 1px;
+  @include mobile() {
+    font-size: getFontSize(2) * 1px;
+  }
+}
+
+.errorMessageSmall {
+  @extend .errorMessage;
+  font-size: getFontSize(3) * 1px;
+}

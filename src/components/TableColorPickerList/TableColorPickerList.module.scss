@@ -1,0 +1,27 @@
+@import '../../utils/scss/spaces';
+@import '../../utils/scss/variables';
+@import '../../utils/scss/fontSize';
+@import '../../utils/scss/lineHeight';
+.colorContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin: getSpace(1) * 1px 0;
+}
+
+.heading {
+  margin: getSpace(4) * 1px 0;
+  margin-bottom: getSpace(2) * 1px;
+  color: $primaryColor;
+  line-height: map-get($map: $line-height, $key: 'medium') * 1px;
+  font-size: getFontSize(6) * 1px;
+}
+
+.colors {
+  width: 10px;
+  padding: 8px;
+  margin: 8px;
+  cursor: pointer;
+  &::first-child {
+    margin-left: 0;
+  }
+}

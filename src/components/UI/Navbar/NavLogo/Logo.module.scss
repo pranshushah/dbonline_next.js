@@ -1,0 +1,16 @@
+@import '../../../../utils/scss/fontSize';
+@import '../../../../utils/scss/media';
+@import '../../../../utils/scss/variables';
+@import '../../../../utils/scss/lineHeight';
+@import '../../../../utils/scss/spaces';
+.Logo {
+  font-size: getFontSize(8) * 1px;
+  line-height: map-get($map: $line-height, $key: 'large') * 1px;
+  padding: 4px getSpace(4) * 1px;
+  color: $textColor;
+  @include tablet() {
+    font-size: getFontSize(6) * 1px;
+    line-height: map-get($map: $line-height, $key: 'medium') * 1px;
+    padding: getSpace(2) * 1px getSpace(3) * 1px;
+  }
+}

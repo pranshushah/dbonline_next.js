@@ -1,0 +1,91 @@
+.navLink {
+  position: relative;
+}
+
+.navLink .link {
+  display: inline-block;
+  text-transform: capitalize;
+  color: #ebebeb;
+  text-decoration: none;
+  width: 100%;
+  font-size: 22px;
+  padding: 16px 48px;
+  line-height: 24px;
+}
+
+.navLink .link:hover {
+  background-color: #125b8c;
+  color: #ebebeb;
+}
+
+@media only screen and (max-width: 1023px) {
+  .navLink .link {
+    font-size: 18px;
+    padding: 16px 28px;
+  }
+}
+
+.navLink .subMenuContainer {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 0%;
+  top: 100%;
+  width: 100%;
+  z-index: 2;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0;
+  background-color: #0f4c75;
+}
+
+.navLink .subMenuContainer .subNavLink {
+  display: none;
+}
+
+.navLink .subMenuContainer .subNavLink .subLink {
+  display: block;
+  text-align: center;
+  width: 300px;
+  text-transform: capitalize;
+  color: #ebebeb;
+  text-decoration: none;
+  width: 100%;
+  line-height: 24px;
+  padding: 16px 32px;
+  font-size: 18px;
+}
+
+.navLink .subMenuContainer .subNavLink .subLink:hover {
+  background-color: #125b8c;
+  color: #ebebeb;
+}
+
+@media only screen and (max-width: 1023px) {
+  .navLink .subMenuContainer .subNavLink .subLink {
+    font-size: 16px;
+    padding: 16px 24px;
+  }
+}
+
+.navLink:hover .subMenuContainer .subNavLink {
+  display: block;
+}
+
+.downArrow {
+  background: url("../../../../utils/scss/down/down.svg");
+  background-repeat: no-repeat;
+  background-position: 90% 45%;
+  -webkit-transition: 0.2s background ease-in;
+  transition: 0.2s background ease-in;
+}
+
+@media only screen and (max-width: 1023px) {
+  .downArrow {
+    background-position: 106% 45%;
+  }
+}
+/*# sourceMappingURL=NavLink.module.css.map */

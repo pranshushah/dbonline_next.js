@@ -1,0 +1,52 @@
+@import '../../../utils/scss/variables';
+@import '../../../utils/scss/fontSize';
+@import '../../../utils/scss/spaces';
+@import '../../../utils/scss/lineHeight';
+.inLine {
+  line-height: map-get($map: $line-height, $key: 'medium') * 1px;
+  font-weight: 400;
+  vertical-align: middle;
+  display: inline-block;
+  padding-left: getSpace(3.5) * 1px;
+  position: relative;
+  cursor: pointer;
+  color: $textColor;
+  & + & {
+    margin-left: getSpace(2.5) * 1px;
+  }
+}
+
+.inputRadio {
+  display: none;
+}
+
+.circle {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 0px;
+  border: 2px solid rgb(28, 161, 242);
+  &::after {
+    content: '';
+    height: 9px;
+    width: 9px;
+    background: rgb(28, 161, 242);
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+  }
+  .inputRadio:checked + &::after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .inputRadio:disabled + & {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+}

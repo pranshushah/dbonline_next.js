@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "AAIA,AAAA,OAAO,CAAC;EACN,KAAK,EELU,OAAe;EFM9B,WAAW,EAAE,GAAG;EAChB,cAAc,EAAE,IAAiB;EACjC,SAAS,EAAE,IAAqB;EAChC,WAAW,EAAE,IAAgD;CAC9D;;AAED,AAAA,UAAU,CAAC;EACT,MAAM,EAAE,IAAiB;CAC1B",
+    "sources": [
+        "DeleteModal.module.scss",
+        "../../utils/scss/_spaces.scss",
+        "../../utils/scss/_variables.scss",
+        "../../utils/scss/_fontSize.scss",
+        "../../utils/scss/_lineHeight.scss"
+    ],
+    "names": [],
+    "file": "DeleteModal.module.css"
+}

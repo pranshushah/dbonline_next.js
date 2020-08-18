@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,UAAU,CAAC;EACT,MAAM,EAAE,GAAiB;CAC1B",
+    "sources": [
+        "CreateTableModal.module.scss",
+        "../utils/scss/_spaces.scss"
+    ],
+    "names": [],
+    "file": "CreateTableModal.module.css"
+}

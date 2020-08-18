@@ -1,0 +1,22 @@
+@import '../../../utils/scss/fontSize';
+@import '../../../utils/scss/variables';
+.headerContainer {
+  display: flex;
+  background-color: $darkPrimaryLight;
+  justify-content: space-between;
+  letter-spacing: 1px;
+}
+
+.headerContainerDark {
+  background-color: $darkPrimary;
+}
+
+@media print {
+  .headerContainer {
+    display: none;
+  }
+}
+
+@page {
+  margin: 0;
+}

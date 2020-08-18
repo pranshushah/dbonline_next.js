@@ -1,0 +1,36 @@
+.header {
+  color: #282828;
+  font-weight: 500;
+  padding-bottom: 16px;
+  font-size: 32px;
+  line-height: 48px;
+}
+
+.container {
+  margin: 16px;
+}
+
+.listContainer {
+  margin-top: 16px;
+  font-size: 22px;
+  list-style-type: none;
+}
+
+.listContainer li {
+  color: #282828;
+  margin: 16px 0;
+  padding-left: 32px;
+  background-image: url("../../utils/img/alert.svg");
+  background-position: 0 0;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+}
+
+.listContainer li:first-child {
+  margin-top: 32px;
+}
+
+.constraintName {
+  font-weight: bold;
+}
+/*# sourceMappingURL=DeleteAttrModal.module.css.map */

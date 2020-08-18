@@ -1,0 +1,119 @@
+.button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 0.1rem;
+  -webkit-transition: 0.5s background ease-in-out;
+  transition: 0.5s background ease-in-out;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.primary {
+  color: #ebebeb;
+  background-color: #0f4c75;
+}
+
+.primary:hover {
+  background: #0d4367 radial-gradient(circle, transparent 1%, #0d4367 1%) center/15000%;
+}
+
+.primary:active {
+  background-color: #115583;
+  background-size: 100%;
+  -webkit-transition: background 0s;
+  transition: background 0s;
+}
+
+.invertedPrimary {
+  background-color: white;
+  color: #0f4c75;
+  outline: 1px solid #0f4c75;
+}
+
+.invertedPrimary:active {
+  color: #092f48;
+  outline: 1px solid #092f48;
+}
+
+.secondary {
+  color: #ebebeb;
+  background-color: #2d2d2d;
+}
+
+.secondary:hover {
+  background: #202020 radial-gradient(circle, transparent 1%, #202020 1%) center/15000%;
+}
+
+.secondary:active {
+  background-color: #373737;
+  background-size: 100%;
+  -webkit-transition: background 0s;
+  transition: background 0s;
+}
+
+.invertedSecondary {
+  background-color: white;
+  color: #282828;
+  outline: 1px solid #282828;
+}
+
+.invertedSecondary:active {
+  color: #0f0f0f;
+  outline: 1px solid #0f0f0f;
+}
+
+.danger {
+  color: #ebebeb;
+  background-color: #e34646;
+}
+
+.danger:hover {
+  background: #e13939 radial-gradient(circle, transparent 1%, #e13939 1%) center/15000%;
+}
+
+.danger:active {
+  background-color: #e65858;
+  background-size: 100%;
+  -webkit-transition: background 0s;
+  transition: background 0s;
+}
+
+.invertedDanger {
+  background-color: white;
+  color: #e34646;
+  outline: 1px solid #e34646;
+}
+
+.invertedDanger:active {
+  color: #d62020;
+  outline: 1px solid #d62020;
+}
+
+.medium {
+  line-height: 24px;
+  font-size: 20px;
+  padding: 12px 16px;
+}
+
+.small {
+  line-height: 24px;
+  font-size: 18px;
+  padding: 8px 10px;
+}
+
+.large {
+  line-height: 24px;
+  font-size: 25px;
+  padding: 16px 24px;
+}
+
+.huge {
+  line-height: 24px;
+  font-size: 28px;
+  padding: 24px 40px;
+}
+/*# sourceMappingURL=Button.module.css.map */

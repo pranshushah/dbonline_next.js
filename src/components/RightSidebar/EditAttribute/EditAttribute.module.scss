@@ -1,0 +1,33 @@
+@import '../../../utils/scss/spaces';
+@import '../../../utils/scss/fontSize';
+@import '../../../utils/scss/variables';
+.inputContainer {
+  padding: getSpace(2) * 1px getSpace(0.5) * 1px;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  margin: getSpace(2) * 1px getSpace(0.5) * 1px;
+  font-size: getFontSize(4) * 1px;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: $primaryColor;
+}
+
+.button {
+  margin-right: getSpace(1.5) * 1px;
+  margin-top: getSpace(1.5) * 1px;
+}
+
+.select {
+  padding: getSpace(1.5) * 1px getSpace(0.5) * 1px;
+}
+
+.foreignCheckBox {
+  margin-left: 1px;
+  margin-top: getSpace(1.5) * 1px;
+  margin-bottom: getSpace(1) * 1px;
+}

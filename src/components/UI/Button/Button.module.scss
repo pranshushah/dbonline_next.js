@@ -1,0 +1,184 @@
+@import '../../../utils/scss/fontSize';
+@import '../../../utils/scss/lineHeight';
+@import '../../../utils/scss/spaces';
+@import '../../../utils/scss/variables';
+
+.button {
+  border: 1px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
+  outline-style: none;
+  border-radius: 0.1rem;
+  transition: 0.1s background-color ease-in-out;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.primary {
+  color: $textColor;
+  background-color: $primaryColor;
+}
+
+.primary:hover {
+  background: darken($color: $primaryColor, $amount: 3)
+    radial-gradient(
+      circle,
+      transparent 1%,
+      darken($color: $primaryColor, $amount: 3) 1%
+    )
+    center/15000%;
+}
+.primary:active {
+  background-color: lighten($color: $primaryColor, $amount: 3);
+  background-size: 100%;
+  transition: background-color 0s;
+}
+
+.invertedPrimary {
+  background-color: transparent;
+  color: $primaryColor;
+  border: 1px solid $primaryColor;
+}
+
+.invertedPrimary:hover {
+  color: $textColor;
+  background-color: rgba($color: $primaryColor, $alpha: 0.2);
+}
+
+.invertedPrimary:active {
+  color: darken($color: $primaryColor, $amount: 10);
+  border: 1px solid darken($color: $primaryColor, $amount: 10);
+}
+
+.darkPrimary {
+  color: $textColor;
+  background-color: $darkPrimaryColor;
+}
+
+.darkPrimary:hover {
+  background: darken($color: $darkPrimaryColor, $amount: 3)
+    radial-gradient(
+      circle,
+      transparent 1%,
+      darken($color: $darkPrimaryColor, $amount: 3) 1%
+    )
+    center/15000%;
+}
+.darkPrimary:active {
+  background-color: lighten($color: $darkPrimaryColor, $amount: 3);
+  background-size: 100%;
+  transition: background-color 0s;
+}
+
+.invertedDarkPrimary {
+  background-color: transparent;
+  color: $darkPrimaryColor;
+  border: 1px solid $darkPrimaryColor;
+}
+
+.invertedDarkPrimary:hover {
+  color: $textColor;
+  background-color: rgba($color: $darkPrimaryColor, $alpha: 0.2);
+}
+
+.invertedDarkPrimary:active {
+  color: darken($color: $darkPrimaryColor, $amount: 10);
+  border: 1px solid darken($color: $darkPrimaryColor, $amount: 10);
+}
+
+.secondary {
+  color: $textColor;
+  background-color: lighten($color: $secondaryColor, $amount: 2);
+}
+
+.secondary:hover {
+  background: darken($color: $secondaryColor, $amount: 3)
+    radial-gradient(
+      circle,
+      transparent 1%,
+      darken($color: $secondaryColor, $amount: 3) 1%
+    )
+    center/15000%;
+}
+.secondary:active {
+  background-color: lighten($color: $secondaryColor, $amount: 6);
+  background-size: 100%;
+}
+
+.invertedSecondary {
+  background-color: transparent;
+  color: $secondaryColor;
+  border: 1px solid $secondaryColor;
+}
+
+.invertedSecondary:hover {
+  color: $textColor;
+  background-color: lighten($color: $secondaryColor, $amount: 2);
+}
+
+.invertedSecondary:active {
+  color: darken($color: $secondaryColor, $amount: 10);
+  border: 1px solid darken($color: $secondaryColor, $amount: 10);
+}
+
+.danger {
+  color: $textColor;
+  background-color: $darkDanger;
+}
+
+.danger:hover {
+  background: darken($color: $darkDanger, $amount: 3)
+    radial-gradient(
+      circle,
+      transparent 1%,
+      darken($color: $darkDanger, $amount: 3) 1%
+    )
+    center/15000%;
+}
+.danger:active {
+  background-color: lighten($color: $darkDanger, $amount: 4);
+  background-size: 100%;
+  transition: background-color 0s;
+}
+
+.invertedDanger {
+  background-color: transparent;
+  color: $dangerColor;
+  border: 1px solid $dangerColor;
+}
+
+.invertedDanger:hover {
+  color: $textColor;
+  background-color: rgba($color: $dangerColor, $alpha: 0.2);
+}
+
+.invertedDanger:active {
+  color: darken($color: $dangerColor, $amount: 10);
+  border: 1px solid darken($color: $dangerColor, $amount: 10);
+}
+
+.medium {
+  line-height: map-get($map: $line-height, $key: 'medium') * 1px;
+  font-size: getFontSize(5) * 1px;
+  padding: 12px getSpace(2) * 1px;
+}
+
+.small {
+  line-height: map-get($map: $line-height, $key: 'medium') * 1px;
+  font-size: getFontSize(4) * 1px;
+  padding: getSpace(1) * 1px 10 * 1px;
+}
+
+.large {
+  line-height: map-get($map: $line-height, $key: 'medium') * 1px;
+  font-size: getFontSize(7) * 1px;
+  padding: getSpace(2) * 1px getSpace(3) * 1px;
+}
+
+.huge {
+  line-height: map-get($map: $line-height, $key: 'medium') * 1px;
+  font-size: getFontSize(8) * 1px;
+  padding: getSpace(3) * 1px getSpace(5) * 1px;
+}

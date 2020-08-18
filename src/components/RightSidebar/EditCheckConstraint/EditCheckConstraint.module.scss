@@ -1,0 +1,13 @@
+@import '../../../utils/scss/spaces';
+.inputContainer {
+  padding: getSpace(2) * 1px 0;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  margin-right: getSpace(1.5) * 1px;
+  margin-top: getSpace(1.5) * 1px;
+}

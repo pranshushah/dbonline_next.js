@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,gBAAgB,CAAC;EACf,OAAO,EAAE,IAAI;EACb,gBAAgB,EEHH,OAAgB;EFI7B,UAAU,EAAE,CAAC,CAAC,GAAG,CAAC,IAAI,CAAC,mBAAmB;EAC1C,eAAe,EAAE,aAAa;EAC9B,cAAc,EAAE,GAAG;CACpB",
+    "sources": [
+        "NavContainer.module.scss",
+        "../../../utils/scss/_fontSize.scss",
+        "../../../utils/scss/_variables.scss"
+    ],
+    "names": [],
+    "file": "NavContainer.module.css"
+}

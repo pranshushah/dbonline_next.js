@@ -1,0 +1,12 @@
+@import '../../../utils/scss/spaces';
+@import '../../../utils/scss/lineHeight';
+@import '../../../utils/scss/fontSize';
+.container {
+  line-height: map-get($map: $line-height, $key: 'medium') * 1px;
+  padding-top: getSpace(10) * 1px;
+  list-style: none;
+  font-size: getFontSize(3) * 1px;
+  height: 92vh;
+  overflow-y: auto;
+  padding-bottom: getSpace(4) * 1px;
+}

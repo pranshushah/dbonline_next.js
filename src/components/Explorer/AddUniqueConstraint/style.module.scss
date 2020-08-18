@@ -1,0 +1,10 @@
+@import '../../../utils/scss/spaces';
+
+.container {
+  padding: getSpace(1) * 1px;
+}
+
+.selectContainer {
+  width: 75%;
+  padding: getSpace(2.5) * 1px 0;
+}

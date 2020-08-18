@@ -1,0 +1,13 @@
+@import '../../../../utils/scss/variables';
+@import '../../../../utils/scss/media';
+@import '../../../../utils/scss/spaces';
+.navLinksContainer {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  width: 70%;
+  margin-right: getSpace(2) * 1px;
+  @include tablet() {
+    margin-right: getSpace(1) * 1px;
+  }
+}

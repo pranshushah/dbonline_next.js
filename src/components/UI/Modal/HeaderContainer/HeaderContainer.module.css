@@ -1,0 +1,31 @@
+.primary {
+  background-color: #0f4c75;
+}
+
+.secondary {
+  background-color: #282828;
+}
+
+.danger {
+  background-color: #e34646;
+}
+
+.header {
+  margin: 0;
+  padding: 16px;
+  color: #ebebeb;
+  line-height: 48px;
+}
+
+.medium {
+  font-size: 28px;
+}
+
+.large {
+  font-size: 32px;
+}
+
+.huge {
+  font-size: 36px;
+}
+/*# sourceMappingURL=HeaderContainer.module.css.map */

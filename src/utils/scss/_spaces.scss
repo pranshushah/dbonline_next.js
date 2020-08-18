@@ -1,0 +1,4 @@
+@function getSpace($scale) {
+  $base: 8;
+  @return ($base * $scale);
+}

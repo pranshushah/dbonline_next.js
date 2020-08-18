@@ -1,0 +1,17 @@
+export default {
+  gray: 'rgb(53, 57, 65)',
+  RED: 'rgb(239, 83, 80)',
+  LIGHTBLUE: 'rgb(2, 119, 189)',
+  DARKBROWN: 'rgb(121, 85, 72)',
+  TEAL: 'rgb(0, 137, 123)',
+  GREEN: 'rgb(56, 142, 60)',
+  darkOrange: 'rgb(212, 74, 30)',
+  indigo: 'rgb(84, 108, 207)',
+  violet: 'rgb(140, 72, 159)',
+  pink: 'rgb(194, 24, 91)',
+  brown: 'rgb(61, 46, 79)',
+  haldi: 'rgb(239, 108, 0)',
+  lime: 'rgb(130, 119, 23)',
+  mainGreen: 'rgb(85, 139, 47)',
+  cyan: 'rgb(0, 131, 143)',
+};

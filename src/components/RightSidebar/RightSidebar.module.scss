@@ -1,0 +1,37 @@
+@import '../../utils/scss/variables';
+@import '../../utils/scss/spaces';
+.container {
+  background-color: $darkPrimary;
+  color: $textColor;
+  width: 100%;
+  position: relative;
+  .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    background-image: url('../../utils/img/close.svg');
+    background-size: 14px;
+    background-repeat: no-repeat;
+    transition: 0.2s all ease;
+    opacity: 0.6;
+  }
+  .close:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.contentContainer {
+  padding: getSpace(4) * 1px getSpace(1) * 1px;
+}
+.resize {
+  display: flex;
+  border-left: 2px solid rgb(60, 60, 60);
+}
+
+.resize:hover {
+  border-left: 2px solid rgba(60, 60, 60, 0.5);
+}

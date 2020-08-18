@@ -1,0 +1,114 @@
+@import '../../utils/scss/fontSize';
+@import '../../utils/scss/lineHeight';
+@import '../../utils/scss/spaces';
+@import '../../utils/scss/variables';
+
+.container {
+  margin: getSpace(1) * 1px;
+  margin-left: getSpace(2) * 1px;
+}
+
+.header {
+  color: $textColor;
+  margin-top: getSpace(3) * 1px;
+  font-weight: 500;
+  line-height: map-get($map: $line-height, $key: 'large') * 1px;
+  font-size: getFontSize(8) * 1px;
+}
+
+.sizeAndPreContainer {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.dataTypeContainer {
+  display: flex;
+  width: 98%;
+}
+
+.constraintNameContainer {
+  margin: getSpace(1) * 1px;
+  margin-left: 0px;
+  margin-top: getSpace(2) * 1px;
+  width: 100%;
+}
+
+.sizeValueContainer {
+  margin: 0 getSpace(1) * 1px;
+}
+
+.uniqueContainer {
+  display: flex;
+  width: 98%;
+  margin-top: getSpace(3) * 1px;
+}
+
+.uniqueInput {
+  width: 30%;
+}
+.uniqueDropDown {
+  margin-top: 0.9rem;
+  width: 45%;
+  margin-left: 2.5rem;
+}
+
+.primaryContainer {
+  display: flex;
+  width: 98%;
+  margin: 1.5rem 0;
+}
+
+.primaryInput {
+  width: 30%;
+}
+.primaryDropDown {
+  margin: 0.9rem;
+  width: 45%;
+  margin-left: 2.5rem;
+}
+
+.foreignContainer {
+  display: flex;
+  width: 98%;
+  margin: 1.5rem 0;
+  margin-bottom: 0px;
+}
+
+.foreignInput {
+  width: 30%;
+}
+
+.foreignDropDown {
+  margin: 0.9rem;
+  width: 25%;
+  margin-left: 1.5rem;
+}
+
+.checkContainer {
+  display: flex;
+  width: 98%;
+  margin: getSpace(3) * 1px 0;
+}
+
+.checkInput {
+  width: 40%;
+}
+.checkInputExpr {
+  margin: 0 5px;
+  margin-left: 2.6rem;
+  width: 45%;
+}
+
+.foreignCheckBoxContainer {
+  display: flex;
+}
+
+.foreignCheckBox {
+  margin-left: getSpace(2) * 1px;
+  margin-top: getSpace(1.9) * 1px;
+}

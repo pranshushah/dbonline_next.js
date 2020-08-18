@@ -1,0 +1,33 @@
+@import '../../../utils/scss/spaces';
+@import '../../../utils/scss/variables';
+@import '../../../utils/scss/lineHeight';
+@import '../../../utils/scss/fontSize';
+.container {
+  padding: getSpace(1) * 1px;
+}
+
+.selectContainer {
+  width: 75%;
+  padding: getSpace(1) * 1px 0;
+}
+
+.inputContainer {
+  padding: getSpace(1.5) * 1px 0;
+}
+
+.foreignCheckBoxContainer {
+  display: flex;
+}
+
+.foreignCheckBox {
+  margin-left: getSpace(2) * 1px;
+  margin-top: getSpace(1.8) * 1px;
+}
+
+.header {
+  color: $textColor;
+  margin-top: getSpace(3) * 1px;
+  font-weight: 500;
+  line-height: map-get($map: $line-height, $key: 'large') * 1px;
+  font-size: getFontSize(7) * 1px;
+}

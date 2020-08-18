@@ -1,0 +1,1807 @@
+.inputContainerMediumPrimary {
+  height: 56px;
+  position: relative;
+  width: 50%;
+}
+
+.inputContainerMediumPrimary .inputField {
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+  font-size: 22px;
+  border: none;
+  outline: none;
+}
+
+.inputContainerMediumPrimary .inputField::-webkit-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerMediumPrimary .inputField:-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerMediumPrimary .inputField::-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerMediumPrimary .inputField::placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerMediumPrimary .inputField:disabled {
+  background: none;
+  pointer-events: none;
+}
+
+.inputContainerMediumPrimary .inputField:focus + .inputLabelContainer {
+  border-bottom: 2px solid #0f4c75;
+}
+
+.inputContainerMediumPrimary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+  content: ' *';
+}
+
+.inputContainerMediumPrimary .inputField:focus + .inputLabelContainer .inputLabelContent,
+.inputContainerMediumPrimary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  font-size: 16px;
+  padding-bottom: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.inputContainerMediumPrimary .inputLabelContainer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #0f4c75;
+  color: #0f4c75;
+}
+
+.inputContainerMediumPrimary .inputLabelContainer .inputLabelContent {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  font-size: 22px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .inputContainerMediumPrimary {
+    height: 56px;
+    position: relative;
+    width: 50%;
+  }
+  .inputContainerMediumPrimary .inputField {
+    width: 100%;
+    height: 100%;
+    padding-top: 16px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+  }
+  .inputContainerMediumPrimary .inputField::-webkit-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerMediumPrimary .inputField:-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerMediumPrimary .inputField::-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerMediumPrimary .inputField::placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerMediumPrimary .inputField:disabled {
+    background: none;
+    pointer-events: none;
+  }
+  .inputContainerMediumPrimary .inputField:focus + .inputLabelContainer {
+    border-bottom: 2px solid #0f4c75;
+  }
+  .inputContainerMediumPrimary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+    content: ' *';
+  }
+  .inputContainerMediumPrimary .inputField:focus + .inputLabelContainer .inputLabelContent,
+  .inputContainerMediumPrimary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    font-size: 14px;
+    padding-bottom: 4px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .inputContainerMediumPrimary .inputLabelContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #0f4c75;
+    color: #0f4c75;
+  }
+  .inputContainerMediumPrimary .inputLabelContainer .inputLabelContent {
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    font-size: 20px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+
+.inputContainerMediumSecondary {
+  height: 56px;
+  position: relative;
+  width: 50%;
+}
+
+.inputContainerMediumSecondary .inputField {
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+  font-size: 22px;
+  border: none;
+  outline: none;
+}
+
+.inputContainerMediumSecondary .inputField::-webkit-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerMediumSecondary .inputField:-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerMediumSecondary .inputField::-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerMediumSecondary .inputField::placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerMediumSecondary .inputField:disabled {
+  background: none;
+  pointer-events: none;
+}
+
+.inputContainerMediumSecondary .inputField:focus + .inputLabelContainer {
+  border-bottom: 2px solid #282828;
+}
+
+.inputContainerMediumSecondary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+  content: ' *';
+}
+
+.inputContainerMediumSecondary .inputField:focus + .inputLabelContainer .inputLabelContent,
+.inputContainerMediumSecondary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  font-size: 16px;
+  padding-bottom: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.inputContainerMediumSecondary .inputLabelContainer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #282828;
+  color: #282828;
+}
+
+.inputContainerMediumSecondary .inputLabelContainer .inputLabelContent {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  font-size: 22px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .inputContainerMediumSecondary {
+    height: 56px;
+    position: relative;
+    width: 50%;
+  }
+  .inputContainerMediumSecondary .inputField {
+    width: 100%;
+    height: 100%;
+    padding-top: 16px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+  }
+  .inputContainerMediumSecondary .inputField::-webkit-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerMediumSecondary .inputField:-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerMediumSecondary .inputField::-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerMediumSecondary .inputField::placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerMediumSecondary .inputField:disabled {
+    background: none;
+    pointer-events: none;
+  }
+  .inputContainerMediumSecondary .inputField:focus + .inputLabelContainer {
+    border-bottom: 2px solid #282828;
+  }
+  .inputContainerMediumSecondary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+    content: ' *';
+  }
+  .inputContainerMediumSecondary .inputField:focus + .inputLabelContainer .inputLabelContent,
+  .inputContainerMediumSecondary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    font-size: 14px;
+    padding-bottom: 4px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .inputContainerMediumSecondary .inputLabelContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #282828;
+    color: #282828;
+  }
+  .inputContainerMediumSecondary .inputLabelContainer .inputLabelContent {
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    font-size: 20px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+
+.inputContainerMediumError {
+  height: 56px;
+  position: relative;
+  width: 50%;
+}
+
+.inputContainerMediumError .inputField {
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+  font-size: 22px;
+  border: none;
+  outline: none;
+}
+
+.inputContainerMediumError .inputField::-webkit-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerMediumError .inputField:-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerMediumError .inputField::-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerMediumError .inputField::placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerMediumError .inputField:disabled {
+  background: none;
+  pointer-events: none;
+}
+
+.inputContainerMediumError .inputField:focus + .inputLabelContainer {
+  border-bottom: 2px solid #d01919;
+}
+
+.inputContainerMediumError .inputField:required + .inputLabelContainer .inputLabelContent::after {
+  content: ' *';
+}
+
+.inputContainerMediumError .inputField:focus + .inputLabelContainer .inputLabelContent,
+.inputContainerMediumError .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  font-size: 16px;
+  padding-bottom: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.inputContainerMediumError .inputLabelContainer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #d01919;
+  color: #d01919;
+}
+
+.inputContainerMediumError .inputLabelContainer .inputLabelContent {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  font-size: 22px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .inputContainerMediumError {
+    height: 56px;
+    position: relative;
+    width: 50%;
+  }
+  .inputContainerMediumError .inputField {
+    width: 100%;
+    height: 100%;
+    padding-top: 16px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+  }
+  .inputContainerMediumError .inputField::-webkit-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerMediumError .inputField:-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerMediumError .inputField::-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerMediumError .inputField::placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerMediumError .inputField:disabled {
+    background: none;
+    pointer-events: none;
+  }
+  .inputContainerMediumError .inputField:focus + .inputLabelContainer {
+    border-bottom: 2px solid #d01919;
+  }
+  .inputContainerMediumError .inputField:required + .inputLabelContainer .inputLabelContent::after {
+    content: ' *';
+  }
+  .inputContainerMediumError .inputField:focus + .inputLabelContainer .inputLabelContent,
+  .inputContainerMediumError .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    font-size: 14px;
+    padding-bottom: 4px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .inputContainerMediumError .inputLabelContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #d01919;
+    color: #d01919;
+  }
+  .inputContainerMediumError .inputLabelContainer .inputLabelContent {
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    font-size: 20px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+
+.inputContainerLargePrimary {
+  height: 56px;
+  position: relative;
+  width: 75%;
+}
+
+.inputContainerLargePrimary .inputField {
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+  font-size: 25px;
+  border: none;
+  outline: none;
+}
+
+.inputContainerLargePrimary .inputField::-webkit-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerLargePrimary .inputField:-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerLargePrimary .inputField::-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerLargePrimary .inputField::placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerLargePrimary .inputField:disabled {
+  background: none;
+  pointer-events: none;
+}
+
+.inputContainerLargePrimary .inputField:focus + .inputLabelContainer {
+  border-bottom: 2px solid #0f4c75;
+}
+
+.inputContainerLargePrimary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+  content: ' *';
+}
+
+.inputContainerLargePrimary .inputField:focus + .inputLabelContainer .inputLabelContent,
+.inputContainerLargePrimary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  font-size: 18px;
+  padding-bottom: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.inputContainerLargePrimary .inputLabelContainer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #0f4c75;
+  color: #0f4c75;
+}
+
+.inputContainerLargePrimary .inputLabelContainer .inputLabelContent {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  font-size: 25px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .inputContainerLargePrimary {
+    height: 56px;
+    position: relative;
+    width: 75%;
+  }
+  .inputContainerLargePrimary .inputField {
+    width: 100%;
+    height: 100%;
+    padding-top: 16px;
+    font-size: 22px;
+    border: none;
+    outline: none;
+  }
+  .inputContainerLargePrimary .inputField::-webkit-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerLargePrimary .inputField:-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerLargePrimary .inputField::-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerLargePrimary .inputField::placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerLargePrimary .inputField:disabled {
+    background: none;
+    pointer-events: none;
+  }
+  .inputContainerLargePrimary .inputField:focus + .inputLabelContainer {
+    border-bottom: 2px solid #0f4c75;
+  }
+  .inputContainerLargePrimary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+    content: ' *';
+  }
+  .inputContainerLargePrimary .inputField:focus + .inputLabelContainer .inputLabelContent,
+  .inputContainerLargePrimary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    font-size: 16px;
+    padding-bottom: 4px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .inputContainerLargePrimary .inputLabelContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #0f4c75;
+    color: #0f4c75;
+  }
+  .inputContainerLargePrimary .inputLabelContainer .inputLabelContent {
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    font-size: 22px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+
+.inputContainerLargeSecondary {
+  height: 56px;
+  position: relative;
+  width: 75%;
+}
+
+.inputContainerLargeSecondary .inputField {
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+  font-size: 25px;
+  border: none;
+  outline: none;
+}
+
+.inputContainerLargeSecondary .inputField::-webkit-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerLargeSecondary .inputField:-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerLargeSecondary .inputField::-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerLargeSecondary .inputField::placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerLargeSecondary .inputField:disabled {
+  background: none;
+  pointer-events: none;
+}
+
+.inputContainerLargeSecondary .inputField:focus + .inputLabelContainer {
+  border-bottom: 2px solid #282828;
+}
+
+.inputContainerLargeSecondary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+  content: ' *';
+}
+
+.inputContainerLargeSecondary .inputField:focus + .inputLabelContainer .inputLabelContent,
+.inputContainerLargeSecondary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  font-size: 18px;
+  padding-bottom: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.inputContainerLargeSecondary .inputLabelContainer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #282828;
+  color: #282828;
+}
+
+.inputContainerLargeSecondary .inputLabelContainer .inputLabelContent {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  font-size: 25px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .inputContainerLargeSecondary {
+    height: 56px;
+    position: relative;
+    width: 75%;
+  }
+  .inputContainerLargeSecondary .inputField {
+    width: 100%;
+    height: 100%;
+    padding-top: 16px;
+    font-size: 22px;
+    border: none;
+    outline: none;
+  }
+  .inputContainerLargeSecondary .inputField::-webkit-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerLargeSecondary .inputField:-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerLargeSecondary .inputField::-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerLargeSecondary .inputField::placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerLargeSecondary .inputField:disabled {
+    background: none;
+    pointer-events: none;
+  }
+  .inputContainerLargeSecondary .inputField:focus + .inputLabelContainer {
+    border-bottom: 2px solid #282828;
+  }
+  .inputContainerLargeSecondary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+    content: ' *';
+  }
+  .inputContainerLargeSecondary .inputField:focus + .inputLabelContainer .inputLabelContent,
+  .inputContainerLargeSecondary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    font-size: 16px;
+    padding-bottom: 4px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .inputContainerLargeSecondary .inputLabelContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #282828;
+    color: #282828;
+  }
+  .inputContainerLargeSecondary .inputLabelContainer .inputLabelContent {
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    font-size: 22px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+
+.inputContainerLargeError {
+  height: 56px;
+  position: relative;
+  width: 75%;
+}
+
+.inputContainerLargeError .inputField {
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+  font-size: 25px;
+  border: none;
+  outline: none;
+}
+
+.inputContainerLargeError .inputField::-webkit-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerLargeError .inputField:-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerLargeError .inputField::-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerLargeError .inputField::placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerLargeError .inputField:disabled {
+  background: none;
+  pointer-events: none;
+}
+
+.inputContainerLargeError .inputField:focus + .inputLabelContainer {
+  border-bottom: 2px solid #d01919;
+}
+
+.inputContainerLargeError .inputField:required + .inputLabelContainer .inputLabelContent::after {
+  content: ' *';
+}
+
+.inputContainerLargeError .inputField:focus + .inputLabelContainer .inputLabelContent,
+.inputContainerLargeError .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  font-size: 18px;
+  padding-bottom: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.inputContainerLargeError .inputLabelContainer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #d01919;
+  color: #d01919;
+}
+
+.inputContainerLargeError .inputLabelContainer .inputLabelContent {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  font-size: 25px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .inputContainerLargeError {
+    height: 56px;
+    position: relative;
+    width: 75%;
+  }
+  .inputContainerLargeError .inputField {
+    width: 100%;
+    height: 100%;
+    padding-top: 16px;
+    font-size: 22px;
+    border: none;
+    outline: none;
+  }
+  .inputContainerLargeError .inputField::-webkit-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerLargeError .inputField:-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerLargeError .inputField::-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerLargeError .inputField::placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerLargeError .inputField:disabled {
+    background: none;
+    pointer-events: none;
+  }
+  .inputContainerLargeError .inputField:focus + .inputLabelContainer {
+    border-bottom: 2px solid #d01919;
+  }
+  .inputContainerLargeError .inputField:required + .inputLabelContainer .inputLabelContent::after {
+    content: ' *';
+  }
+  .inputContainerLargeError .inputField:focus + .inputLabelContainer .inputLabelContent,
+  .inputContainerLargeError .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    font-size: 16px;
+    padding-bottom: 4px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .inputContainerLargeError .inputLabelContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #d01919;
+    color: #d01919;
+  }
+  .inputContainerLargeError .inputLabelContainer .inputLabelContent {
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    font-size: 22px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+
+.inputContainerSmallPrimary {
+  height: 56px;
+  position: relative;
+  width: 30%;
+}
+
+.inputContainerSmallPrimary .inputField {
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+  font-size: 22px;
+  border: none;
+  outline: none;
+}
+
+.inputContainerSmallPrimary .inputField::-webkit-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerSmallPrimary .inputField:-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerSmallPrimary .inputField::-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerSmallPrimary .inputField::placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerSmallPrimary .inputField:disabled {
+  background: none;
+  pointer-events: none;
+}
+
+.inputContainerSmallPrimary .inputField:focus + .inputLabelContainer {
+  border-bottom: 2px solid #0f4c75;
+}
+
+.inputContainerSmallPrimary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+  content: ' *';
+}
+
+.inputContainerSmallPrimary .inputField:focus + .inputLabelContainer .inputLabelContent,
+.inputContainerSmallPrimary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  font-size: 16px;
+  padding-bottom: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.inputContainerSmallPrimary .inputLabelContainer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #0f4c75;
+  color: #0f4c75;
+}
+
+.inputContainerSmallPrimary .inputLabelContainer .inputLabelContent {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  font-size: 22px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .inputContainerSmallPrimary {
+    height: 56px;
+    position: relative;
+    width: 30%;
+  }
+  .inputContainerSmallPrimary .inputField {
+    width: 100%;
+    height: 100%;
+    padding-top: 16px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+  }
+  .inputContainerSmallPrimary .inputField::-webkit-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerSmallPrimary .inputField:-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerSmallPrimary .inputField::-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerSmallPrimary .inputField::placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerSmallPrimary .inputField:disabled {
+    background: none;
+    pointer-events: none;
+  }
+  .inputContainerSmallPrimary .inputField:focus + .inputLabelContainer {
+    border-bottom: 2px solid #0f4c75;
+  }
+  .inputContainerSmallPrimary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+    content: ' *';
+  }
+  .inputContainerSmallPrimary .inputField:focus + .inputLabelContainer .inputLabelContent,
+  .inputContainerSmallPrimary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    font-size: 14px;
+    padding-bottom: 4px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .inputContainerSmallPrimary .inputLabelContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #0f4c75;
+    color: #0f4c75;
+  }
+  .inputContainerSmallPrimary .inputLabelContainer .inputLabelContent {
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    font-size: 20px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+
+.inputContainerSmallSecondary {
+  height: 56px;
+  position: relative;
+  width: 30%;
+}
+
+.inputContainerSmallSecondary .inputField {
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+  font-size: 22px;
+  border: none;
+  outline: none;
+}
+
+.inputContainerSmallSecondary .inputField::-webkit-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerSmallSecondary .inputField:-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerSmallSecondary .inputField::-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerSmallSecondary .inputField::placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerSmallSecondary .inputField:disabled {
+  background: none;
+  pointer-events: none;
+}
+
+.inputContainerSmallSecondary .inputField:focus + .inputLabelContainer {
+  border-bottom: 2px solid #282828;
+}
+
+.inputContainerSmallSecondary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+  content: ' *';
+}
+
+.inputContainerSmallSecondary .inputField:focus + .inputLabelContainer .inputLabelContent,
+.inputContainerSmallSecondary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  font-size: 16px;
+  padding-bottom: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.inputContainerSmallSecondary .inputLabelContainer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #282828;
+  color: #282828;
+}
+
+.inputContainerSmallSecondary .inputLabelContainer .inputLabelContent {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  font-size: 22px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .inputContainerSmallSecondary {
+    height: 56px;
+    position: relative;
+    width: 30%;
+  }
+  .inputContainerSmallSecondary .inputField {
+    width: 100%;
+    height: 100%;
+    padding-top: 16px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+  }
+  .inputContainerSmallSecondary .inputField::-webkit-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerSmallSecondary .inputField:-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerSmallSecondary .inputField::-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerSmallSecondary .inputField::placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerSmallSecondary .inputField:disabled {
+    background: none;
+    pointer-events: none;
+  }
+  .inputContainerSmallSecondary .inputField:focus + .inputLabelContainer {
+    border-bottom: 2px solid #282828;
+  }
+  .inputContainerSmallSecondary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+    content: ' *';
+  }
+  .inputContainerSmallSecondary .inputField:focus + .inputLabelContainer .inputLabelContent,
+  .inputContainerSmallSecondary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    font-size: 14px;
+    padding-bottom: 4px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .inputContainerSmallSecondary .inputLabelContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #282828;
+    color: #282828;
+  }
+  .inputContainerSmallSecondary .inputLabelContainer .inputLabelContent {
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    font-size: 20px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+
+.inputContainerSmallError {
+  height: 56px;
+  position: relative;
+  width: 30%;
+}
+
+.inputContainerSmallError .inputField {
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+  font-size: 22px;
+  border: none;
+  outline: none;
+}
+
+.inputContainerSmallError .inputField::-webkit-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerSmallError .inputField:-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerSmallError .inputField::-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerSmallError .inputField::placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerSmallError .inputField:disabled {
+  background: none;
+  pointer-events: none;
+}
+
+.inputContainerSmallError .inputField:focus + .inputLabelContainer {
+  border-bottom: 2px solid #d01919;
+}
+
+.inputContainerSmallError .inputField:required + .inputLabelContainer .inputLabelContent::after {
+  content: ' *';
+}
+
+.inputContainerSmallError .inputField:focus + .inputLabelContainer .inputLabelContent,
+.inputContainerSmallError .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  font-size: 16px;
+  padding-bottom: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.inputContainerSmallError .inputLabelContainer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #d01919;
+  color: #d01919;
+}
+
+.inputContainerSmallError .inputLabelContainer .inputLabelContent {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  font-size: 22px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .inputContainerSmallError {
+    height: 56px;
+    position: relative;
+    width: 30%;
+  }
+  .inputContainerSmallError .inputField {
+    width: 100%;
+    height: 100%;
+    padding-top: 16px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+  }
+  .inputContainerSmallError .inputField::-webkit-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerSmallError .inputField:-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerSmallError .inputField::-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerSmallError .inputField::placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerSmallError .inputField:disabled {
+    background: none;
+    pointer-events: none;
+  }
+  .inputContainerSmallError .inputField:focus + .inputLabelContainer {
+    border-bottom: 2px solid #d01919;
+  }
+  .inputContainerSmallError .inputField:required + .inputLabelContainer .inputLabelContent::after {
+    content: ' *';
+  }
+  .inputContainerSmallError .inputField:focus + .inputLabelContainer .inputLabelContent,
+  .inputContainerSmallError .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    font-size: 14px;
+    padding-bottom: 4px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .inputContainerSmallError .inputLabelContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #d01919;
+    color: #d01919;
+  }
+  .inputContainerSmallError .inputLabelContainer .inputLabelContent {
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    font-size: 20px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+
+.inputContainerHugePrimary {
+  height: 56px;
+  position: relative;
+  width: 95%;
+}
+
+.inputContainerHugePrimary .inputField {
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+  font-size: 25px;
+  border: none;
+  outline: none;
+}
+
+.inputContainerHugePrimary .inputField::-webkit-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerHugePrimary .inputField:-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerHugePrimary .inputField::-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerHugePrimary .inputField::placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerHugePrimary .inputField:disabled {
+  background: none;
+  pointer-events: none;
+}
+
+.inputContainerHugePrimary .inputField:focus + .inputLabelContainer {
+  border-bottom: 2px solid #0f4c75;
+}
+
+.inputContainerHugePrimary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+  content: ' *';
+}
+
+.inputContainerHugePrimary .inputField:focus + .inputLabelContainer .inputLabelContent,
+.inputContainerHugePrimary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  font-size: 18px;
+  padding-bottom: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.inputContainerHugePrimary .inputLabelContainer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #0f4c75;
+  color: #0f4c75;
+}
+
+.inputContainerHugePrimary .inputLabelContainer .inputLabelContent {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  font-size: 25px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .inputContainerHugePrimary {
+    height: 56px;
+    position: relative;
+    width: 95%;
+  }
+  .inputContainerHugePrimary .inputField {
+    width: 100%;
+    height: 100%;
+    padding-top: 16px;
+    font-size: 22px;
+    border: none;
+    outline: none;
+  }
+  .inputContainerHugePrimary .inputField::-webkit-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerHugePrimary .inputField:-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerHugePrimary .inputField::-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerHugePrimary .inputField::placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerHugePrimary .inputField:disabled {
+    background: none;
+    pointer-events: none;
+  }
+  .inputContainerHugePrimary .inputField:focus + .inputLabelContainer {
+    border-bottom: 2px solid #0f4c75;
+  }
+  .inputContainerHugePrimary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+    content: ' *';
+  }
+  .inputContainerHugePrimary .inputField:focus + .inputLabelContainer .inputLabelContent,
+  .inputContainerHugePrimary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    font-size: 16px;
+    padding-bottom: 4px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .inputContainerHugePrimary .inputLabelContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #0f4c75;
+    color: #0f4c75;
+  }
+  .inputContainerHugePrimary .inputLabelContainer .inputLabelContent {
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    font-size: 22px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+
+.inputContainerHugeSecondary {
+  height: 56px;
+  position: relative;
+  width: 95%;
+}
+
+.inputContainerHugeSecondary .inputField {
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+  font-size: 25px;
+  border: none;
+  outline: none;
+}
+
+.inputContainerHugeSecondary .inputField::-webkit-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerHugeSecondary .inputField:-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerHugeSecondary .inputField::-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerHugeSecondary .inputField::placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerHugeSecondary .inputField:disabled {
+  background: none;
+  pointer-events: none;
+}
+
+.inputContainerHugeSecondary .inputField:focus + .inputLabelContainer {
+  border-bottom: 2px solid #282828;
+}
+
+.inputContainerHugeSecondary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+  content: ' *';
+}
+
+.inputContainerHugeSecondary .inputField:focus + .inputLabelContainer .inputLabelContent,
+.inputContainerHugeSecondary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  font-size: 18px;
+  padding-bottom: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.inputContainerHugeSecondary .inputLabelContainer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #282828;
+  color: #282828;
+}
+
+.inputContainerHugeSecondary .inputLabelContainer .inputLabelContent {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  font-size: 25px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .inputContainerHugeSecondary {
+    height: 56px;
+    position: relative;
+    width: 95%;
+  }
+  .inputContainerHugeSecondary .inputField {
+    width: 100%;
+    height: 100%;
+    padding-top: 16px;
+    font-size: 22px;
+    border: none;
+    outline: none;
+  }
+  .inputContainerHugeSecondary .inputField::-webkit-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerHugeSecondary .inputField:-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerHugeSecondary .inputField::-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerHugeSecondary .inputField::placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerHugeSecondary .inputField:disabled {
+    background: none;
+    pointer-events: none;
+  }
+  .inputContainerHugeSecondary .inputField:focus + .inputLabelContainer {
+    border-bottom: 2px solid #282828;
+  }
+  .inputContainerHugeSecondary .inputField:required + .inputLabelContainer .inputLabelContent::after {
+    content: ' *';
+  }
+  .inputContainerHugeSecondary .inputField:focus + .inputLabelContainer .inputLabelContent,
+  .inputContainerHugeSecondary .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    font-size: 16px;
+    padding-bottom: 4px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .inputContainerHugeSecondary .inputLabelContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #282828;
+    color: #282828;
+  }
+  .inputContainerHugeSecondary .inputLabelContainer .inputLabelContent {
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    font-size: 22px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+
+.inputContainerHugeError {
+  height: 56px;
+  position: relative;
+  width: 95%;
+}
+
+.inputContainerHugeError .inputField {
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+  font-size: 25px;
+  border: none;
+  outline: none;
+}
+
+.inputContainerHugeError .inputField::-webkit-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerHugeError .inputField:-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerHugeError .inputField::-ms-input-placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerHugeError .inputField::placeholder {
+  color: transparent;
+  display: none;
+}
+
+.inputContainerHugeError .inputField:disabled {
+  background: none;
+  pointer-events: none;
+}
+
+.inputContainerHugeError .inputField:focus + .inputLabelContainer {
+  border-bottom: 2px solid #d01919;
+}
+
+.inputContainerHugeError .inputField:required + .inputLabelContainer .inputLabelContent::after {
+  content: ' *';
+}
+
+.inputContainerHugeError .inputField:focus + .inputLabelContainer .inputLabelContent,
+.inputContainerHugeError .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  font-size: 18px;
+  padding-bottom: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.inputContainerHugeError .inputLabelContainer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #d01919;
+  color: #d01919;
+}
+
+.inputContainerHugeError .inputLabelContainer .inputLabelContent {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  font-size: 25px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .inputContainerHugeError {
+    height: 56px;
+    position: relative;
+    width: 95%;
+  }
+  .inputContainerHugeError .inputField {
+    width: 100%;
+    height: 100%;
+    padding-top: 16px;
+    font-size: 22px;
+    border: none;
+    outline: none;
+  }
+  .inputContainerHugeError .inputField::-webkit-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerHugeError .inputField:-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerHugeError .inputField::-ms-input-placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerHugeError .inputField::placeholder {
+    color: transparent;
+    display: none;
+  }
+  .inputContainerHugeError .inputField:disabled {
+    background: none;
+    pointer-events: none;
+  }
+  .inputContainerHugeError .inputField:focus + .inputLabelContainer {
+    border-bottom: 2px solid #d01919;
+  }
+  .inputContainerHugeError .inputField:required + .inputLabelContainer .inputLabelContent::after {
+    content: ' *';
+  }
+  .inputContainerHugeError .inputField:focus + .inputLabelContainer .inputLabelContent,
+  .inputContainerHugeError .inputField:not(:placeholder-shown) + .inputLabelContainer .inputLabelContent {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    font-size: 16px;
+    padding-bottom: 4px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .inputContainerHugeError .inputLabelContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #d01919;
+    color: #d01919;
+  }
+  .inputContainerHugeError .inputLabelContainer .inputLabelContent {
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    font-size: 22px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+
+.errorMessage, .errorMessageHuge, .errorMessageLarge, .errorMessageMedium, .errorMessageSmall {
+  margin-top: 4px;
+  margin-left: 2px;
+  color: #d01919;
+  text-align: left;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.errorMessageHuge {
+  font-size: 18px;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .errorMessageHuge {
+    font-size: 16px;
+  }
+}
+
+.errorMessageLarge {
+  font-size: 16px;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .errorMessageLarge {
+    font-size: 14px;
+  }
+}
+
+.errorMessageMedium {
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .errorMessageMedium {
+    font-size: 12px;
+  }
+}
+
+.errorMessageSmall {
+  font-size: 12px;
+}
+/*# sourceMappingURL=Input.module.css.map */

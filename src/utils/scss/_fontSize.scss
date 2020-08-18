@@ -1,0 +1,12 @@
+@function pow($base, $exponent) {
+  $result: 1;
+  @for $_ from 1 through $exponent {
+    $result: $result * $base;
+  }
+  @return $result;
+}
+
+@function getFontSize($scale) {
+  $base: 11;
+  @return round($base * pow(9/8, $scale));
+}

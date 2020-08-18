@@ -1,0 +1,18 @@
+.navLinksContainer {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 70%;
+  margin-right: 16px;
+}
+
+@media only screen and (max-width: 1023px) {
+  .navLinksContainer {
+    margin-right: 8px;
+  }
+}
+/*# sourceMappingURL=NavLinksContainer.module.css.map */
