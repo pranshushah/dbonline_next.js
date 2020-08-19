@@ -7,6 +7,11 @@
     sans-serif;
 }
 
+.react-select__value-container {
+  background-color: $secondaryColor;
+  color: $textColor;
+}
+
 .App {
   display: flex;
   flex-direction: row;

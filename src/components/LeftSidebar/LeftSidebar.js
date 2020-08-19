@@ -54,7 +54,7 @@ function LeftSideBar({
         {mainTableDetails.length === 0 ? (
           <div className={Styles.buttonContainer}>
             <Button onClick={onCreateTableButtonClick} darkPrimary>
-              Create database for free
+              Create Table
             </Button>
           </div>
         ) : (

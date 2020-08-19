@@ -6,8 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faKey } from '@fortawesome/free-solid-svg-icons';
 import { EXPLORERCONSTANT } from '../../utils/constant/explorer';
 
-import 'react-virtualized/styles.css';
-
 /**
  * @param {string} id
  * @param {primaryKeyObj} primaryKeyObj

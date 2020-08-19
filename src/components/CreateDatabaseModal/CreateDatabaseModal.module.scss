@@ -1,0 +1,17 @@
+@import '../../utils//scss/spaces';
+@import '../../utils//scss/fontSize';
+@import '../../utils/scss/variables';
+.container {
+  padding: getSpace(2) * 1px;
+}
+
+.radioContainer {
+  padding: getSpace(2) * 1px 0;
+  padding-bottom: 0;
+}
+
+.header {
+  padding: getSpace(2) * 1px 0;
+  font-size: getFontSize(6) * 1px;
+  color: $textColor;
+}

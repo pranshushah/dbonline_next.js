@@ -1,12 +1,11 @@
 import React from 'react';
 import { dataTypes } from '../../utils/attributeDataTypes';
 import Select from 'react-select';
-import './dropdown.scss';
 import { customStyles } from '../../utils/selectStyle';
 /**
  * @param {{onNewDataSelected:Function,selectedValue:string}} props
  */
-function DataTypeDropDown({ onNewDataSelected, selectedValue, ...props }) {
+function DataTypeDropDown({ onNewDataSelected, selectedValue }) {
   function changeHandler(value) {
     onNewDataSelected(value.value);
   }

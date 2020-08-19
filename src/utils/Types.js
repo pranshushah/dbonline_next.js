@@ -70,3 +70,15 @@
  * @property {attributeObj[]} attributes
  * @property {tableLevelConstraintObj} tableLevelConstraint
  */
+
+/**
+ * @typedef {object} databaseType
+ * @property {id} id
+ * @property {string} databaseName
+ * @property {mainTableDetailsType[]} mainTableDetails
+ * @property {tableDndDetailsObj[]} tableDndDetails
+ * @property {Date} createdAt
+ * @property {Date} modifiedAt
+ * @property {boolean} isSqlDatabase
+ * @property {string} databaseType
+ */

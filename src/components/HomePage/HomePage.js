@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Nav from '../HomeNav/HomeNav';
 import Styles from './HomePage.module.scss';
 import Button from '../UI/Button/Button';
+import CreatedatabaseModal from '../CreateDatabaseModal/CreateDatabaseModal';
 export default function HomePage() {
+  const [showModal, setShowModal] = useState(false);
+
+  function showModalHandler() {
+    setShowModal(true);
+  }
+
+  function closeModalHandler() {
+    setShowModal(false);
+  }
+
   return (
     <div className={Styles.container}>
       <Nav />
@@ -16,11 +27,14 @@ export default function HomePage() {
         <div className={Styles.oracle} />
       </div>
       <div className={Styles.buttonContainer}>
-        <Button darkPrimary dimension='medium'>
+        <Button darkPrimary dimension='medium' onClick={showModalHandler}>
           CREATE DATABASE FOR FREE
         </Button>
       </div>
       <p className={Styles.text}>No login required and it’s totally free</p>
+      {showModal && (
+        <CreatedatabaseModal show={showModal} modalCancel={closeModalHandler} />
+      )}
     </div>
   );
 }

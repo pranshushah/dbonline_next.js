@@ -12,20 +12,16 @@ export function useLocalStorage(defaultValue, key) {
 }
 
 export function useIdb(defaultValue, key) {
-  const [state, setState] = useState([]);
+  const [state, setState] = useState(defaultValue);
   useEffect(() => {
-    get(key).then((val) => {
-      if (val) {
-        setState(val);
-      } else {
-        setState(defaultValue);
-      }
-    });
-  }, []);
+    if (key) {
+      get(key).then((val) => {
+        if (val) setState(val);
+      });
+    }
+  }, [key]);
   function setter(data) {
     setState(data);
-    console.log(data);
-    console.log(key);
     set(key, data);
   }
   return [state, setter];
