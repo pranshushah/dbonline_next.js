@@ -1,4 +1,12 @@
 .container {
   margin: 8px;
 }
+
+.header {
+  font-size: 22px;
+  margin: 40px 0;
+  line-height: 24px;
+  color: #1ca1f2;
+  font-weight: 300;
+}
 /*# sourceMappingURL=CreateTableModal.module.css.map */

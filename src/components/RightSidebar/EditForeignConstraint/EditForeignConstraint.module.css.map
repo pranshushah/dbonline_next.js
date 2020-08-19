@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,eAAe,CAAC;EACd,MAAM,EAAE,IAAiB,CAAC,CAAC;CAC5B;;AACD,AAAA,gBAAgB,CAAC;EACf,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;CACxB;;AAED,AAAA,OAAO,CAAC;EACN,YAAY,EAAE,IAAmB;EACjC,UAAU,EAAE,IAAmB;CAChC;;AAED,AAAA,OAAO,CAAC;EACN,MAAM,EAAE,GAAiB,CAAC,GAAmB;EAC7C,SAAS,EAAE,IAAoB;EAC/B,WAAW,EAAE,GAAG;EAChB,cAAc,EAAE,UAAU;EAC1B,KAAK,EGlBQ,OAAiB;CHmB/B;;AAED,AAAA,OAAO,AAAA,cAAc,CAAC;EACpB,MAAM,EAAE,IAAmB,CAAC,GAAmB;EAC/C,UAAU,EAAE,IAAiB;CAC9B;;AAED,AAAA,OAAO,CAAC;EACN,OAAO,EAAE,IAAmB,CAAC,GAAmB;CACjD;;AAED,AAAA,gBAAgB,CAAC;EACf,WAAW,EAAE,GAAiB;EAC9B,UAAU,EAAE,IAAmB;EAC/B,aAAa,EAAE,GAAiB;CACjC",
+    "sources": [
+        "EditForeignConstraint.module.scss",
+        "../../../utils/scss/_spaces.scss",
+        "../../../utils/scss/_fontSize.scss",
+        "../../../utils/scss/_variables.scss"
+    ],
+    "names": [],
+    "file": "EditForeignConstraint.module.css"
+}

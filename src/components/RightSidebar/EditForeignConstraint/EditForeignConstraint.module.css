@@ -1,0 +1,41 @@
+.inputContainer {
+  margin: 16px 0;
+}
+
+.buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.button {
+  margin-right: 12px;
+  margin-top: 12px;
+}
+
+.header {
+  margin: 8px 4px;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #1ca1f2;
+}
+
+.header:first-of-type {
+  margin: 12px 4px;
+  margin-top: 16px;
+}
+
+.select {
+  padding: 12px 4px;
+}
+
+.foreignCheckBox {
+  margin-left: 8px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+/*# sourceMappingURL=EditForeignConstraint.module.css.map */

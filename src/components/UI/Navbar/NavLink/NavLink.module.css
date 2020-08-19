@@ -5,6 +5,7 @@
 .navLink .link {
   display: inline-block;
   text-transform: capitalize;
+  cursor: pointer;
   color: #ebebeb;
   text-decoration: none;
   width: 100%;
@@ -14,7 +15,7 @@
 }
 
 .navLink .link:hover {
-  background-color: #125b8c;
+  background-color: #5e646f;
   color: #ebebeb;
 }
 
@@ -25,21 +26,32 @@
   }
 }
 
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .navLink .link {
+    font-size: 16px;
+    padding: 16px;
+  }
+}
+
+.navLink .darkLink:hover {
+  background-color: #353b45;
+}
+
 .navLink .subMenuContainer {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   left: 0%;
-  top: 100%;
-  width: 100%;
-  z-index: 2;
+  top: 95%;
+  width: 250px;
+  z-index: 1;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 0;
-  background-color: #0f4c75;
+  background-color: #555a64;
 }
 
 .navLink .subMenuContainer .subNavLink {
@@ -48,26 +60,47 @@
 
 .navLink .subMenuContainer .subNavLink .subLink {
   display: block;
+  cursor: pointer;
+  position: relative;
   text-align: center;
-  width: 300px;
+  width: 250px;
   text-transform: capitalize;
   color: #ebebeb;
   text-decoration: none;
   width: 100%;
   line-height: 24px;
-  padding: 16px 32px;
-  font-size: 18px;
+  padding: 16px 16px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.navLink .subMenuContainer .subNavLink .subLink .shortcut {
+  position: absolute;
+  left: 170px;
+  text-transform: lowercase;
+}
+
+@media only screen and (max-width: 1023px) {
+  .navLink .subMenuContainer .subNavLink .subLink .shortcut {
+    left: 150px;
+  }
 }
 
 .navLink .subMenuContainer .subNavLink .subLink:hover {
-  background-color: #125b8c;
+  background-color: #5e646f;
   color: #ebebeb;
 }
 
 @media only screen and (max-width: 1023px) {
   .navLink .subMenuContainer .subNavLink .subLink {
-    font-size: 16px;
-    padding: 16px 24px;
+    width: 220px;
+    padding: 16px 8px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .navLink .subMenuContainer {
+    width: 220px;
   }
 }
 

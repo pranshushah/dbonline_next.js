@@ -1,0 +1,57 @@
+.container {
+  background-color: #282c34;
+  color: #ebebeb;
+  width: 100%;
+  position: relative;
+}
+
+.container .close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+  background-image: url("../../utils/img/close.svg");
+  background-size: 14px;
+  background-repeat: no-repeat;
+  -webkit-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+  opacity: 0.6;
+}
+
+.container .close:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  opacity: 0.9;
+}
+
+@media print {
+  .container {
+    display: none;
+  }
+}
+
+.resize {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-right: 2px solid #3c3c3c;
+}
+
+@media print {
+  .resize {
+    display: none;
+  }
+}
+
+.resize:hover {
+  border-right: 2px solid rgba(60, 60, 60, 0.5);
+}
+
+.buttonContainer {
+  margin-left: 20%;
+  margin-right: 15%;
+  margin-top: 200px;
+}
+/*# sourceMappingURL=LeftSidebar.module.css.map */

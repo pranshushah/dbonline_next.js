@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,eAAe,CAAC;EACd,OAAO,EAAE,IAAiB,CAAC,CAAC;CAC7B;;AACD,AAAA,gBAAgB,CAAC;EACf,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;CACxB;;AAED,AAAA,OAAO,CAAC;EACN,YAAY,EAAE,IAAmB;EACjC,UAAU,EAAE,IAAmB;CAChC",
+    "sources": [
+        "EditCheckConstraint.module.scss",
+        "../../../utils/scss/_spaces.scss"
+    ],
+    "names": [],
+    "file": "EditCheckConstraint.module.css"
+}

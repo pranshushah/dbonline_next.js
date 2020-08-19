@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,eAAe,CAAC;EACd,OAAO,EAAE,IAAiB,CAAC,GAAmB;CAC/C;;AACD,AAAA,gBAAgB,CAAC;EACf,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;CACxB;;AAED,AAAA,OAAO,CAAC;EACN,MAAM,EAAE,IAAiB,CAAC,GAAmB;EAC7C,SAAS,EAAE,IAAoB;EAC/B,WAAW,EAAE,GAAG;EAChB,cAAc,EAAE,UAAU;EAC1B,KAAK,EGbQ,OAAiB;CHc/B;;AAED,AAAA,OAAO,CAAC;EACN,YAAY,EAAE,IAAmB;EACjC,UAAU,EAAE,IAAmB;CAChC;;AAED,AAAA,OAAO,CAAC;EACN,OAAO,EAAE,IAAmB,CAAC,GAAmB;CACjD;;AAED,AAAA,gBAAgB,CAAC;EACf,WAAW,EAAE,GAAG;EAChB,UAAU,EAAE,IAAmB;EAC/B,aAAa,EAAE,GAAiB;CACjC",
+    "sources": [
+        "EditAttribute.module.scss",
+        "../../../utils/scss/_spaces.scss",
+        "../../../utils/scss/_fontSize.scss",
+        "../../../utils/scss/_variables.scss"
+    ],
+    "names": [],
+    "file": "EditAttribute.module.css"
+}

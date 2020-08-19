@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AAIA,AAAA,qBAAqB,CAAC;EACpB,cAAc,EAAE,GAAiB;CAClC;;AACD,AAAA,cAAc,CAAC;EACb,OAAO,EAAE,KAAK;EACd,gBAAgB,EAAE,yCAA4C;EAC9D,iBAAiB,EAAE,SAAS;EAC5B,eAAe,EAAE,IAAI;EACrB,mBAAmB,EAAE,SAAS;EAC9B,KAAK,EAAE,IAAI;EACX,aAAa,EAAE,QAAQ;EACvB,QAAQ,EAAE,MAAM;EAChB,MAAM,EAAE,OAAO;EACf,WAAW,EAAE,IAAI;EACjB,WAAW,EAAE,MAAM;EACnB,OAAO,EAAE,GAAiB,CAAC,CAAC;EAC5B,YAAY,EAAE,IAAiB;EAC/B,SAAS,EAAE,IAAoB;CAChC;;AAED,AAAA,cAAc,AAAA,MAAM,CAAC;EACnB,gBAAgB,EAAE,OAAyC;CAC5D",
+    "sources": [
+        "TableItem.module.scss",
+        "../../../../utils/scss/_spaces.scss",
+        "../../../../utils/scss/_variables.scss",
+        "../../../../utils/scss/_fontSize.scss"
+    ],
+    "names": [],
+    "file": "TableItem.module.css"
+}

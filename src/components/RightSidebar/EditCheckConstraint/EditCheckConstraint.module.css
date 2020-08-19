@@ -1,0 +1,18 @@
+.inputContainer {
+  padding: 16px 0;
+}
+
+.buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.button {
+  margin-right: 12px;
+  margin-top: 12px;
+}
+/*# sourceMappingURL=EditCheckConstraint.module.css.map */

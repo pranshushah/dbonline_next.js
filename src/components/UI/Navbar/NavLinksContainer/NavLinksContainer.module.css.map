@@ -1,10 +1,11 @@
 {
     "version": 3,
-    "mappings": "AAEA,AAAA,kBAAkB,CAAC;EACjB,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,QAAQ;EACzB,KAAK,EAAE,GAAG;EACV,YAAY,ECDL,IAAI;CDKZ;;AEQC,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,MAAM;EFjB3C,AAAA,kBAAkB,CAAC;IAOf,YAAY,ECJP,GAAG;GDMX",
+    "mappings": "AAGA,AAAA,kBAAkB,CAAC;EACjB,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,QAAQ;EACzB,KAAK,EAAE,GAAG;EACV,YAAY,EAAE,IAAiB;CAQhC;;AEGC,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,MAAM;EFhB3C,AAAA,kBAAkB,CAAC;IAOf,YAAY,EAAE,GAAiB;GAMlC;;;AETC,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,KAAK,OAAO,SAAS,EAAE,KAAK;EFJjE,AAAA,kBAAkB,CAAC;IAUf,YAAY,EAAE,CAAC;IACf,KAAK,EAAE,GAAG;GAEb",
     "sources": [
         "NavLinksContainer.module.scss",
         "../../../../utils/scss/_variables.scss",
-        "../../../../utils/scss/_media.scss"
+        "../../../../utils/scss/_media.scss",
+        "../../../../utils/scss/_spaces.scss"
     ],
     "names": [],
     "file": "NavLinksContainer.module.css"

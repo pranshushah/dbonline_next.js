@@ -1,0 +1,132 @@
+.container {
+  margin: 8px;
+  margin-left: 16px;
+}
+
+.header {
+  color: #ebebeb;
+  margin-top: 24px;
+  font-weight: 500;
+  line-height: 48px;
+  font-size: 28px;
+}
+
+.sizeAndPreContainer {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.dataTypeContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 98%;
+}
+
+.constraintNameContainer {
+  margin: 8px;
+  margin-left: 0px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.sizeValueContainer {
+  margin: 0 8px;
+}
+
+.uniqueContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 98%;
+  margin-top: 24px;
+}
+
+.uniqueInput {
+  width: 30%;
+}
+
+.uniqueDropDown {
+  margin-top: 0.9rem;
+  width: 45%;
+  margin-left: 2.5rem;
+}
+
+.primaryContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 98%;
+  margin: 1.5rem 0;
+}
+
+.primaryInput {
+  width: 30%;
+}
+
+.primaryDropDown {
+  margin: 0.9rem;
+  width: 45%;
+  margin-left: 2.5rem;
+}
+
+.foreignContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 98%;
+  margin: 1.5rem 0;
+  margin-bottom: 0px;
+}
+
+.foreignInput {
+  width: 30%;
+}
+
+.foreignDropDown {
+  margin: 0.9rem;
+  width: 25%;
+  margin-left: 1.5rem;
+}
+
+.checkContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 98%;
+  margin: 24px 0;
+}
+
+.checkInput {
+  width: 40%;
+}
+
+.checkInputExpr {
+  margin: 0 5px;
+  margin-left: 2.6rem;
+  width: 45%;
+}
+
+.foreignCheckBoxContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.foreignCheckBox {
+  margin-left: 16px;
+  margin-top: 15.2px;
+}
+/*# sourceMappingURL=AddAttribute.module.css.map */

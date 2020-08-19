@@ -1,12 +1,13 @@
 {
     "version": 3,
-    "mappings": "AAIA,AAAA,KAAK,CAAC;EACJ,SAAS,EAAE,IAAoB;EAC/B,WAAW,EAAE,IAAgD;EAC7D,OAAO,EAAE,GAAG,CGCL,IAAI;EHAX,KAAK,EGLS,OAAkB;CHWjC;;AEKC,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,MAAM;EFf3C,AAAA,KAAK,CAAC;IAMF,SAAS,EAAE,IAAoB;IAC/B,WAAW,EAAE,IAAiD;IAC9D,OAAO,EGNF,IAAI,CACJ,IAAI;GHOZ",
+    "mappings": "AAKA,AAAA,KAAK,CAAC;EACJ,SAAS,EAAE,IAAoB;EAC/B,WAAW,EAAE,IAAgD;EAC7D,OAAO,EAAE,GAAG,CAAC,IAAiB;EAC9B,KAAK,EGJK,OAAkB;CHe7B;;AEDC,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,MAAM;EFd3C,AAAA,KAAK,CAAC;IAMF,SAAS,EAAE,IAAoB;IAC/B,WAAW,EAAE,IAAiD;IAC9D,OAAO,EAAE,IAAiB,CAAC,IAAiB;GAO/C;;;AEbC,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,KAAK,OAAO,SAAS,EAAE,KAAK;EFFjE,AAAA,KAAK,CAAC;IAWF,SAAS,EAAE,IAAoB;IAC/B,WAAW,EAAE,IAAiD;IAC9D,OAAO,EAAE,IAAiB,CAAC,IAAiB;GAE/C",
     "sources": [
         "Logo.module.scss",
         "../../../../utils/scss/_fontSize.scss",
         "../../../../utils/scss/_media.scss",
         "../../../../utils/scss/_variables.scss",
-        "../../../../utils/scss/_lineHeight.scss"
+        "../../../../utils/scss/_lineHeight.scss",
+        "../../../../utils/scss/_spaces.scss"
     ],
     "names": [],
     "file": "Logo.module.css"

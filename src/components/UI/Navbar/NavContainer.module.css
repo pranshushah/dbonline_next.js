@@ -2,12 +2,24 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #0f4c75;
-  -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
-          box-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
+  background-color: #50555e;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   letter-spacing: 1px;
+}
+
+.headerContainerDark {
+  background-color: #282c34;
+}
+
+@media print {
+  .headerContainer {
+    display: none;
+  }
+}
+
+@page {
+  margin: 0;
 }
 /*# sourceMappingURL=NavContainer.module.css.map */

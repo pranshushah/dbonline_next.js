@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,UAAU,CAAC;EACT,OAAO,EAAE,GAAiB;CAC3B;;AAED,AAAA,gBAAgB,CAAC;EACf,KAAK,EAAE,GAAG;EACV,OAAO,EAAE,IAAmB,CAAC,CAAC;CAC/B",
+    "sources": [
+        "style.module.scss",
+        "../../../utils/scss/_spaces.scss"
+    ],
+    "names": [],
+    "file": "style.module.css"
+}

@@ -1,0 +1,57 @@
+.container {
+  padding: 16px 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  border-bottom: 1px solid #2f353d;
+}
+
+.container:hover {
+  background-color: #2f353d;
+  border-bottom: 1px solid #464e59;
+}
+
+.databaseName {
+  font-size: 18px;
+  color: #ebebeb;
+  line-height: 24px;
+  width: 20%;
+}
+
+.created {
+  font-size: 16px;
+  color: #ebebeb;
+  line-height: 24px;
+  opacity: 0.7;
+  width: 32%;
+}
+
+.modified {
+  font-size: 16px;
+  color: #ebebeb;
+  line-height: 24px;
+  opacity: 0.7;
+  width: 32%;
+}
+
+.sql {
+  font-size: 16px;
+  color: #ebebeb;
+  line-height: 24px;
+  opacity: 0.7;
+  width: 11%;
+}
+
+.type {
+  font-size: 16px;
+  color: #ebebeb;
+  line-height: 24px;
+  opacity: 0.7;
+  width: 11%;
+}
+/*# sourceMappingURL=DashBoardElement.module.css.map */

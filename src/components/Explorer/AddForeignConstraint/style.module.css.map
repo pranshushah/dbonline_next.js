@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "AAIA,AAAA,UAAU,CAAC;EACT,OAAO,EAAE,GAAiB;CAC3B;;AAED,AAAA,gBAAgB,CAAC;EACf,KAAK,EAAE,GAAG;EACV,OAAO,EAAE,GAAiB,CAAC,CAAC;CAC7B;;AAED,AAAA,eAAe,CAAC;EACd,OAAO,EAAE,IAAmB,CAAC,CAAC;CAC/B;;AAED,AAAA,yBAAyB,CAAC;EACxB,OAAO,EAAE,IAAI;CACd;;AAED,AAAA,gBAAgB,CAAC;EACf,WAAW,EAAE,IAAiB;EAC9B,UAAU,EAAE,MAAmB;CAChC;;AAED,AAAA,OAAO,CAAC;EACN,KAAK,EEtBK,OAAkB;EFuB5B,UAAU,EAAE,IAAiB;EAC7B,WAAW,EAAE,GAAG;EAChB,WAAW,EAAE,IAAgD;EAC7D,SAAS,EAAE,IAAoB;CAChC",
+    "sources": [
+        "style.module.scss",
+        "../../../utils/scss/_spaces.scss",
+        "../../../utils/scss/_variables.scss",
+        "../../../utils/scss/_lineHeight.scss",
+        "../../../utils/scss/_fontSize.scss"
+    ],
+    "names": [],
+    "file": "style.module.css"
+}

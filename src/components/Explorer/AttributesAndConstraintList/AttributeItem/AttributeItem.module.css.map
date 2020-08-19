@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "AAIA,AAAA,UAAU,CAAC;EACT,OAAO,EAAE,CAAC;EACV,cAAc,EAAE,IAAI;EACpB,SAAS,EAAE,kBAAkB;EAC7B,UAAU,EAAE,aAAa;EACzB,WAAW,EAAE,CAAC;EACd,YAAY,EAAE,IAAmB;EACjC,aAAa,EAAE,QAAQ;EACvB,QAAQ,EAAE,MAAM;EAChB,MAAM,EAAE,OAAO;EACf,WAAW,EAAE,IAAI;EACjB,WAAW,EAAE,MAAM;EACnB,OAAO,EAAE,EAAE;EACX,gBAAgB,EAAE,kCAAkC;EACpD,eAAe,EAAE,IAAI;EACrB,mBAAmB,EAAE,QAAQ;EAC7B,iBAAiB,EAAE,SAAS;EAC5B,SAAS,EAAE,IAAI;CAChB;;AAED,AAAA,KAAK,CAAC;EACJ,OAAO,EAAE,CAAC;EACV,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,aAAa;EACzB,cAAc,EAAE,GAAG;EACnB,SAAS,EAAE,aAAa;EACxB,WAAW,EAAE,IAAiD;CAC/D;;AAED,AAAA,UAAU,AAAA,MAAM,CAAC;EACf,gBAAgB,EAAE,OAAyC;CAC5D",
+    "sources": [
+        "AttributeItem.module.scss",
+        "../../../../utils/scss/_spaces.scss",
+        "../../../../utils/scss/_lineHeight.scss",
+        "../../../../utils/scss/_fontSize.scss",
+        "../../../../utils/scss/_variables.scss"
+    ],
+    "names": [],
+    "file": "AttributeItem.module.css"
+}

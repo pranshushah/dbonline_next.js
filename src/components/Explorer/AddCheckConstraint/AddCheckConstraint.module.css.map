@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,UAAU,CAAC;EACT,OAAO,EAAE,GAAiB;CAC3B;;AAED,AAAA,eAAe,CAAC;EACd,OAAO,EAAE,IAAiB,CAAC,CAAC;CAC7B",
+    "sources": [
+        "AddCheckConstraint.module.scss",
+        "../../../utils/scss/_spaces.scss"
+    ],
+    "names": [],
+    "file": "AddCheckConstraint.module.css"
+}

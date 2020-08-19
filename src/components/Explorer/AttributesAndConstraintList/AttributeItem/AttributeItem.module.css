@@ -1,0 +1,40 @@
+.container {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateX(-100vh);
+          transform: translateX(-100vh);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  line-height: 0;
+  padding-left: 60px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: nowrap;
+  z-index: -1;
+  background-image: url("../../../../utils/img/a.png");
+  background-size: 14px;
+  background-position: 42px 6px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+}
+
+.show {
+  z-index: 0;
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  pointer-events: all;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  line-height: 24px;
+}
+
+.container:hover {
+  background-color: #333842;
+}
+/*# sourceMappingURL=AttributeItem.module.css.map */

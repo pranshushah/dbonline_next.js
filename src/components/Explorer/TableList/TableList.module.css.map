@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,UAAU,CAAC;EACT,WAAW,EAAE,IAAiD;EAC9D,WAAW,EAAE,IAAkB;EAC/B,UAAU,EAAE,IAAI;EAChB,SAAS,EAAE,IAAoB;EAC/B,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,IAAI;EAChB,cAAc,EAAE,IAAiB;CAClC",
+    "sources": [
+        "TableList.module.scss",
+        "../../../utils/scss/_spaces.scss",
+        "../../../utils/scss/_lineHeight.scss",
+        "../../../utils/scss/_fontSize.scss"
+    ],
+    "names": [],
+    "file": "TableList.module.css"
+}

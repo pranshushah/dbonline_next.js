@@ -1,0 +1,110 @@
+.inputCheckBox {
+  display: none;
+}
+
+.checkBox {
+  display: block;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ebebeb;
+}
+
+.checkBox::before {
+  content: '\2713';
+  border: 1px solid #1ca1f2;
+  border-radius: 2px;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 7px;
+  padding-left: 0.1em;
+  padding-bottom: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  font-size: 16px;
+}
+
+.inputCheckBox:checked + .checkBox:before {
+  background: #1ca1f2;
+  border-color: #1ca1f2;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.inputCheckBox + .checkBox:active:before {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.inputCheckBox:checked:disabled + .checkBox:before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  border-color: #1ca1f2;
+  background-color: #1ca1f2;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.inputCheckBox:disabled + .checkBox:before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  border-color: #ebebeb;
+  background-color: #ebebeb;
+  pointer-events: none;
+}
+
+.checkBoxDark {
+  display: block;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ebebeb;
+}
+
+.checkBoxDark::before {
+  content: '\2713';
+  border: 1px solid #0468aa;
+  border-radius: 2px;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 7px;
+  padding-left: 0.1em;
+  padding-bottom: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  font-size: 16px;
+}
+
+.inputCheckBox:checked + .checkBoxDark:before {
+  background: #0468aa;
+  border-color: #0468aa;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.inputCheckBox + .checkBoxDark:active:before {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.inputCheckBox:checked:disabled + .checkBoxDark:before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  border-color: #0468aa;
+  background-color: #0468aa;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.inputCheckBox:disabled + .checkBoxDark:before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  border-color: #ebebeb;
+  background-color: #ebebeb;
+  pointer-events: none;
+}
+/*# sourceMappingURL=CheckBox.module.css.map */

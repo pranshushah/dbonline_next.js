@@ -1,0 +1,28 @@
+.itemPaddingContainer {
+  padding-bottom: 8px;
+}
+
+.itemContainer {
+  display: block;
+  background-image: url("../../../../utils/img/grid (1).svg");
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: 20px 10px;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: nowrap;
+  padding: 8px 0;
+  padding-left: 48px;
+  font-size: 18px;
+}
+
+.itemContainer:hover {
+  background-color: #333842;
+}
+/*# sourceMappingURL=TableItem.module.css.map */

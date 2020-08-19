@@ -1,96 +1,141 @@
 .button {
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0);
   cursor: pointer;
-  outline: none;
+  outline-style: none;
   border-radius: 0.1rem;
-  -webkit-transition: 0.5s background ease-in-out;
-  transition: 0.5s background ease-in-out;
+  -webkit-transition: 0.1s background-color ease-in-out;
+  transition: 0.1s background-color ease-in-out;
 }
 
 .button:disabled {
   cursor: not-allowed;
-  opacity: 0.45;
+  opacity: 0.6;
 }
 
 .primary {
   color: #ebebeb;
-  background-color: #0f4c75;
+  background-color: #1ca1f2;
 }
 
 .primary:hover {
-  background: #0d4367 radial-gradient(circle, transparent 1%, #0d4367 1%) center/15000%;
+  background: #0e9bf1 radial-gradient(circle, transparent 1%, #0e9bf1 1%) center/15000%;
 }
 
 .primary:active {
-  background-color: #115583;
+  background-color: #2aa7f3;
   background-size: 100%;
-  -webkit-transition: background 0s;
-  transition: background 0s;
+  -webkit-transition: background-color 0s;
+  transition: background-color 0s;
 }
 
 .invertedPrimary {
-  background-color: white;
-  color: #0f4c75;
-  outline: 1px solid #0f4c75;
+  background-color: transparent;
+  color: #1ca1f2;
+  border: 1px solid #1ca1f2;
+}
+
+.invertedPrimary:hover {
+  color: #ebebeb;
+  background-color: rgba(28, 161, 242, 0.2);
 }
 
 .invertedPrimary:active {
-  color: #092f48;
-  outline: 1px solid #092f48;
+  color: #0c85cf;
+  border: 1px solid #0c85cf;
+}
+
+.darkPrimary {
+  color: #ebebeb;
+  background-color: #0468aa;
+}
+
+.darkPrimary:hover {
+  background: #045f9b radial-gradient(circle, transparent 1%, #045f9b 1%) center/15000%;
+}
+
+.darkPrimary:active {
+  background-color: #0471b9;
+  background-size: 100%;
+  -webkit-transition: background-color 0s;
+  transition: background-color 0s;
+}
+
+.invertedDarkPrimary {
+  background-color: transparent;
+  color: #0468aa;
+  border: 1px solid #0468aa;
+}
+
+.invertedDarkPrimary:hover {
+  color: #ebebeb;
+  background-color: rgba(4, 104, 170, 0.2);
+}
+
+.invertedDarkPrimary:active {
+  color: #034a78;
+  border: 1px solid #034a78;
 }
 
 .secondary {
   color: #ebebeb;
-  background-color: #2d2d2d;
+  background-color: #1d2126;
 }
 
 .secondary:hover {
-  background: #202020 radial-gradient(circle, transparent 1%, #202020 1%) center/15000%;
+  background: #121417 radial-gradient(circle, transparent 1%, #121417 1%) center/15000%;
 }
 
 .secondary:active {
-  background-color: #373737;
+  background-color: #262b31;
   background-size: 100%;
-  -webkit-transition: background 0s;
-  transition: background 0s;
 }
 
 .invertedSecondary {
-  background-color: white;
-  color: #282828;
-  outline: 1px solid #282828;
+  background-color: transparent;
+  color: #191c20;
+  border: 1px solid #191c20;
+}
+
+.invertedSecondary:hover {
+  color: #ebebeb;
+  background-color: #1d2126;
 }
 
 .invertedSecondary:active {
-  color: #0f0f0f;
-  outline: 1px solid #0f0f0f;
+  color: #030303;
+  border: 1px solid #030303;
 }
 
 .danger {
   color: #ebebeb;
-  background-color: #e34646;
+  background-color: #c13448;
 }
 
 .danger:hover {
-  background: #e13939 radial-gradient(circle, transparent 1%, #e13939 1%) center/15000%;
+  background: #b53144 radial-gradient(circle, transparent 1%, #b53144 1%) center/15000%;
 }
 
 .danger:active {
-  background-color: #e65858;
+  background-color: #cb3e52;
   background-size: 100%;
-  -webkit-transition: background 0s;
-  transition: background 0s;
+  -webkit-transition: background-color 0s;
+  transition: background-color 0s;
 }
 
 .invertedDanger {
-  background-color: white;
-  color: #e34646;
-  outline: 1px solid #e34646;
+  background-color: transparent;
+  color: #da4358;
+  border: 1px solid #da4358;
+}
+
+.invertedDanger:hover {
+  color: #ebebeb;
+  background-color: rgba(218, 67, 88, 0.2);
 }
 
 .invertedDanger:active {
-  color: #d62020;
-  outline: 1px solid #d62020;
+  color: #c4263c;
+  border: 1px solid #c4263c;
 }
 
 .medium {

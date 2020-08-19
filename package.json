@@ -38,6 +38,7 @@
     "react-xarrows": "^1.4.4",
     "sass": "^1.26.10",
     "styled-components": "5.0.1",
+    "timeago.js": "^4.0.2",
     "uuid": "3.4.0"
   },
   "devDependencies": {

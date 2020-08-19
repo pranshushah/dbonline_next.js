@@ -1,0 +1,32 @@
+.container {
+  padding: 8px;
+}
+
+.selectContainer {
+  width: 75%;
+  padding: 8px 0;
+}
+
+.inputContainer {
+  padding: 12px 0;
+}
+
+.foreignCheckBoxContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.foreignCheckBox {
+  margin-left: 16px;
+  margin-top: 14.4px;
+}
+
+.header {
+  color: #ebebeb;
+  margin-top: 24px;
+  font-weight: 500;
+  line-height: 48px;
+  font-size: 25px;
+}
+/*# sourceMappingURL=style.module.css.map */

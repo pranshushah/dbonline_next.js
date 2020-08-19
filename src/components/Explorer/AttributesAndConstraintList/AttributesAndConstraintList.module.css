@@ -1,0 +1,25 @@
+.container {
+  list-style: none;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateX(-100vh);
+          transform: translateX(-100vh);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  padding-left: 0;
+  padding-top: 0;
+  line-height: 0;
+  z-index: -1;
+}
+
+.show {
+  z-index: 0;
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  padding-top: 4px;
+  line-height: 24px;
+}
+/*# sourceMappingURL=AttributesAndConstraintList.module.css.map */

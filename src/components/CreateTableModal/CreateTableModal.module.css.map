@@ -1,9 +1,12 @@
 {
     "version": 3,
-    "mappings": "AAEA,AAAA,UAAU,CAAC;EACT,MAAM,EAAE,GAAiB;CAC1B",
+    "mappings": "AAIA,AAAA,UAAU,CAAC;EACT,MAAM,EAAE,GAAiB;CAC1B;;AAED,AAAA,OAAO,CAAC;EACN,SAAS,EAAE,IAAoB;EAC/B,MAAM,EAAE,IAAiB,CAAC,CAAC;EAC3B,WAAW,EAAE,IAAiD;EAC9D,KAAK,EETQ,OAAiB;EFU9B,WAAW,EAAE,GAAG;CACjB",
     "sources": [
         "CreateTableModal.module.scss",
-        "../utils/scss/_spaces.scss"
+        "../../utils/scss/_spaces.scss",
+        "../../utils/scss/_variables.scss",
+        "../../utils/scss/_fontSize.scss",
+        "../../utils/scss/_lineHeight.scss"
     ],
     "names": [],
     "file": "CreateTableModal.module.css"

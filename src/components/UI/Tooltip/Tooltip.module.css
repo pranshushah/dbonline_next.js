@@ -1,0 +1,33 @@
+.Tooltip {
+  display: block;
+  max-width: 320px;
+  background-color: #282c34;
+  color: #ebebeb;
+  border-radius: 2px;
+  padding: 8px;
+  position: fixed;
+  z-index: 1;
+  margin-left: -20px;
+}
+
+.Tooltip::after {
+  border: solid;
+  border-color: #282c34 transparent;
+  border-width: 12px 6px 0 6px;
+  content: '';
+  left: 45%;
+  bottom: -10px;
+  position: absolute;
+}
+
+.rel {
+  position: relative;
+}
+
+.text {
+  padding: 2px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*# sourceMappingURL=Tooltip.module.css.map */

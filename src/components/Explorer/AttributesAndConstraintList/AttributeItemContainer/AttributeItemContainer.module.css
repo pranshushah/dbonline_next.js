@@ -1,0 +1,61 @@
+.container {
+  line-height: 24px;
+  padding-top: 4px;
+  list-style: none;
+  font-size: 18px;
+  padding-bottom: 8px;
+}
+
+.liContainer {
+  padding-left: 48px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+}
+
+.liContainer::before {
+  content: '';
+  background-image: url("../../../../utils/img/arrow1.png");
+  background-size: 14px;
+  background-position: 1%;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 16px;
+  height: 24px;
+  left: 29px;
+  top: -5%;
+  -webkit-transition: 0.1s all ease;
+  transition: 0.1s all ease;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.down {
+  padding-bottom: 8px;
+  top: 10%;
+}
+
+.down::before {
+  -webkit-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.text {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  margin-bottom: -6px;
+}
+
+.liContainer:hover {
+  background-color: #333842;
+}
+/*# sourceMappingURL=AttributeItemContainer.module.css.map */

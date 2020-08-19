@@ -1,0 +1,39 @@
+.container {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateX(-100vh);
+          transform: translateX(-100vh);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  line-height: 0;
+  padding-left: 64px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: nowrap;
+  z-index: -1;
+  background-image: url("../../../../../../utils/img/f.svg");
+  background-size: 13px;
+  background-position: 48px;
+  background-repeat: no-repeat;
+}
+
+.show {
+  z-index: 0;
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  pointer-events: all;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  line-height: 24px;
+}
+
+.container:hover {
+  background-color: #333842;
+}
+/*# sourceMappingURL=ForeignKeys.module.css.map */

@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,UAAU,CAAC;EACT,OAAO,EAAE,IAAiB;CAC3B;;AAED,AAAA,eAAe,CAAC;EACd,OAAO,EAAE,IAAiB,CAAC,CAAC;EAC5B,cAAc,EAAE,CAAC;CAClB;;AAED,AAAA,OAAO,CAAC;EACN,OAAO,EAAE,IAAiB,CAAC,CAAC;EAC5B,SAAS,EAAE,IAAoB;EAC/B,KAAK,EGVK,OAAkB;CHW7B",
+    "sources": [
+        "CreateDatabaseModal.module.scss",
+        "../../utils/scss/_spaces.scss",
+        "../../utils/scss/_fontSize.scss",
+        "../../utils/scss/_variables.scss"
+    ],
+    "names": [],
+    "file": "CreateDatabaseModal.module.css"
+}

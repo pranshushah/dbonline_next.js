@@ -1,8 +1,8 @@
 .header {
-  color: #282828;
+  color: #ebebeb;
   font-weight: 500;
   padding-bottom: 16px;
-  font-size: 32px;
+  font-size: 28px;
   line-height: 48px;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .listContainer li {
-  color: #282828;
+  color: #ebebeb;
   margin: 16px 0;
   padding-left: 32px;
   background-image: url("../../utils/img/alert.svg");

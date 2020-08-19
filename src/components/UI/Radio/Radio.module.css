@@ -1,0 +1,61 @@
+.inLine {
+  line-height: 24px;
+  font-weight: 400;
+  vertical-align: middle;
+  display: inline-block;
+  padding-left: 28px;
+  position: relative;
+  cursor: pointer;
+  color: #ebebeb;
+}
+
+.inLine + .inLine {
+  margin-left: 20px;
+}
+
+.disabledInput {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.inputRadio {
+  display: none;
+}
+
+.circle {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 0px;
+  border: 2px solid #1ca1f2;
+}
+
+.circle::after {
+  content: '';
+  height: 9px;
+  width: 9px;
+  background: #1ca1f2;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.inputRadio:checked + .circle::after {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+.inputRadio:disabled + .circle {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+/*# sourceMappingURL=Radio.module.css.map */

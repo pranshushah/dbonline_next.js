@@ -6,16 +6,24 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   margin: 8px 0;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .heading {
-  margin: 16px 0;
-  margin-bottom: 8px;
-  color: #282828;
+  margin: 32px 0;
+  margin-bottom: 16px;
+  color: #1ca1f2;
   line-height: 24px;
   font-size: 22px;
+}
+
+.colors {
+  width: 10px;
+  padding: 8px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+.colors::first-child {
+  margin-left: 0;
 }
 /*# sourceMappingURL=TableColorPickerList.module.css.map */

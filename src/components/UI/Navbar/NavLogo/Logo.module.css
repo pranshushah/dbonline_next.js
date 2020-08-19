@@ -12,4 +12,12 @@
     padding: 16px 24px;
   }
 }
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  .Logo {
+    font-size: 20px;
+    line-height: 24px;
+    padding: 16px 16px;
+  }
+}
 /*# sourceMappingURL=Logo.module.css.map */
