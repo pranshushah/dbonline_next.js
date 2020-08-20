@@ -8,6 +8,9 @@
   line-height: map-get($map: $line-height, $key: 'large') * 1px;
   padding: 4px getSpace(4) * 1px;
   color: $textColor;
+  text-decoration: none;
+  display: block;
+  font-weight: 600;
   @include tablet() {
     font-size: getFontSize(6) * 1px;
     line-height: map-get($map: $line-height, $key: 'medium') * 1px;

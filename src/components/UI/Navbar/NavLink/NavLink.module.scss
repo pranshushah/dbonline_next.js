@@ -92,3 +92,7 @@
     background-position: 106% 45%;
   }
 }
+.activeLink {
+  background-color: lighten($color: $darkPrimary, $amount: 4);
+  color: $textColor;
+}

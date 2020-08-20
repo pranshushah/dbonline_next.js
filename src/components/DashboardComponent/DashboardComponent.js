@@ -3,6 +3,7 @@ import { get, keys } from 'idb-keyval';
 import Styles from './Style.module.scss';
 import CreateDataBaseModal from '../CreateDatabaseModal/CreateDatabaseModal';
 import { useState, useEffect } from 'react';
+import HomeNav from '../HomeNav/HomeNav';
 import DashboardElement from './DashBoardElement/DashBoardElement';
 export default function DashboardComponent() {
   /**
@@ -25,45 +26,53 @@ export default function DashboardComponent() {
   function closeCreateDatabaseModalHandler() {
     setShowModal(false);
   }
-  console.log(databaseArray);
   if (databaseArray.length === 0) {
     return (
-      <div className={Styles.container}>
-        <div className={Styles.headerContainer}>
-          <span className={Styles.recent}>Recently Used Database</span>
-          <span className={Styles.new} onClick={showCreateDatabaseModalHandler}>
-            + New Database
-          </span>
+      <>
+        <HomeNav />
+        <div className={Styles.container}>
+          <div className={Styles.headerContainer}>
+            <span className={Styles.recent}>Recently Used Database</span>
+            <span
+              className={Styles.new}
+              onClick={showCreateDatabaseModalHandler}>
+              + New Database
+            </span>
+          </div>
+          <h1 className={Styles.noDatabaseHeader}>No Database Found</h1>
+          <CreateDataBaseModal
+            show={showModal}
+            modalCancel={closeCreateDatabaseModalHandler}
+          />
         </div>
-        <h1 className={Styles.noDatabaseHeader}>No Database Found</h1>
-        <CreateDataBaseModal
-          show={showModal}
-          modalCancel={closeCreateDatabaseModalHandler}
-        />
-      </div>
+      </>
     );
   } else {
     return (
-      <div className={Styles.container}>
-        <div className={Styles.headerContainer}>
-          <span className={Styles.recent}>Recently Used Database</span>
-          <span className={Styles.new} onClick={showCreateDatabaseModalHandler}>
-            + New Database
-          </span>
+      <>
+        <HomeNav />
+        <div className={Styles.container}>
+          <div className={Styles.headerContainer}>
+            <span className={Styles.recent}>Recently Used Database</span>
+            <span
+              className={Styles.new}
+              onClick={showCreateDatabaseModalHandler}>
+              + New Database
+            </span>
+          </div>
+          {databaseArray.map((database, index) => {
+            return (
+              <div key={index}>
+                <DashboardElement databaseObj={database} />
+              </div>
+            );
+          })}
+          <CreateDataBaseModal
+            show={showModal}
+            modalCancel={closeCreateDatabaseModalHandler}
+          />
         </div>
-
-        {databaseArray.map((database, index) => {
-          return (
-            <div key={index}>
-              <DashboardElement databaseObj={database} />
-            </div>
-          );
-        })}
-        <CreateDataBaseModal
-          show={showModal}
-          modalCancel={closeCreateDatabaseModalHandler}
-        />
-      </div>
+      </>
     );
   }
 }

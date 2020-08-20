@@ -6,23 +6,16 @@ import NavLinksContainer from '../UI/Navbar/NavLinksContainer/NavLinksContainer'
 import '../../utils/Types';
 
 /**
- * @param {{showGrid:boolean,
- * showRightSidebar:boolean,
- * showLeftSidebar:boolean,
- * mainTableDetails:mainTableDetailsType[],
- * onGridClick:Function,
- * onCreateTableClick:Function,
- * onRightSideBarClick:Function,
- * onLeftSideBarClick:Function}} props
+ * @param {{}} props
  */
 
-function Nav({ mainTableDetails, ...props }) {
+function Nav() {
   return (
     <NavbarContainer dark>
       <NavLogo text='DB ONLINE' />
       <NavLinksContainer>
-        <NavLink text='Documation' dark></NavLink>
-        <NavLink text='Dashboard' dark />
+        <NavLink text='Documation' link='/documation' dark />
+        <NavLink text='Dashboard' link='/dashboard' dark />
       </NavLinksContainer>
     </NavbarContainer>
   );
