@@ -43,6 +43,20 @@ function DeleteTableModal({
     }
   }, [deleteTableInputValue, tableName]);
 
+  useEffect(() => {
+    function doneOnEnterModalHandler(e) {
+      if (!tableError && deleteTableInputValue) {
+        if (e.key === 'Enter') {
+          confirmModalHandler();
+        }
+      }
+    }
+    document.addEventListener('keypress', doneOnEnterModalHandler);
+    return function cleanup() {
+      document.removeEventListener('keypress', doneOnEnterModalHandler);
+    };
+  }, [deleteTableInputValue, tableError]);
+
   return (
     <Modal
       size='large'

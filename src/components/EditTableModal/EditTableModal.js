@@ -84,6 +84,20 @@ function EditTableModal({
     }
   }
 
+  useEffect(() => {
+    function doneOnEnterModalHandler(e) {
+      if (!tableError && tableName) {
+        if (e.key === 'Enter') {
+          confirmModalHandler();
+        }
+      }
+    }
+    document.addEventListener('keypress', doneOnEnterModalHandler);
+    return function cleanup() {
+      document.removeEventListener('keypress', doneOnEnterModalHandler);
+    };
+  }, [tableName, tableError, tableColor]);
+
   return (
     <Modal
       primary

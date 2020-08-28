@@ -63,6 +63,7 @@ function CreateTableModal({
     setCreateTableInputValue('');
     onModalClosed();
     setTableError(true);
+    setCreateTableDirty(false);
     updateTableColor('rgb(105,105,105)');
   }
 
@@ -92,10 +93,25 @@ function CreateTableModal({
       };
       updateTableColor('rgb(105,105,105)');
       setCreateTableInputValue('');
-      onModalConfirmed(newTableDndDetails, mainTableDetails);
       setTableError(true);
+      onModalConfirmed(newTableDndDetails, mainTableDetails);
+      setCreateTableDirty(false);
     }
   }
+
+  useEffect(() => {
+    function doneOnEnterModalHandler(e) {
+      if (!tableError && createTableInputValue) {
+        if (e.key === 'Enter') {
+          confirmModalHandler();
+        }
+      }
+    }
+    document.addEventListener('keypress', doneOnEnterModalHandler);
+    return function cleanup() {
+      document.removeEventListener('keypress', doneOnEnterModalHandler);
+    };
+  }, [createTableInputValue, tableError]);
 
   return (
     <Modal
@@ -108,7 +124,7 @@ function CreateTableModal({
       modalConfirmed={confirmModalHandler}
       confirmDisabled={tableError}
       modalClosed={cancelModalHandler}>
-      <div className={Styles.container}>
+      <div className={[Styles.container, 'keypresss'].join(' ')}>
         <Input
           label='Table Name'
           autoFocus
