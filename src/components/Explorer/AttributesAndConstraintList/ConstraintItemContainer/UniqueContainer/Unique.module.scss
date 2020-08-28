@@ -31,7 +31,7 @@
   cursor: pointer;
   width: 100%;
   display: block;
-  padding-left: getSpace(7) * 1px;
+  padding-left: getSpace(9) * 1px;
 }
 
 .liContainer::before {
@@ -43,7 +43,7 @@
   position: absolute;
   width: 16px;
   height: 24px;
-  left: 35px;
+  left: 51px;
   top: -1px;
   transition: 0.1s all ease;
   transform: rotate(-90deg);

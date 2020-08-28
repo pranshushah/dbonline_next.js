@@ -8,7 +8,7 @@
   transform: translateX(-100vh);
   transition: all 0.1s ease;
   line-height: 0;
-  padding-left: getSpace(8.2) * 1px;
+  padding-left: getSpace(10.5) * 1px;
   text-overflow: ellipsis;
   overflow: hidden;
   cursor: pointer;
@@ -17,7 +17,7 @@
   z-index: -1;
   background-image: url('../../../../../utils/img/p.svg');
   background-size: 13px;
-  background-position: 48px;
+  background-position: 66px;
   background-repeat: no-repeat;
 }
 
@@ -62,7 +62,7 @@
   cursor: pointer;
   width: 100%;
   display: block;
-  padding-left: getSpace(7) * 1px;
+  padding-left: getSpace(9) * 1px;
 }
 
 .liContainer::before {
@@ -74,7 +74,7 @@
   position: absolute;
   width: 16px;
   height: 24px;
-  left: 35px;
+  left: 51px;
   top: -1px;
   transition: 0.1s all ease;
   transform: rotate(-90deg);
@@ -96,7 +96,7 @@
     background-position: 1%;
     width: 100%;
     height: 100%;
-    left: 85%;
+    left: 90%;
     top: 0;
     opacity: 0.7;
     background-repeat: no-repeat;

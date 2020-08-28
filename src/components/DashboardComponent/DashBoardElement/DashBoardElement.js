@@ -14,10 +14,10 @@ export default function DashBoardElement({ databaseObj }) {
     <div className={Styles.container} onClick={DatabaseClickHandler}>
       <span className={Styles.databaseName}>{databaseObj.databaseName}</span>
       <span className={Styles.created}>{`Created ${format(
-        Date.now() - databaseObj.createdAt,
+        databaseObj.createdAt,
       )}`}</span>
       <span className={Styles.modified}>{`Modified ${format(
-        Date.now() - databaseObj.createdAt,
+        databaseObj.modifiedAt,
       )}`}</span>
       <span className={Styles.sql}>
         {databaseObj.isSqlDatabase ? 'SQL' : 'NO-SQL'}

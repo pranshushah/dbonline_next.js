@@ -1,0 +1,15 @@
+@import '../../../utils/scss/fontSize';
+@import '../../../utils/scss/lineHeight';
+@import '../../../utils/scss/spaces';
+@import '../../../utils/scss/variables';
+.database {
+  line-height: map-get($map: $line-height, $key: 'medium') * 1px;
+  font-size: getFontSize(5) * 1px;
+  padding-left: getSpace(5.5) * 1px;
+  margin-top: getSpace(10) * 1px;
+  background-image: url('../../../utils/img/database64.png');
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: 15px 2px;
+  width: 100%;
+}

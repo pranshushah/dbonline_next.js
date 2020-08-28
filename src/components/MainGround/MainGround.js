@@ -21,6 +21,7 @@ import Tooltip from '../UI/Tooltip/Tooltip';
  * onMainTableDetailsChange:Function,
  * onRowClicked:Function,
  * onForeignArrowClicked:Function,
+ * onTableDndAndMainChange:Function
  * }} props
  */
 function MainGround({
@@ -28,6 +29,7 @@ function MainGround({
   tableDndDetails,
   mainTableDetails,
   onRowClicked,
+  onTableDndAndMainChange,
   onTableDndDetailsChange,
   onMainTableDetailsChange,
   onForeignArrowClicked,
@@ -164,8 +166,8 @@ function MainGround({
   }
 
   function deleteTableModalConfirmHandler() {
-    const newTableDndDetails = deepClone(tableDndDetails);
-    const newMainTableDetails = deepClone(mainTableDetails);
+    const newTableDndDetails = [...tableDndDetails];
+    const newMainTableDetails = [...mainTableDetails];
 
     const dndIndex = newTableDndDetails.findIndex(
       (table) =>
@@ -178,8 +180,7 @@ function MainGround({
     newTableDndDetails.splice(dndIndex, 1);
     newMainTableDetails.splice(mainIndex, 1);
 
-    onMainTableDetailsChange(newMainTableDetails);
-    onTableDndDetailsChange(newTableDndDetails);
+    onTableDndAndMainChange(newMainTableDetails, newTableDndDetails);
     dispatch({ type: 'DELETE_MODAL_CONFIRM' });
   }
 
@@ -201,8 +202,8 @@ function MainGround({
   }
 
   function editTableModalConfirmHandler(newColor, newName) {
-    const newTableDndDetails = deepClone(tableDndDetails);
-    const newMainTableDetails = deepClone(mainTableDetails);
+    const newTableDndDetails = [...tableDndDetails];
+    const newMainTableDetails = [...mainTableDetails];
 
     const dndIndex = newTableDndDetails.findIndex(
       (table) =>
@@ -215,10 +216,8 @@ function MainGround({
     newMainTableDetails[mainIndex].tableName = newName;
     newTableDndDetails[dndIndex].tableName = newName;
     newTableDndDetails[dndIndex].color = newColor;
-
-    onMainTableDetailsChange(newMainTableDetails);
-    onTableDndDetailsChange(newTableDndDetails);
-
+    console.log(newMainTableDetails);
+    onTableDndAndMainChange(newMainTableDetails, newTableDndDetails);
     dispatch({ type: 'EDIT_MODAL_CONFIRM' });
   }
   let tables = [];

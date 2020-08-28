@@ -11,7 +11,7 @@
 }
 
 .liContainer {
-  padding-left: getSpace(6) * 1px;
+  padding-left: getSpace(8) * 1px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -30,7 +30,7 @@
   position: absolute;
   width: 16px;
   height: 24px;
-  left: 29px;
+  left: 45px;
   top: -5%;
   transition: 0.1s all ease;
   transform: rotate(-90deg);

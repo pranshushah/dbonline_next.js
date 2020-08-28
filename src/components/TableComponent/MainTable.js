@@ -20,12 +20,7 @@ import { EXPLORERCONSTANT } from '../../utils/constant/explorer';
  * }} props
  */
 
-function MainTable({
-  mainTableDetails,
-  tableName,
-  tableDndDetails,
-  onRowClicked,
-}) {
+function MainTable({ mainTableDetails, tableName, onRowClicked }) {
   let nameWidth = 85;
   let dataTypeWidth = 105;
   let tableWidth = 215;

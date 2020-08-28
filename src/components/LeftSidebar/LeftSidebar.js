@@ -5,6 +5,7 @@ import Button from '../UI/Button/Button';
 import TableList from '../Explorer/TableList/TableList';
 import Styles from './LeftSidebar.module.scss';
 import TableItem from '../Explorer/TableList/TableItem/TableItem';
+import DatabaseName from '../Explorer/DatabaseName/DatabaseName';
 /**
  * @param {{
  * mainTableDetails:mainTableDetailsType[],
@@ -12,6 +13,7 @@ import TableItem from '../Explorer/TableList/TableItem/TableItem';
  * onItemClicked:Function,
  * onMainTableDetailsChange:Function,
  * onCreateTableButtonClick:Function,
+ * givenDatabase:databaseType
  * }} props
  */
 
@@ -19,10 +21,11 @@ function LeftSideBar({
   mainTableDetails,
   toggleSidebar,
   onItemClicked,
+  givenDatabase,
   onMainTableDetailsChange,
   onCreateTableButtonClick,
 }) {
-  const [width, setWidth] = useState(250);
+  const [width, setWidth] = useState(265);
 
   function WidthHandler(e, direction, ref, d) {
     setWidth((width) => width + d.width);
@@ -36,7 +39,7 @@ function LeftSideBar({
     <Resizable
       className={Styles.resize}
       minWidth='15%'
-      maxWidth='20%'
+      maxWidth='22%'
       size={{ width: width, height: '170vh' }}
       onResizeStop={WidthHandler}
       enable={{
@@ -58,11 +61,14 @@ function LeftSideBar({
             </Button>
           </div>
         ) : (
-          <TableList
-            mainTableDetails={mainTableDetails}
-            onMainTableDetailsChange={onMainTableDetailsChange}>
-            {list}
-          </TableList>
+          <>
+            <DatabaseName name={givenDatabase.databaseName} />
+            <TableList
+              mainTableDetails={mainTableDetails}
+              onMainTableDetailsChange={onMainTableDetailsChange}>
+              {list}
+            </TableList>
+          </>
         )}
       </div>
     </Resizable>

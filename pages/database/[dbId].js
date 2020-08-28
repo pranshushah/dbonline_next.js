@@ -71,9 +71,21 @@ export default function Database() {
    */
 
   function tableDndDetailsHandler(newTableDndDetails) {
+    const newDatabase = { ...database };
+    newDatabase.modifiedAt = new Date();
+    newDatabase.tableDndDetails = newTableDndDetails;
+    setDatabase(newDatabase);
+  }
+
+  /**
+   * @param {mainTableDetailsType[]} newMainTableDetails
+   * @param {newTableDndDetails[]} newTableDndDetails
+   */
+  function tableDndAndMainHandler(newMainTableDetails, newTableDndDetails) {
     const newDatabase = cloneDeep(database);
     newDatabase.modifiedAt = new Date();
     newDatabase.tableDndDetails = newTableDndDetails;
+    newDatabase.mainTableDetails = newMainTableDetails;
     setDatabase(newDatabase);
   }
 
@@ -83,9 +95,8 @@ export default function Database() {
   function cancelCreateTableModalHandler() {
     updateShowModal(false);
   }
-
   function mainTableDetailsChangeHandler(newMainTableDetails) {
-    const newDatabase = cloneDeep(database);
+    const newDatabase = { ...database };
     newDatabase.modifiedAt = new Date();
     newDatabase.mainTableDetails = newMainTableDetails;
     setDatabase(newDatabase);
@@ -454,6 +465,7 @@ export default function Database() {
       document.removeEventListener('keyup', shortcutHandler);
     };
   }, [database.mainTableDetails]);
+  console.log(database);
   return (
     <>
       <Nav
@@ -483,6 +495,7 @@ export default function Database() {
               mainTableDetails={database.mainTableDetails}
               toggleSidebar={showLeftSidebarHandler}
               onItemClicked={explorerItemClickHandler}
+              givenDatabase={database}
               onMainTableDetailsChange={mainTableDetailsChangeHandler}
               onCreateTableButtonClick={newTableCreatedHandler}
             />
@@ -494,6 +507,7 @@ export default function Database() {
             onMainTableDetailsChange={mainTableDetailsChangeHandler}
             onTableDndDetailsChange={tableDndDetailsHandler}
             onRowClicked={explorerItemClickHandler}
+            onTableDndAndMainChange={tableDndAndMainHandler}
             onForeignArrowClicked={explorerItemClickHandler}
           />
           {showRightSidebar && (

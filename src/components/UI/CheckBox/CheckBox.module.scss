@@ -23,7 +23,7 @@
     padding-bottom: 0.2em;
     vertical-align: bottom;
     color: transparent;
-    font-size: 16px;
+    font-size: 14px;
   }
   .inputCheckBox:checked + &:before {
     background: $primaryColor;
@@ -53,7 +53,7 @@
   display: block;
   padding: getSpace(1) * 1px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   color: $textColor;
   &::before {
     content: '\2713';
@@ -67,7 +67,7 @@
     padding-bottom: 0.2em;
     vertical-align: bottom;
     color: transparent;
-    font-size: 16px;
+    font-size: 17px;
   }
   .inputCheckBox:checked + &:before {
     background: $darkPrimaryColor;
