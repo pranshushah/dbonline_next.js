@@ -67,11 +67,15 @@
     center/15000%;
 }
 .darkPrimary:active {
-  background-color: lighten($color: $darkPrimaryColor, $amount: 3);
+  background-color: darken($color: $darkPrimaryColor, $amount: 5);
   background-size: 100%;
   transition: background-color 0s;
 }
 
+.darkPrimary:focus {
+  background-color: darken($color: $darkPrimaryColor, $amount: 4);
+  outline: 1px solid whitesmoke;
+}
 .invertedDarkPrimary {
   background-color: transparent;
   color: $darkPrimaryColor;

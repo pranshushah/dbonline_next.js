@@ -33,11 +33,12 @@ export default function DashboardComponent() {
         <div className={Styles.container}>
           <div className={Styles.headerContainer}>
             <span className={Styles.recent}>Recently Used Database</span>
-            <span
+            <button
+              tabIndex={0}
               className={Styles.new}
               onClick={showCreateDatabaseModalHandler}>
               + New Database
-            </span>
+            </button>
           </div>
           <h1 className={Styles.noDatabaseHeader}>No Database Found</h1>
           <CreateDataBaseModal
@@ -54,11 +55,12 @@ export default function DashboardComponent() {
         <div className={Styles.container}>
           <div className={Styles.headerContainer}>
             <span className={Styles.recent}>Recently Used Database</span>
-            <span
+            <button
+              tabIndex={0}
               className={Styles.new}
               onClick={showCreateDatabaseModalHandler}>
               + New Database
-            </span>
+            </button>
           </div>
           {databaseArray.map((database, index) => {
             return (

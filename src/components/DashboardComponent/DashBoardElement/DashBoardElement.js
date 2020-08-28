@@ -11,7 +11,11 @@ export default function DashBoardElement({ databaseObj }) {
     router.push(`database/${databaseObj.id}`);
   }
   return (
-    <div className={Styles.container} onClick={DatabaseClickHandler}>
+    <button
+      tabIndex='0'
+      role='button'
+      className={Styles.container}
+      onClick={DatabaseClickHandler}>
       <span className={Styles.databaseName}>{databaseObj.databaseName}</span>
       <span className={Styles.created}>{`Created ${format(
         databaseObj.createdAt,
@@ -23,6 +27,6 @@ export default function DashBoardElement({ databaseObj }) {
         {databaseObj.isSqlDatabase ? 'SQL' : 'NO-SQL'}
       </span>
       <span className={Styles.type}>{databaseObj.databaseType}</span>
-    </div>
+    </button>
   );
 }
