@@ -3,6 +3,11 @@
 @import '../../../utils/scss/spaces';
 @import '../../../utils/scss/variables';
 .database {
+  border: none;
+  background-color: transparent;
+  color: $textColor;
+  outline: none;
+  cursor: text;
   line-height: map-get($map: $line-height, $key: 'medium') * 1px;
   font-size: getFontSize(5) * 1px;
   padding-left: getSpace(5.5) * 1px;

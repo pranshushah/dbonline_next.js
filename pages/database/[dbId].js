@@ -101,6 +101,12 @@ export default function Database() {
     newDatabase.mainTableDetails = newMainTableDetails;
     setDatabase(newDatabase);
   }
+  function databseNameChangeHandler(newDatabaseName) {
+    const newDatabase = { ...database };
+    newDatabase.modifiedAt = new Date();
+    newDatabase.databaseName = newDatabaseName;
+    setDatabase(newDatabase);
+  }
 
   /**
    * @param {tableDndDetailsObj} newTable
@@ -465,7 +471,7 @@ export default function Database() {
       document.removeEventListener('keyup', shortcutHandler);
     };
   }, [database.mainTableDetails]);
-  console.log(database);
+
   return (
     <>
       <Nav
@@ -496,6 +502,7 @@ export default function Database() {
               toggleSidebar={showLeftSidebarHandler}
               onItemClicked={explorerItemClickHandler}
               givenDatabase={database}
+              onDatabaseNameChange={databseNameChangeHandler}
               onMainTableDetailsChange={mainTableDetailsChangeHandler}
               onCreateTableButtonClick={newTableCreatedHandler}
             />

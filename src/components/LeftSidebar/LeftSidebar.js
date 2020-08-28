@@ -13,7 +13,8 @@ import DatabaseName from '../Explorer/DatabaseName/DatabaseName';
  * onItemClicked:Function,
  * onMainTableDetailsChange:Function,
  * onCreateTableButtonClick:Function,
- * givenDatabase:databaseType
+ * givenDatabase:databaseType,
+ * onDatabaseNameChange:Function
  * }} props
  */
 
@@ -22,11 +23,11 @@ function LeftSideBar({
   toggleSidebar,
   onItemClicked,
   givenDatabase,
+  onDatabaseNameChange,
   onMainTableDetailsChange,
   onCreateTableButtonClick,
 }) {
   const [width, setWidth] = useState(265);
-
   function WidthHandler(e, direction, ref, d) {
     setWidth((width) => width + d.width);
   }
@@ -62,7 +63,10 @@ function LeftSideBar({
           </div>
         ) : (
           <>
-            <DatabaseName name={givenDatabase.databaseName} />
+            <DatabaseName
+              name={givenDatabase.databaseName}
+              onInputValueChange={onDatabaseNameChange}
+            />
             <TableList
               mainTableDetails={mainTableDetails}
               onMainTableDetailsChange={onMainTableDetailsChange}>
