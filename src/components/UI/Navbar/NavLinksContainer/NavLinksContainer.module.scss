@@ -5,13 +5,13 @@
   list-style: none;
   display: flex;
   justify-content: flex-end;
-  width: 70%;
-  margin-right: getSpace(2) * 1px;
+  width: 60%;
+  margin-right: getSpace(8) * 1px;
   @include tablet() {
-    margin-right: getSpace(1) * 1px;
+    margin-right: getSpace(8) * 1px;
   }
   @include mobile() {
-    margin-right: 0;
-    width: 60%;
+    margin-right: getSpace(2) * 1px;
+    width: 50%;
   }
 }
