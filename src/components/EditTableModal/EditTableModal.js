@@ -90,11 +90,15 @@ function EditTableModal({
         if (e.key === 'Enter') {
           confirmModalHandler();
         }
+      } else {
+        if (e.key === 'Escape') {
+          cancelModalHandler();
+        }
       }
     }
-    document.addEventListener('keypress', doneOnEnterModalHandler);
+    document.addEventListener('keydown', doneOnEnterModalHandler);
     return function cleanup() {
-      document.removeEventListener('keypress', doneOnEnterModalHandler);
+      document.removeEventListener('keydown', doneOnEnterModalHandler);
     };
   }, [tableName, tableError, tableColor]);
 

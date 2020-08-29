@@ -65,6 +65,7 @@ export default function CreateDatabaseModal({ show, modalCancel }) {
     });
   }
   // submit on enter and cancel on esc
+  //using keyup when you open modal using enter it will think it from modal and it take that enter and create database so we are using keydown.
   useEffect(() => {
     function doneOnEnterModalHandler(e) {
       if (e.key === 'Enter') {
@@ -76,9 +77,9 @@ export default function CreateDatabaseModal({ show, modalCancel }) {
       }
     }
 
-    document.addEventListener('keypress', doneOnEnterModalHandler);
+    document.addEventListener('keydown', doneOnEnterModalHandler);
     return function cleanup() {
-      document.removeEventListener('keypress', doneOnEnterModalHandler);
+      document.removeEventListener('keydown', doneOnEnterModalHandler);
     };
   }, [inputValue]);
   return (
