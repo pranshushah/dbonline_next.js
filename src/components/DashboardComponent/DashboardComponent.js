@@ -41,10 +41,12 @@ export default function DashboardComponent() {
             </button>
           </div>
           <h1 className={Styles.noDatabaseHeader}>No Database Found</h1>
-          <CreateDataBaseModal
-            show={showModal}
-            modalCancel={closeCreateDatabaseModalHandler}
-          />
+          {showModal && (
+            <CreateDataBaseModal
+              show={showModal}
+              modalCancel={closeCreateDatabaseModalHandler}
+            />
+          )}
         </div>
       </>
     );
@@ -69,10 +71,12 @@ export default function DashboardComponent() {
               </div>
             );
           })}
-          <CreateDataBaseModal
-            show={showModal}
-            modalCancel={closeCreateDatabaseModalHandler}
-          />
+          {showModal && (
+            <CreateDataBaseModal
+              show={showModal}
+              modalCancel={closeCreateDatabaseModalHandler}
+            />
+          )}
         </div>
       </>
     );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from '../UI/Modal/Modal';
 import Input from '../UI/Input/Input';
 import Radio from '../UI/Radio/Radio';
@@ -19,7 +19,7 @@ export default function CreateDatabaseModal({ show, modalCancel }) {
   const [databaseRadio, setDatabaseRadio] = useRadio(dataTypesRadioList);
   const [sqlRadio, setSqlRadio] = useRadio(sqlDatabaseRadioList);
   const router = useRouter();
-  const reg = /^[a-zA-Z_$][0-9a-zA-Z_$]*$/;
+  const reg = /^[a-zA-Z_$][0-9a-zA-Z_$]*$/; // regex for valid dataabse name
 
   function inputValueChangeHandler(e) {
     if (e.target.value === '') {
@@ -64,6 +64,20 @@ export default function CreateDatabaseModal({ show, modalCancel }) {
       modalCancel();
     });
   }
+  // submit on enter
+  useEffect(() => {
+    function doneOnEnterModalHandler(e) {
+      if (e.key === 'Enter') {
+        confirmHandler();
+        document.removeEventListener('keypress', doneOnEnterModalHandler);
+      }
+    }
+
+    document.addEventListener('keypress', doneOnEnterModalHandler);
+    return function cleanup() {
+      document.removeEventListener('keypress', doneOnEnterModalHandler);
+    };
+  }, [inputValue]);
   return (
     <Modal
       show={show}

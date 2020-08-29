@@ -27,7 +27,11 @@ export default function HomePage() {
         <div className={Styles.oracle} />
       </div>
       <div className={Styles.buttonContainer}>
-        <Button darkPrimary dimension='medium' onClick={showModalHandler}>
+        <Button
+          darkPrimary
+          dimension='medium'
+          tabIndex={1}
+          onClick={showModalHandler}>
           CREATE DATABASE FOR FREE
         </Button>
       </div>
