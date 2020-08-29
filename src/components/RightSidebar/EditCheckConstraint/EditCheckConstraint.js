@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../../UI/Button/Button';
 import Input from '../../UI/Input/Input';
-import Modal from '../../UI/Modal/Modal';
 import { constraintError } from '../../../utils/helper-function/constraintError';
 import Styles from './EditCheckConstraint.module.scss';
 import cloneDeep from 'clone-deep';
 const parser = require('js-sql-parser');
-
+import DeleteConstraintModal from '../DeleteConstraintModal/DeleteConstraintModal';
 /**
  * @param {{
  * onRightSideBarAfterConfirmOrDelete:Function,
@@ -163,15 +162,14 @@ function EditCheckConstraint({
   }
   return (
     <div>
-      <Modal
-        size='large'
-        show={showDeleteModal}
-        canConfirm
-        canCancel
-        modalConfirmed={confirmModalHandler}
-        modalClosed={cancelModalHandler}
-        title={`Are sure you want to delete ${initialCheckConstraintName} check constraint`}
-      />
+      {showDeleteModal && (
+        <DeleteConstraintModal
+          show={showDeleteModal}
+          onModalConfirmed={confirmModalHandler}
+          onModalCanceled={cancelModalHandler}
+          title={`Are sure you want to delete ${initialCheckConstraintName} check constraint`}
+        />
+      )}
       <div className={Styles.inputContainer}>
         <Input
           usingFor={'sidebar'}

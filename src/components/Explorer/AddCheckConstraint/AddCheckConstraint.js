@@ -47,6 +47,28 @@ function AddCheckConstraint({
     }
   }, [constraintErr, checkExprError]);
 
+  // submit on enter and cancel on escape
+  useEffect(() => {
+    function doneOnEnterModalHandler(e) {
+      if (e.key === 'Enter') {
+        if (!containerError) {
+          modalConfirmHandler();
+          document.removeEventListener('keyup', doneOnEnterModalHandler);
+        }
+      } else {
+        if (e.key === 'Escape') {
+          onCancel();
+          document.removeEventListener('keyup', doneOnEnterModalHandler);
+        }
+      }
+    }
+
+    document.addEventListener('keyup', doneOnEnterModalHandler);
+    return function cleanup() {
+      document.removeEventListener('keyup', doneOnEnterModalHandler);
+    };
+  }, [containerError, checkExpr, constraintName]);
+
   function modalConfirmHandler() {
     let finalCname;
     if (constraintName) {

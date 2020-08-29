@@ -25,7 +25,7 @@
     }
     @include mobile() {
       font-size: getFontSize(3) * 1px;
-      padding: getSpace(2) * 1px;
+      padding: getSpace(2) * 1px 28px;
     }
   }
   .darkLink:hover {

@@ -5,13 +5,13 @@
 }
 
 @mixin mobile {
-  @media only screen and (min-width: 350px) and (max-width: 767px) {
+  @media only screen and (max-width: 767px) {
     @content;
   }
 }
 
 @mixin ipad {
-  @media only screen and (min-width: 768px) and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2) {
+  @media only screen and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2) {
     @content;
   }
 }

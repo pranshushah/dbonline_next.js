@@ -64,12 +64,15 @@ export default function CreateDatabaseModal({ show, modalCancel }) {
       modalCancel();
     });
   }
-  // submit on enter
+  // submit on enter and cancel on esc
   useEffect(() => {
     function doneOnEnterModalHandler(e) {
       if (e.key === 'Enter') {
         confirmHandler();
-        document.removeEventListener('keypress', doneOnEnterModalHandler);
+      } else {
+        if (e.key === 'Escape') {
+          modalCancel();
+        }
       }
     }
 

@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Input from '../../UI/Input/Input';
 import Button from '../../UI/Button/Button';
-import Modal from '../../UI/Modal/Modal';
 import Styles from './EditUniqueConstraint.module.scss';
 import { constraintError } from '../../../utils/helper-function/constraintError';
 import Select from 'react-select';
 import { customStyles } from '../../../utils/selectStyle';
-
+import DeleteConstraintModal from '../DeleteConstraintModal/DeleteConstraintModal';
 /**
  * @param {{
  * table:mainTableDetailsType,
@@ -91,15 +90,14 @@ function EditUniqueConstraint({
   });
   return (
     <div>
-      <Modal
-        size='large'
-        show={showDeleteModal}
-        canConfirm
-        canCancel
-        modalConfirmed={confirmModalHandler}
-        modalClosed={cancelModalHandler}
-        title={`Are sure you want to delete ${initialUniqueConstraintName} unique constraint`}
-      />
+      {showDeleteModal && (
+        <DeleteConstraintModal
+          show={showDeleteModal}
+          onModalConfirmed={confirmModalHandler}
+          onModalCanceled={cancelModalHandler}
+          title={`Are sure you want to delete ${initialUniqueConstraintName} unique constraint`}
+        />
+      )}
       <div className={Styles.inputContainer}>
         <Input
           dimension='huge'

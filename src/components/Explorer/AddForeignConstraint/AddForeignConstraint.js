@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Input from '../../UI/Input/Input';
 import Modal from '../../UI/Modal/Modal';
 import Select from 'react-select';
@@ -124,6 +124,19 @@ function AddUniqueConstraint({
     });
     onConfirm(newMainTableDetails);
   }
+
+  // cancel on esc, not doing submit on enter because it will not work with react select
+  useEffect(() => {
+    function doneOnEnterModalHandler(e) {
+      if (e.key === 'Escape') {
+        onCancel();
+      }
+    }
+    document.addEventListener('keyup', doneOnEnterModalHandler);
+    return function cleanup() {
+      document.removeEventListener('keyup', doneOnEnterModalHandler);
+    };
+  }, []);
 
   return (
     <Modal

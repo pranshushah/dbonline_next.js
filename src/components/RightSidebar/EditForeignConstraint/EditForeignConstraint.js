@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Input from '../../UI/Input/Input';
 import Button from '../../UI/Button/Button';
-import Modal from '../../UI/Modal/Modal';
+import DeleteConstraintModal from '../DeleteConstraintModal/DeleteConstraintModal';
 import Styles from './EditForeignConstraint.module.scss';
 import { constraintError } from '../../../utils/helper-function/constraintError';
 import Select from 'react-select';
@@ -258,15 +258,14 @@ function EditUniqueConstraint({
 
   return (
     <div>
-      <Modal
-        size='large'
-        show={showDeleteModal}
-        canConfirm
-        canCancel
-        modalConfirmed={confirmModalHandler}
-        modalClosed={cancelModalHandler}
-        title={`Are sure you want to delete ${initialForeignConstraintName} foreign constraint`}
-      />
+      {showDeleteModal && (
+        <DeleteConstraintModal
+          show={showDeleteModal}
+          onModalConfirmed={confirmModalHandler}
+          onModalCanceled={cancelModalHandler}
+          title={`Are sure you want to delete ${initialForeignConstraintName} foreign constraint`}
+        />
+      )}
       <div className={Styles.inputContainer}>
         <Input
           dimension='huge'

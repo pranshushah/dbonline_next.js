@@ -101,7 +101,7 @@ function DeleteAttrModal({
 
   return (
     <Modal
-      size='medium'
+      size='large'
       title={`Are sure You want To Delete ${attrName} in ${tableName} table`}
       show={showModalState}
       canConfirm

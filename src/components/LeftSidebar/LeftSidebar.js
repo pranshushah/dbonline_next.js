@@ -56,11 +56,17 @@ function LeftSideBar({
       <div className={Styles.container}>
         <div className={Styles.close} onClick={toggleSidebar} />
         {mainTableDetails.length === 0 ? (
-          <div className={Styles.buttonContainer}>
-            <Button onClick={onCreateTableButtonClick} darkPrimary>
-              Create Table
-            </Button>
-          </div>
+          <>
+            <DatabaseName
+              name={givenDatabase.databaseName}
+              onInputValueChange={onDatabaseNameChange}
+            />
+            <div className={Styles.buttonContainer}>
+              <Button onClick={onCreateTableButtonClick} darkPrimary>
+                Create Table
+              </Button>
+            </div>
+          </>
         ) : (
           <>
             <DatabaseName

@@ -25,7 +25,6 @@ function AddUniqueConstraint({
   onConfirm,
   onCancel,
   showModal,
-  title,
   usingFor = 'unique',
 }) {
   const [constraintName, setConstraintName, constraintErr] = useConstraint(
@@ -109,6 +108,19 @@ function AddUniqueConstraint({
     });
     onConfirm(newMainTableDetails);
   }
+
+  // cancel on esc, not doing submit on enter because it will not work with react select
+  useEffect(() => {
+    function doneOnEnterModalHandler(e) {
+      if (e.key === 'Escape') {
+        onCancel();
+      }
+    }
+    document.addEventListener('keyup', doneOnEnterModalHandler);
+    return function cleanup() {
+      document.removeEventListener('keyup', doneOnEnterModalHandler);
+    };
+  }, []);
 
   return (
     <Modal

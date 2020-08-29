@@ -59,7 +59,6 @@ function Nav({ mainTableDetails, ...props }) {
             />
           </SubMenuContiainer>
         </NavLink>
-        <NavLink text='Guest' />
       </NavLinksContainer>
     </NavbarContainer>
   );
