@@ -51,3 +51,8 @@
 .liContainer:hover {
   background-color: lighten($color: $darkPrimary, $amount: 5);
 }
+
+.liContainer:focus {
+  outline: none;
+  background-color: lighten($color: $darkPrimary, $amount: 5);
+}

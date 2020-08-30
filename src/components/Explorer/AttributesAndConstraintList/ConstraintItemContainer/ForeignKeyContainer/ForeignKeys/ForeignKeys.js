@@ -21,13 +21,23 @@ export default function ForeignKeys({
     onItemClicked(table, EXPLORERCONSTANT.FOREIGN, item);
   }
 
+  function keyboradEnterHandler(e) {
+    if (e.which === 13) {
+      itemClickHandler();
+    }
+  }
+
   return (
-    <li
-      onClick={itemClickHandler}
-      className={
-        show ? [Styles.show, Styles.container].join(' ') : Styles.container
-      }>
-      {children}
-    </li>
+    show && (
+      <li
+        onKeyPress={keyboradEnterHandler}
+        tabIndex={0}
+        onClick={itemClickHandler}
+        className={
+          show ? [Styles.show, Styles.container].join(' ') : Styles.container
+        }>
+        {children}
+      </li>
+    )
   );
 }

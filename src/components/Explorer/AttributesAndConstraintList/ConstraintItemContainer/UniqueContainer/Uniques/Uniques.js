@@ -20,13 +20,24 @@ export default function Uniques({
   function itemClickHandler() {
     onItemClicked(table, EXPLORERCONSTANT.UNIQUE, item);
   }
+
+  function keyboradEnterHandler(e) {
+    if (e.which === 13) {
+      itemClickHandler();
+    }
+  }
+
   return (
-    <li
-      onClick={itemClickHandler}
-      className={
-        show ? [Styles.show, Styles.container].join(' ') : Styles.container
-      }>
-      {children}
-    </li>
+    show && (
+      <li
+        tabIndex={0}
+        onKeyPress={keyboradEnterHandler}
+        onClick={itemClickHandler}
+        className={
+          show ? [Styles.show, Styles.container].join(' ') : Styles.container
+        }>
+        {children}
+      </li>
+    )
   );
 }

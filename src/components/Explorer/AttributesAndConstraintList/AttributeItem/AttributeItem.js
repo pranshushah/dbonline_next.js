@@ -15,14 +15,23 @@ function attrItem({ attr, show, table, onItemClicked }) {
   function ItemClickHandler() {
     onItemClicked(table, EXPLORERCONSTANT.ATTRIBUTE, attr);
   }
+  function keyboradEnterHandler(e) {
+    if (e.which === 13) {
+      ItemClickHandler();
+    }
+  }
   return (
-    <li
-      onClick={ItemClickHandler}
-      className={
-        show ? [Styles.show, Styles.container].join(' ') : Styles.container
-      }>
-      {attr.name}
-    </li>
+    show && (
+      <li
+        tabIndex={0}
+        onKeyPress={keyboradEnterHandler}
+        onClick={ItemClickHandler}
+        className={
+          show ? [Styles.show, Styles.container].join(' ') : Styles.container
+        }>
+        {attr.name}
+      </li>
+    )
   );
 }
 

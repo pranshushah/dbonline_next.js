@@ -27,6 +27,11 @@ function TableItem({ table, onItemClicked, onAddConstraintIconClicked }) {
   function toggleHandle() {
     setOpen((open) => !open);
   }
+  function keyboradEnterHandler(e) {
+    if (e.which === 13) {
+      toggleHandle();
+    }
+  }
   const foreigns = table.tableLevelConstraint?.FOREIGNKEY.map(
     (foreignObj, index) => (
       <ForeignKeys
@@ -70,7 +75,11 @@ function TableItem({ table, onItemClicked, onAddConstraintIconClicked }) {
   ));
   return (
     <li className={open ? Styles.itemPaddingContainer : null}>
-      <span className={Styles.itemContainer} onClick={toggleHandle}>
+      <span
+        className={Styles.itemContainer}
+        tabIndex='0'
+        onKeyPress={keyboradEnterHandler}
+        onClick={toggleHandle}>
         {table.tableName}
       </span>
       <AttrAndConstraintList show={open}>

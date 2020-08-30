@@ -22,6 +22,12 @@ function PrimaryKeyContainer({
   if (!show && open) {
     setOpen(false);
   }
+  function keyboradEnterHandler(e) {
+    if (e.which === 13) {
+      toogleArrow();
+    }
+  }
+
   function addConstraintClickHandler(e) {
     e.stopPropagation();
     onAddConstraintIconClicked(table, EXPLORERCONSTANT.UNIQUE);
@@ -31,20 +37,24 @@ function PrimaryKeyContainer({
       className={
         show ? [Styles.container, Styles.show].join(' ') : Styles.container
       }>
-      <span
-        onClick={toogleArrow}
-        className={
-          open
-            ? [Styles.liContainer, Styles.down].join(' ')
-            : Styles.liContainer
-        }>
-        unique constraints
+      {show && (
         <span
-          title='add unique constraint'
-          className={Styles.add}
-          onClick={addConstraintClickHandler}
-        />
-      </span>
+          onClick={toogleArrow}
+          onKeyPress={keyboradEnterHandler}
+          tabIndex={0}
+          className={
+            open
+              ? [Styles.liContainer, Styles.down].join(' ')
+              : Styles.liContainer
+          }>
+          unique constraints
+          <span
+            title='add unique constraint'
+            className={Styles.add}
+            onClick={addConstraintClickHandler}
+          />
+        </span>
+      )}
       <ul
         className={
           show ? [Styles.show, Styles.container].join(' ') : Styles.container

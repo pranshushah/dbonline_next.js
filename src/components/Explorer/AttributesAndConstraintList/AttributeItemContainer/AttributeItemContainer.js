@@ -12,20 +12,30 @@ function AttrListContainer({ children, parentShow }) {
   function toogleArrow() {
     setOpen((open) => !open);
   }
+
+  function keyboradEnterHandler(e) {
+    if (e.which === 13) {
+      toogleArrow();
+    }
+  }
   if (!parentShow && open) {
     setOpen(false);
   }
   return (
     <li className={Styles.text}>
-      <span
-        onClick={toogleArrow}
-        className={
-          open
-            ? [Styles.liContainer, Styles.down].join(' ')
-            : Styles.liContainer
-        }>
-        attributes
-      </span>
+      {parentShow && (
+        <span
+          onKeyPress={keyboradEnterHandler}
+          tabIndex={0}
+          onClick={toogleArrow}
+          className={
+            open
+              ? [Styles.liContainer, Styles.down].join(' ')
+              : Styles.liContainer
+          }>
+          attributes
+        </span>
+      )}
       <ul className={Styles.container}>
         {children.map((child) => React.cloneElement(child, { show: open }))}
       </ul>

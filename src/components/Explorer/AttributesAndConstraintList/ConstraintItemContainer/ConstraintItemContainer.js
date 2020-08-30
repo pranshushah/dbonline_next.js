@@ -16,17 +16,26 @@ function ConstraintItemContainer({ children, parentShow }) {
   if (!parentShow && open) {
     setOpen(false);
   }
+  function keyboradEnterHandler(e) {
+    if (e.which === 13) {
+      toogleArrow();
+    }
+  }
   return (
     <li className={Styles.text}>
-      <span
-        onClick={toogleArrow}
-        className={
-          open
-            ? [Styles.liContainer, Styles.down].join(' ')
-            : Styles.liContainer
-        }>
-        constraints
-      </span>
+      {parentShow && (
+        <span
+          onKeyPress={keyboradEnterHandler}
+          tabIndex={0}
+          onClick={toogleArrow}
+          className={
+            open
+              ? [Styles.liContainer, Styles.down].join(' ')
+              : Styles.liContainer
+          }>
+          constraints
+        </span>
+      )}
       <ul className={Styles.container}>
         {children.map((child, index) =>
           React.cloneElement(child, { show: open, key: index }),

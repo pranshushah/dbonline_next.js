@@ -26,25 +26,35 @@ function ForeignKeyContainer({
     e.stopPropagation();
     onAddConstraintIconClicked(table, EXPLORERCONSTANT.FOREIGN);
   }
+
+  function keyboradEnterHandler(e) {
+    if (e.which === 13) {
+      toogleArrow();
+    }
+  }
   return (
     <li
       className={
         show ? [Styles.container, Styles.show].join(' ') : Styles.container
       }>
-      <span
-        onClick={toogleArrow}
-        className={
-          open
-            ? [Styles.liContainer, Styles.down].join(' ')
-            : Styles.liContainer
-        }>
-        foreign keys
+      {show && (
         <span
-          title='add foreign key'
-          className={Styles.add}
-          onClick={addConstraintClickHandler}
-        />
-      </span>
+          onKeyPress={keyboradEnterHandler}
+          tabIndex={0}
+          onClick={toogleArrow}
+          className={
+            open
+              ? [Styles.liContainer, Styles.down].join(' ')
+              : Styles.liContainer
+          }>
+          foreign keys
+          <span
+            title='add foreign key'
+            className={Styles.add}
+            onClick={addConstraintClickHandler}
+          />
+        </span>
+      )}
       <ul
         className={
           show ? [Styles.show, Styles.container].join(' ') : Styles.container

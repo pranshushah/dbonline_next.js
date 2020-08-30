@@ -33,40 +33,60 @@ function PrimaryKeyContainer({
     e.stopPropagation();
     onAddConstraintIconClicked(table, EXPLORERCONSTANT.PRIMARY);
   }
+
+  function primaryEnterClick(e) {
+    if (e.which === 13) {
+      constraintClickHandler();
+    }
+  }
+
+  function keyboradEnterHandler(e) {
+    if (e.which === 13) {
+      toogleArrow();
+    }
+  }
   return (
     <li
       className={
         show ? [Styles.container, Styles.show].join(' ') : Styles.container
       }>
-      <span
-        onClick={toogleArrow}
-        className={
-          open
-            ? [Styles.liContainer, Styles.down].join(' ')
-            : Styles.liContainer
-        }>
-        primary key
-        {children ? null : (
-          <span
-            title='add Primary Key'
-            className={Styles.add}
-            onClick={addConstraintClickHandler}
-          />
-        )}
-      </span>
+      {show && (
+        <span
+          onKeyPress={keyboradEnterHandler}
+          tabIndex={0}
+          onClick={toogleArrow}
+          className={
+            open
+              ? [Styles.liContainer, Styles.down].join(' ')
+              : Styles.liContainer
+          }>
+          primary key
+          {children ? null : (
+            <span
+              title='add Primary Key'
+              className={Styles.add}
+              onClick={addConstraintClickHandler}
+            />
+          )}
+        </span>
+      )}
       <ul
         className={
           show ? [Styles.container, Styles.show].join(' ') : Styles.container
         }>
-        <li
-          onClick={constraintClickHandler}
-          className={
-            open
-              ? [Styles.elementShow, Styles.elementContainer].join(' ')
-              : Styles.elementContainer
-          }>
-          {children}
-        </li>
+        {open && (
+          <li
+            tabIndex={0}
+            onKeyPress={primaryEnterClick}
+            onClick={constraintClickHandler}
+            className={
+              open
+                ? [Styles.elementShow, Styles.elementContainer].join(' ')
+                : Styles.elementContainer
+            }>
+            {children}
+          </li>
+        )}
       </ul>
     </li>
   );
