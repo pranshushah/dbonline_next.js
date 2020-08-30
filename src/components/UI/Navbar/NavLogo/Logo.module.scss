@@ -22,3 +22,8 @@
     padding: getSpace(2) * 1px getSpace(2) * 1px;
   }
 }
+
+.Logo:focus {
+  border: 1px solid $textColor;
+  outline: none;
+}

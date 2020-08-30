@@ -22,7 +22,7 @@
   opacity: 1;
   pointer-events: all;
   transform: translateY(0);
-  padding-top: getSpace(0.5) * 1px;
+  padding-top: getSpace(0.1) * 1px;
   line-height: map-get($map: $line-height, $key: 'medium') * 1px;
 }
 

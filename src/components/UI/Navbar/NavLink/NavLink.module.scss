@@ -65,15 +65,20 @@
             left: 150px;
           }
         }
-        &:hover {
-          background-color: lighten($color: $darkPrimaryLight, $amount: 6);
-          color: $textColor;
-        }
         @include tablet() {
           width: 220px;
           font-size: getFontSize(2) * 1px;
           padding: getSpace(2) * 1px getSpace(1) * 1px;
         }
+      }
+      &:hover {
+        background-color: lighten($color: $darkPrimaryLight, $amount: 6);
+        color: $textColor;
+      }
+      &:focus {
+        outline: none;
+        background-color: lighten($color: $darkPrimaryLight, $amount: 6);
+        color: $textColor;
       }
     }
     @include tablet() {
@@ -83,6 +88,13 @@
   }
   &:hover .subMenuContainer .subNavLink {
     display: block;
+  }
+  &:focus .subMenuContainer .subNavLink {
+    display: block;
+  }
+  &:focus {
+    outline: none;
+    border: 1px solid $textColor;
   }
 }
 .downArrow {
