@@ -22,9 +22,13 @@ function PrimaryKeyContainer({
   if (!show && open) {
     setOpen(false);
   }
+  // if use keypress and press shift+c it add c in constraint name input because it autofoused
   function keyboradEnterHandler(e) {
     if (e.which === 13) {
       toogleArrow();
+    }
+    if (!e.altKey && e.which === 67 && !e.ctrlKey && e.shiftKey) {
+      onAddConstraintIconClicked(table, EXPLORERCONSTANT.UNIQUE);
     }
   }
 
@@ -40,7 +44,7 @@ function PrimaryKeyContainer({
       {show && (
         <span
           onClick={toogleArrow}
-          onKeyPress={keyboradEnterHandler}
+          onKeyUp={keyboradEnterHandler}
           tabIndex={0}
           className={
             open

@@ -23,13 +23,16 @@ function ForeignKeyContainer({
     setOpen(false);
   }
   function addConstraintClickHandler(e) {
-    e.stopPropagation();
+    e.stopPropagation(); //if don't use this it also open the foreign keys constraints
     onAddConstraintIconClicked(table, EXPLORERCONSTANT.FOREIGN);
   }
-
+  // if use keypress and press shift+c it add c in constraint name input because it autofoused
   function keyboradEnterHandler(e) {
     if (e.which === 13) {
       toogleArrow();
+    }
+    if (!e.altKey && e.which === 67 && !e.ctrlKey && e.shiftKey) {
+      onAddConstraintIconClicked(table, EXPLORERCONSTANT.FOREIGN);
     }
   }
   return (
@@ -39,7 +42,7 @@ function ForeignKeyContainer({
       }>
       {show && (
         <span
-          onKeyPress={keyboradEnterHandler}
+          onKeyUp={keyboradEnterHandler}
           tabIndex={0}
           onClick={toogleArrow}
           className={

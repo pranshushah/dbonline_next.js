@@ -33,7 +33,7 @@ function NavLink({ text, dark, link, children, ...props }) {
     );
   } else {
     return (
-      <li className={Styles.navLink} tabIndex={0} {...props}>
+      <li className={Styles.navLink} {...props}>
         <Link href={link ? link : '/'}>
           <a
             className={
@@ -52,11 +52,7 @@ function NavLink({ text, dark, link, children, ...props }) {
 }
 
 function SubMenuContiainer({ children }) {
-  return (
-    <ul tabIndex={0} className={Styles.subMenuContainer}>
-      {children}
-    </ul>
-  );
+  return <ul className={Styles.subMenuContainer}>{children}</ul>;
 }
 
 /**
@@ -68,7 +64,7 @@ function SubMenuContiainer({ children }) {
 
 function SubNavLink({ text, shortcut, ...props }) {
   return (
-    <li tabIndex={0} className={Styles.subNavLink} {...props}>
+    <li className={Styles.subNavLink} {...props}>
       <span className={Styles.subLink}>
         {text}
         {shortcut && <span className={Styles.shortcut}>{shortcut}</span>}
