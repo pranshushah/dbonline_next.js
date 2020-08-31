@@ -57,7 +57,7 @@ function PrimaryKeyContainer({
       }>
       {show && (
         <span
-          onKeyPress={keyboradEnterHandler}
+          onKeyUp={keyboradEnterHandler}
           tabIndex={0}
           onClick={toogleArrow}
           className={

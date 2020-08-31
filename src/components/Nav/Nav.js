@@ -18,7 +18,11 @@ import { code } from '../../utils/helper-function/createCode';
  * onGridClick:Function,
  * onCreateTableClick:Function,
  * onRightSideBarClick:Function,
- * onLeftSideBarClick:Function}} props
+ * onLeftSideBarClick:Function,
+ * onCloseRightSidebar:Function,
+ * onHomeClicked:Function,
+ * onDashbardClicked:Function
+ * }} props
  */
 
 function Nav({ mainTableDetails, ...props }) {
@@ -46,6 +50,21 @@ function Nav({ mainTableDetails, ...props }) {
               text={props.showLeftSidebar ? 'hide explorer' : 'show explorer'}
               onClick={props.onLeftSideBarClick}
               shortcut={'ctrl + b'}
+            />
+            <SubNavLink
+              text={'go to dashboard'}
+              onClick={props.onDashbardClicked}
+              shortcut={'shift + d'}
+            />
+            <SubNavLink
+              text={'go to home'}
+              onClick={props.onHomeClicked}
+              shortcut={'shift + h'}
+            />
+            <SubNavLink
+              text={'close r-sidebar'}
+              onClick={props.onRightSideBarClick}
+              shortcut={'shift + r'}
             />
           </SubMenuContiainer>
         </NavLink>

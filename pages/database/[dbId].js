@@ -447,6 +447,14 @@ export default function Database() {
     window.print();
   }
 
+  function goToDashboard() {
+    router.push('/dashboard');
+  }
+
+  function goToHome() {
+    router.push({ pathname: '/', query: { app: 1 } });
+  }
+
   useEffect(() => {
     function shortcutHandler(e) {
       // ctrl + b (explorer sidebar toggle)
@@ -464,6 +472,17 @@ export default function Database() {
       // alt + c (get code)
       else if (!e.ctrlKey && e.which === 67 && e.altKey && !e.shiftKey) {
         code(database.mainTableDetails);
+        // shift + d (dashboard)
+      } else if (!e.ctrlKey && e.which === 68 && !e.altKey && e.shiftKey) {
+        goToDashboard();
+      }
+      //shift + h (home)
+      else if (!e.ctrlKey && e.which === 72 && !e.altKey && e.shiftKey) {
+        goToHome();
+      }
+      // shift + r (close right sidebar)
+      else if (!e.ctrlKey && e.which === 82 && !e.altKey && e.shiftKey) {
+        cleanupRightSidebar();
       }
     }
     document.addEventListener('keyup', shortcutHandler);
@@ -483,6 +502,9 @@ export default function Database() {
         onRightSideBarClick={showRightSidebarHandler}
         onLeftSideBarClick={showLeftSidebarHandler}
         Main={MainGround}
+        onCloseRightSidebar={cleanupRightSidebar}
+        onHomeClicked={goToHome}
+        onDashbardClicked={goToDashboard}
         mainTableDetails={database.mainTableDetails}
         tableDndDetails={database.tableDndDetails}
       />
@@ -585,12 +607,24 @@ export default function Database() {
           <span className={'shrotcut'}>alt + c</span>
         </MenuItem>
         <MenuItem onClick={showLeftSidebarHandler} className={'menuItem'}>
-          {showLeftSidebar ? 'hide sidebar' : 'show sidebar'}
+          {showLeftSidebar ? 'hide explorer' : 'show explorer'}
           <span className={'shrotcut'}>ctrl + b</span>
         </MenuItem>
         <MenuItem onClick={pdf} className={'menuItem'}>
           export as pdf
           <span className={'shrotcut'}>ctrl + p</span>
+        </MenuItem>
+        <MenuItem onClick={cleanupRightSidebar} className={'menuItem'}>
+          close right-sidebar
+          <span className={'shrotcut'}>shift + r</span>
+        </MenuItem>
+        <MenuItem onClick={goToHome} className={'menuItem'}>
+          Go to Home
+          <span className={'shrotcut'}>shift + h</span>
+        </MenuItem>
+        <MenuItem onClick={goToDashboard} className={'menuItem'}>
+          Go to dashboard
+          <span className={'shrotcut'}>shift + d</span>
         </MenuItem>
       </ContextMenu>
     </>
