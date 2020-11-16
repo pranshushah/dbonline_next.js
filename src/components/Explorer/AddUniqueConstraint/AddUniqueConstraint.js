@@ -6,8 +6,7 @@ import Styles from './style.module.scss';
 import { useConstraint } from '../../../utils/customHooks/useConstraint';
 import { customStyles } from '../../../utils/selectStyle/';
 import { randomString } from '../../../utils/helper-function/randomString';
-import deepClone from 'clone-deep';
-
+import produce from 'immer';
 /**
  * @param {{
  * mainTableDetails:mainTableDetailsType[],
@@ -59,24 +58,24 @@ function AddUniqueConstraint({
     } else {
       finalCname = randomString();
     }
-    const newMainTableDetails = deepClone(mainTableDetails);
-    const tableIndex = newMainTableDetails.findIndex(
-      (table) => table.id === givenTable.id,
-    );
-    newMainTableDetails[tableIndex].tableLevelConstraint.UNIQUETABLELEVEL.push({
-      constraintName: finalCname,
-      attributes: finalArr,
-    });
-    finalArr.forEach((id) => {
-      newMainTableDetails[tableIndex].attributes.some((attr) => {
-        let ret = false;
-        if (attr.id === id) {
-          attr.inTableLevelUniquConstraint.push(finalCname);
-          ret = true;
-        }
-        return ret;
+    const newMainTableDetails = produce(mainTableDetails, (draft) => {
+      const tableIndex = draft.findIndex((table) => table.id === givenTable.id);
+      draft[tableIndex].tableLevelConstraint.UNIQUETABLELEVEL.push({
+        constraintName: finalCname,
+        attributes: finalArr,
+      });
+      finalArr.forEach((id) => {
+        draft[tableIndex].attributes.some((attr) => {
+          let ret = false;
+          if (attr.id === id) {
+            attr.inTableLevelUniquConstraint.push(finalCname);
+            ret = true;
+          }
+          return ret;
+        });
       });
     });
+
     onConfirm(newMainTableDetails);
   }
 
@@ -88,22 +87,21 @@ function AddUniqueConstraint({
     } else {
       finalCname = randomString();
     }
-    const newMainTableDetails = deepClone(mainTableDetails);
-    const tableIndex = newMainTableDetails.findIndex(
-      (table) => table.id === givenTable.id,
-    );
-    newMainTableDetails[tableIndex].tableLevelConstraint.PRIMARYKEY = {
-      constraintName: finalCname,
-      attributes: finalArr,
-    };
-    finalArr.forEach((id) => {
-      newMainTableDetails[tableIndex].attributes.some((attr) => {
-        let ret = false;
-        if (attr.id === id) {
-          attr.isPRIMARYKEY = true;
-          ret = true;
-        }
-        return ret;
+    const newMainTableDetails = produce(mainTableDetails, (draft) => {
+      const tableIndex = draft.findIndex((table) => table.id === givenTable.id);
+      draft[tableIndex].tableLevelConstraint.PRIMARYKEY = {
+        constraintName: finalCname,
+        attributes: finalArr,
+      };
+      finalArr.forEach((id) => {
+        draft[tableIndex].attributes.some((attr) => {
+          let ret = false;
+          if (attr.id === id) {
+            attr.isPRIMARYKEY = true;
+            ret = true;
+          }
+          return ret;
+        });
       });
     });
     onConfirm(newMainTableDetails);

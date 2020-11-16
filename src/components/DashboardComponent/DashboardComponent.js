@@ -5,6 +5,7 @@ import CreateDataBaseModal from '../CreateDatabaseModal/CreateDatabaseModal';
 import { useState, useEffect } from 'react';
 import HomeNav from '../HomeNav/HomeNav';
 import DashboardElement from './DashBoardElement/DashBoardElement';
+import produce from 'immer';
 export default function DashboardComponent() {
   /**
    *@type {[databaseType[],Function]} databaseArray
@@ -15,7 +16,11 @@ export default function DashboardComponent() {
     keys().then((keys) => {
       keys.forEach((key) => {
         get(key).then((val) => {
-          setDataBaseArray((databaseArr) => [...databaseArr, val]);
+          setDataBaseArray((databaseArr) =>
+            produce(databaseArr, (draft) => {
+              draft.push(val);
+            }),
+          );
         });
       });
     });

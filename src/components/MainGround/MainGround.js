@@ -12,6 +12,7 @@ import mainGroundReducer from '../../utils/reducers/mainGroundReducer';
 import XArrow from 'react-xarrows';
 import deepClone from 'clone-deep';
 import Tooltip from '../UI/Tooltip/Tooltip';
+import produce from 'immer';
 /**
  * @param {{
  * showGrid:boolean,
@@ -166,20 +167,20 @@ function MainGround({
   }
 
   function deleteTableModalConfirmHandler() {
-    const newTableDndDetails = [...tableDndDetails];
-    const newMainTableDetails = [...mainTableDetails];
-
-    const dndIndex = newTableDndDetails.findIndex(
-      (table) =>
-        table.tableName === selectedTableDndDetailsForDeleteModal.tableName,
-    );
-    const mainIndex = newMainTableDetails.findIndex(
-      (table) =>
-        table.tableName === selectedTableDetailsForDeleteModal.tableName,
-    );
-    newTableDndDetails.splice(dndIndex, 1);
-    newMainTableDetails.splice(mainIndex, 1);
-
+    const newTableDndDetails = produce(tableDndDetails, (draft) => {
+      const dndIndex = draft.findIndex(
+        (table) =>
+          table.tableName === selectedTableDndDetailsForDeleteModal.tableName,
+      );
+      draft.splice(dndIndex, 1);
+    });
+    const newMainTableDetails = produce(mainTableDetails, (draft) => {
+      const mainIndex = draft.findIndex(
+        (table) =>
+          table.tableName === selectedTableDetailsForDeleteModal.tableName,
+      );
+      draft.splice(mainIndex, 1);
+    });
     onTableDndAndMainChange(newMainTableDetails, newTableDndDetails);
     dispatch({ type: 'DELETE_MODAL_CONFIRM' });
   }
@@ -202,24 +203,25 @@ function MainGround({
   }
 
   function editTableModalConfirmHandler(newColor, newName) {
-    const newTableDndDetails = [...tableDndDetails];
-    const newMainTableDetails = [...mainTableDetails];
-
-    const dndIndex = newTableDndDetails.findIndex(
-      (table) =>
-        table.tableName === selectedTableDndDetailsForEditModal.tableName,
-    );
-    const mainIndex = newMainTableDetails.findIndex(
-      (table) => table.tableName === selectedTableDetailsForEditModal.tableName,
-    );
-
-    newMainTableDetails[mainIndex].tableName = newName;
-    newTableDndDetails[dndIndex].tableName = newName;
-    newTableDndDetails[dndIndex].color = newColor;
-    console.log(newMainTableDetails);
+    const newTableDndDetails = produce(tableDndDetails, (draft) => {
+      const dndIndex = draft.findIndex(
+        (table) =>
+          table.tableName === selectedTableDndDetailsForEditModal.tableName,
+      );
+      draft[dndIndex].tableName = newName;
+      draft[dndIndex].color = newColor;
+    });
+    const newMainTableDetails = produce(tableDndDetails, (draft) => {
+      const mainIndex = draft.findIndex(
+        (table) =>
+          table.tableName === selectedTableDetailsForEditModal.tableName,
+      );
+      draft[mainIndex].tableName = newName;
+    });
     onTableDndAndMainChange(newMainTableDetails, newTableDndDetails);
     dispatch({ type: 'EDIT_MODAL_CONFIRM' });
   }
+
   let tables = [];
   if (mainTableDetails && tableDndDetails) {
     tables = tableDndDetails.map((tableDndDetail) => {

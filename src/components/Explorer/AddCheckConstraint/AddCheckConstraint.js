@@ -5,7 +5,7 @@ import { useCheckExpr } from '../../../utils/customHooks/useCheckExpr';
 import Styles from './AddCheckConstraint.module.scss';
 import { randomString } from '../../../utils/helper-function/randomString';
 import { useConstraint } from '../../../utils/customHooks/useConstraint';
-import deepClone from 'clone-deep';
+import produce from 'immer';
 const parser = require('js-sql-parser');
 
 /**
@@ -76,13 +76,12 @@ function AddCheckConstraint({
     } else {
       finalCname = randomString();
     }
-    const newMainTableDetails = deepClone(mainTableDetails);
-    const tableIndex = newMainTableDetails.findIndex(
-      (table) => table.id === givenTable.id,
-    );
-    newMainTableDetails[tableIndex].tableLevelConstraint.CHECK.push({
-      constraintName: finalCname,
-      AST: parser.parse(`select * from boom WHERE (${checkExpr})`),
+    const newMainTableDetails = produce(mainTableDetails, (draft) => {
+      const tableIndex = draft.findIndex((table) => table.id === givenTable.id);
+      draft[tableIndex].tableLevelConstraint.CHECK.push({
+        constraintName: finalCname,
+        AST: parser.parse(`select * from boom WHERE (${checkExpr})`),
+      });
     });
     onConfirm(newMainTableDetails);
   }

@@ -7,9 +7,9 @@ import { customStyles } from '../../../utils/selectStyle/';
 import { useRadio } from '../../../utils/customHooks/useRadio';
 import { randomString } from '../../../utils/helper-function/randomString';
 import { foreignConstraintRadioList } from '../../../utils/checkedItemsForAddAttr';
-import deepClone from 'clone-deep';
 import { useConstraint } from '../../../utils/customHooks/useConstraint';
 import Radio from '../../UI/Radio/Radio';
+import produce from 'immer';
 /**
  * @param {{
  * mainTableDetails:mainTableDetailsType[],
@@ -73,54 +73,55 @@ function AddUniqueConstraint({
   function ModalconfirmHandler() {
     let finalCname = constraintName ? constraintName : randomString();
 
-    const newMainTableDetails = deepClone(mainTableDetails);
-    const referencedIndex = newMainTableDetails.findIndex(
-      (table) => table.id === givenTable.id,
-    );
-    // finding these indexes because we want to have same datatype for referncing and referenced attribute.
-    const referencingTableIndex = newMainTableDetails.findIndex(
-      (table) => table.id === referencingTable.value,
-    );
-    const referencingAttIndex = newMainTableDetails[
-      referencingTableIndex
-    ].attributes.findIndex((attrObj) => attrObj.id === referencingAtt.value);
-    //adding cascade
-    newMainTableDetails[referencedIndex].tableLevelConstraint.FOREIGNKEY.push({
-      constraintName: finalCname,
-      referencedAtt: referencedAtt.value,
-      ReferencingAtt: referencingAtt.value,
-      ReferencingTable: referencingTable.value,
-      cascade:
-        foreignRadio.findIndex(
-          (foreignObj) => foreignObj.label === 'CASCADE' && foreignObj.checked,
-        ) !== -1
-          ? true
-          : false,
-      setNull:
-        foreignRadio.findIndex(
-          (foreignObj) => foreignObj.label === 'SET NULL' && foreignObj.checked,
-        ) !== -1,
-    });
-    // using array.some because it will end after true.
-    newMainTableDetails[referencedIndex].attributes.some((attrObj) => {
-      let ret = false;
-      if (attrObj.id === referencedAtt.value) {
-        attrObj['isFOREIGNKEY'] = true;
-        attrObj.dataType =
-          newMainTableDetails[referencingTableIndex].attributes[
-            referencingAttIndex
-          ].dataType;
-        attrObj.size =
-          newMainTableDetails[referencingTableIndex].attributes[
-            referencingAttIndex
-          ].size;
-        attrObj.precision =
-          newMainTableDetails[referencingTableIndex].attributes[
-            referencingAttIndex
-          ].precision;
-        ret = true;
-      }
-      return ret;
+    const newMainTableDetails = produce(mainTableDetails, (draft) => {
+      const referencedIndex = draft.findIndex(
+        (table) => table.id === givenTable.id,
+      );
+      // finding these indexes because we want to have same datatype for referncing and referenced attribute.
+      const referencingTableIndex = draft.findIndex(
+        (table) => table.id === referencingTable.value,
+      );
+      const referencingAttIndex = draft[
+        referencingTableIndex
+      ].attributes.findIndex((attrObj) => attrObj.id === referencingAtt.value);
+      //adding cascade
+      draft[referencedIndex].tableLevelConstraint.FOREIGNKEY.push({
+        constraintName: finalCname,
+        referencedAtt: referencedAtt.value,
+        ReferencingAtt: referencingAtt.value,
+        ReferencingTable: referencingTable.value,
+        cascade:
+          foreignRadio.findIndex(
+            (foreignObj) =>
+              foreignObj.label === 'CASCADE' && foreignObj.checked,
+          ) !== -1
+            ? true
+            : false,
+        setNull:
+          foreignRadio.findIndex(
+            (foreignObj) =>
+              foreignObj.label === 'SET NULL' && foreignObj.checked,
+          ) !== -1,
+      });
+      // using array.some because it will end after true.
+      draft[referencedIndex].attributes.some((attrObj) => {
+        let ret = false;
+        if (attrObj.id === referencedAtt.value) {
+          attrObj['isFOREIGNKEY'] = true;
+          attrObj.dataType =
+            draft[referencingTableIndex].attributes[
+              referencingAttIndex
+            ].dataType;
+          attrObj.size =
+            draft[referencingTableIndex].attributes[referencingAttIndex].size;
+          attrObj.precision =
+            draft[referencingTableIndex].attributes[
+              referencingAttIndex
+            ].precision;
+          ret = true;
+        }
+        return ret;
+      });
     });
     onConfirm(newMainTableDetails);
   }

@@ -8,8 +8,7 @@ import { columnConstraintCheckboxList } from '../../../utils/checkedItemsForAddA
 import ConstraintCheckBoxContainer from '../../AddAttributeModal/constraintCheckboxContainer';
 import DeleteAttrModal from '../../DeleteAttrModal/DeleteAttrModal';
 import { customStyles } from '../../../utils/selectStyle';
-import cloneDeep from 'clone-deep';
-
+import produce from 'immer';
 import {
   oracleSizeError,
   oracleHasPre,
@@ -131,8 +130,7 @@ function EditCheckConstraint({
 
   function precisionAfterDecimalInputValueChangeHandler(e) {
     let val = e.target.value;
-    if (val === '' || val === '-') {
-    } else {
+    if (!(val === '' || val === '-')) {
       const tempVal = parseInt(val);
       if (tempVal) {
         val = tempVal;
@@ -188,75 +186,65 @@ function EditCheckConstraint({
   }, [defaultValueError, sizeError, attributeError]);
 
   function deleteAttributeHandler() {
-    const newMainTableDetails = cloneDeep(mainTableDetails);
-
-    const index = newMainTableDetails.findIndex(
-      (givenTable) => givenTable.tableName === table.tableName,
-    );
-
-    const selectedAttributeIndexForDeleteAttribute = newMainTableDetails[
-      index
-    ].attributes.findIndex((attrObj) => attrObj.name === initialAttriuteName);
-
-    newMainTableDetails[index].attributes.splice(
-      selectedAttributeIndexForDeleteAttribute,
-      1,
-    );
-
-    // clean-up
-
-    //unique-key
-    if (
-      table.attributes[selectedAttributeIndexForDeleteAttribute]
-        ?.inTableLevelUniquConstraint.length !== 0
-    ) {
-      table.attributes[
-        selectedAttributeIndexForDeleteAttribute
-      ].inTableLevelUniquConstraint.forEach((cName) => {
-        newMainTableDetails[index].attributes.forEach((attr) => {
-          attr.inTableLevelUniquConstraint = attr?.inTableLevelUniquConstraint.filter(
-            (entity) => entity !== cName,
-          );
-        });
-      });
-      newMainTableDetails[
-        index
-      ].tableLevelConstraint.UNIQUETABLELEVEL = newMainTableDetails[
-        index
-      ].tableLevelConstraint.UNIQUETABLELEVEL.filter((obj) => {
-        return !table.attributes[
-          selectedAttributeIndexForDeleteAttribute
-        ].inTableLevelUniquConstraint.includes(obj.constraintName);
-      });
-    }
-
-    // foreign-key
-
-    if (
-      table.attributes[selectedAttributeIndexForDeleteAttribute]?.isFOREIGNKEY
-    ) {
-      newMainTableDetails[
-        index
-      ].tableLevelConstraint.FOREIGNKEY = newMainTableDetails[
-        index
-      ].tableLevelConstraint.FOREIGNKEY.filter(
-        (obj) =>
-          !obj.referencedAtt ===
-          table.attributes[selectedAttributeIndexForDeleteAttribute].id,
+    const newMainTableDetails = produce(mainTableDetails, (draft) => {
+      const index = draft.findIndex(
+        (givenTable) => givenTable.tableName === table.tableName,
       );
-    }
 
-    //primary-key
-    if (
-      table.attributes[selectedAttributeIndexForDeleteAttribute].isPRIMARYKEY
-    ) {
-      newMainTableDetails[index].attributes.forEach((attr) => {
-        if (attr.isPRIMARYKEY) {
-          delete attr.isPRIMARYKEY;
-        }
-      });
-      newMainTableDetails[index].tableLevelConstraint.PRIMARYKEY = null;
-    }
+      const selectedAttributeIndexForDeleteAttribute = draft[
+        index
+      ].attributes.findIndex((attrObj) => attrObj.name === initialAttriuteName);
+
+      draft[index].attributes.splice(
+        selectedAttributeIndexForDeleteAttribute,
+        1,
+      );
+      //unique-key
+      if (
+        table.attributes[selectedAttributeIndexForDeleteAttribute]
+          ?.inTableLevelUniquConstraint.length !== 0
+      ) {
+        table.attributes[
+          selectedAttributeIndexForDeleteAttribute
+        ].inTableLevelUniquConstraint.forEach((cName) => {
+          draft[index].attributes.forEach((attr) => {
+            attr.inTableLevelUniquConstraint = attr?.inTableLevelUniquConstraint.filter(
+              (entity) => entity !== cName,
+            );
+          });
+        });
+        draft[index].tableLevelConstraint.UNIQUETABLELEVEL = draft[
+          index
+        ].tableLevelConstraint.UNIQUETABLELEVEL.filter((obj) => {
+          return !table.attributes[
+            selectedAttributeIndexForDeleteAttribute
+          ].inTableLevelUniquConstraint.includes(obj.constraintName);
+        });
+      }
+      // foreign-key
+      if (
+        table.attributes[selectedAttributeIndexForDeleteAttribute]?.isFOREIGNKEY
+      ) {
+        draft[index].tableLevelConstraint.FOREIGNKEY = draft[
+          index
+        ].tableLevelConstraint.FOREIGNKEY.filter(
+          (obj) =>
+            !obj.referencedAtt ===
+            table.attributes[selectedAttributeIndexForDeleteAttribute].id,
+        );
+      }
+      //primary-key
+      if (
+        table.attributes[selectedAttributeIndexForDeleteAttribute].isPRIMARYKEY
+      ) {
+        draft[index].attributes.forEach((attr) => {
+          if (attr.isPRIMARYKEY) {
+            delete attr.isPRIMARYKEY;
+          }
+        });
+        draft[index].tableLevelConstraint.PRIMARYKEY = null;
+      }
+    });
 
     onRightSideBarAfterConfirmOrDelete(newMainTableDetails);
   }
@@ -268,24 +256,25 @@ function EditCheckConstraint({
     } else {
       finalAttributeName = attributeName;
     }
-    const newMainTableDetails = cloneDeep(mainTableDetails);
-    const tableIndex = newMainTableDetails.findIndex(
-      (givenTable) => givenTable.tableName === table.tableName,
-    );
-    const attrIndex = newMainTableDetails[tableIndex].attributes.findIndex(
-      (attrObj) => attrObj.name === initialAttriuteName,
-    );
-    newMainTableDetails[tableIndex].attributes[attrIndex] = {
-      ...newMainTableDetails[tableIndex].attributes[attrIndex],
-      name: finalAttributeName,
-      dataType: dataType.value,
-      size: sizeInput ? sizeInput : undefined,
-      precision: preInput ? preInput : undefined,
-      isNOTNULL: columnLevelConstraint['NOT-NULL'] ? true : false,
-      isUNIQUE: columnLevelConstraint['UNIQUE'] ? true : false,
-      isAUTOINCREMENT: columnLevelConstraint['AUTO-INCREMENT'] ? true : false,
-      DEFAULT: columnLevelConstraint['DEFAULT'] ? defaultValue : undefined,
-    };
+    const newMainTableDetails = produce(mainTableDetails, (draft) => {
+      const tableIndex = draft.findIndex(
+        (givenTable) => givenTable.tableName === table.tableName,
+      );
+      const attrIndex = draft[tableIndex].attributes.findIndex(
+        (attrObj) => attrObj.name === initialAttriuteName,
+      );
+      draft[tableIndex].attributes[attrIndex] = {
+        ...draft[tableIndex].attributes[attrIndex],
+        name: finalAttributeName,
+        dataType: dataType.value,
+        size: sizeInput ? sizeInput : undefined,
+        precision: preInput ? preInput : undefined,
+        isNOTNULL: columnLevelConstraint['NOT-NULL'] ? true : false,
+        isUNIQUE: columnLevelConstraint['UNIQUE'] ? true : false,
+        isAUTOINCREMENT: columnLevelConstraint['AUTO-INCREMENT'] ? true : false,
+        DEFAULT: columnLevelConstraint['DEFAULT'] ? defaultValue : undefined,
+      };
+    });
     onRightSideBarAfterConfirmOrDelete(newMainTableDetails);
   }
 

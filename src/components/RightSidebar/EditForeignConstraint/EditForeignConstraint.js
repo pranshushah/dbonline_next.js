@@ -7,7 +7,7 @@ import { constraintError } from '../../../utils/helper-function/constraintError'
 import Select from 'react-select';
 import Radio from '../../UI/Radio/Radio';
 import { customStyles } from '../../../utils/selectStyle';
-import cloneDeep from 'clone-deep';
+import produce from 'immer';
 
 /**
  * @param {{
@@ -129,33 +129,32 @@ function EditUniqueConstraint({
   }
 
   function deleteForeignConstraintClickHandler() {
-    const newMainTableDetails = cloneDeep(mainTableDetails);
-    const referencedTableIndex = newMainTableDetails.findIndex(
-      (givenTable) => givenTable.id === table.id,
-    );
+    const newMainTableDetails = produce(mainTableDetails, (draft) => {
+      const referencedTableIndex = draft.findIndex(
+        (givenTable) => givenTable.id === table.id,
+      );
 
-    const foreignConstraintIndex = newMainTableDetails[
-      referencedTableIndex
-    ].tableLevelConstraint.FOREIGNKEY.findIndex(
-      (foreignObj) => foreignObj.constraintName === foreignConstraintName,
-    );
-
-    const referencedAttIndex = newMainTableDetails[
-      referencedTableIndex
-    ].attributes.findIndex(
-      (attrObj) =>
-        attrObj.id ===
-        newMainTableDetails[referencedTableIndex].tableLevelConstraint
-          .FOREIGNKEY[foreignConstraintIndex].referencedAtt,
-    );
-
-    newMainTableDetails[
-      referencedTableIndex
-    ].tableLevelConstraint.FOREIGNKEY.splice(foreignConstraintIndex, 1);
-
-    delete newMainTableDetails[referencedTableIndex].attributes[
-      referencedAttIndex
-    ].isFOREIGNKEY;
+      const foreignConstraintIndex = draft[
+        referencedTableIndex
+      ].tableLevelConstraint.FOREIGNKEY.findIndex(
+        (foreignObj) => foreignObj.constraintName === foreignConstraintName,
+      );
+      const referencedAttIndex = draft[
+        referencedTableIndex
+      ].attributes.findIndex(
+        (attrObj) =>
+          attrObj.id ===
+          draft[referencedTableIndex].tableLevelConstraint.FOREIGNKEY[
+            foreignConstraintIndex
+          ].referencedAtt,
+      );
+      draft[referencedTableIndex].tableLevelConstraint.FOREIGNKEY.splice(
+        foreignConstraintIndex,
+        1,
+      );
+      delete draft[referencedTableIndex].attributes[referencedAttIndex]
+        .isFOREIGNKEY;
+    });
 
     // add new stuff
     onRightSideBarAfterConfirmOrDelete(newMainTableDetails);
@@ -168,90 +167,81 @@ function EditUniqueConstraint({
     } else {
       finalConstraintName = foreignConstraintName;
     }
-    const newMainTableDetails = cloneDeep(mainTableDetails);
-    const referencedTableIndex = newMainTableDetails.findIndex(
-      (givenTable) => givenTable.id === table.id,
-    );
+    const newMainTableDetails = produce(mainTableDetails, (draft) => {
+      const referencedTableIndex = draft.findIndex(
+        (givenTable) => givenTable.id === table.id,
+      );
 
-    const referencedAttIndex = newMainTableDetails[
-      referencedTableIndex
-    ].attributes.findIndex((attrObj) => attrObj.id === referencedAtt.value);
+      const referencedAttIndex = draft[
+        referencedTableIndex
+      ].attributes.findIndex((attrObj) => attrObj.id === referencedAtt.value);
 
-    const referencingTableIndex = newMainTableDetails.findIndex(
-      (table) => table.id === referencingTable.value,
-    );
+      const referencingTableIndex = draft.findIndex(
+        (table) => table.id === referencingTable.value,
+      );
 
-    const referencingAttIndex = newMainTableDetails[
-      referencingTableIndex
-    ].attributes.findIndex((attrObj) => attrObj.id === referencingAtt.value);
+      const referencingAttIndex = draft[
+        referencingTableIndex
+      ].attributes.findIndex((attrObj) => attrObj.id === referencingAtt.value);
 
-    //delete old stuff
+      //delete old stuff
 
-    const foreignConstraintIndex = newMainTableDetails[
-      referencedTableIndex
-    ].tableLevelConstraint.FOREIGNKEY.findIndex(
-      (foreignObj) =>
-        foreignObj.constraintName === initialForeignConstraintName,
-    );
+      const foreignConstraintIndex = draft[
+        referencedTableIndex
+      ].tableLevelConstraint.FOREIGNKEY.findIndex(
+        (foreignObj) =>
+          foreignObj.constraintName === initialForeignConstraintName,
+      );
 
-    const oldReferencedAttIndex = newMainTableDetails[
-      referencedTableIndex
-    ].attributes.findIndex(
-      (attrObj) =>
-        attrObj.id ===
-        newMainTableDetails[referencedTableIndex].tableLevelConstraint
-          .FOREIGNKEY[foreignConstraintIndex].referencedAtt,
-    );
+      const oldReferencedAttIndex = draft[
+        referencedTableIndex
+      ].attributes.findIndex(
+        (attrObj) =>
+          attrObj.id ===
+          draft[referencedTableIndex].tableLevelConstraint.FOREIGNKEY[
+            foreignConstraintIndex
+          ].referencedAtt,
+      );
 
-    delete newMainTableDetails[referencedTableIndex].attributes[
-      oldReferencedAttIndex
-    ].isFOREIGNKEY;
+      delete draft[referencedTableIndex].attributes[oldReferencedAttIndex]
+        .isFOREIGNKEY;
 
-    // add new stuff
+      // add new stuff
 
-    newMainTableDetails[referencedTableIndex].attributes[
-      referencedAttIndex
-    ].dataType =
-      newMainTableDetails[referencingTableIndex].attributes[
-        referencingAttIndex
-      ].dataType;
+      draft[referencedTableIndex].attributes[referencedAttIndex].dataType =
+        draft[referencingTableIndex].attributes[referencingAttIndex].dataType;
 
-    newMainTableDetails[referencedTableIndex].attributes[referencedAttIndex][
-      'size'
-    ] =
-      newMainTableDetails[referencingTableIndex].attributes[
-        referencingAttIndex
-      ]?.size;
+      draft[referencedTableIndex].attributes[referencedAttIndex]['size'] =
+        draft[referencingTableIndex].attributes[referencingAttIndex]?.size;
 
-    newMainTableDetails[referencedTableIndex].attributes[referencedAttIndex][
-      'precision'
-    ] =
-      newMainTableDetails[referencingTableIndex].attributes[
-        referencingAttIndex
-      ]?.precision;
+      draft[referencedTableIndex].attributes[referencedAttIndex]['precision'] =
+        draft[referencingTableIndex].attributes[referencingAttIndex]?.precision;
 
-    newMainTableDetails[referencedTableIndex].attributes[
-      referencedAttIndex
-    ].isFOREIGNKEY = true;
+      draft[referencedTableIndex].attributes[
+        referencedAttIndex
+      ].isFOREIGNKEY = true;
 
-    newMainTableDetails[referencedTableIndex].tableLevelConstraint.FOREIGNKEY[
-      foreignConstraintIndex
-    ] = {
-      referencedAtt: referencedAtt.value,
-      ReferencingAtt: referencingAtt.value,
-      ReferencingTable: referencingTable.value,
-      constraintName: finalConstraintName,
-      cascade:
-        foreignRadio.findIndex(
-          (foreignObj) => foreignObj.label === 'CASCADE' && foreignObj.checked,
-        ) !== -1
-          ? true
-          : false,
-      setNull:
-        foreignRadio.findIndex(
-          (foreignObj) => foreignObj.label === 'SET NULL' && foreignObj.checked,
-        ) !== -1,
-    };
+      draft[referencedTableIndex].tableLevelConstraint.FOREIGNKEY[
+        foreignConstraintIndex
+      ] = {
+        referencedAtt: referencedAtt.value,
+        ReferencingAtt: referencingAtt.value,
+        ReferencingTable: referencingTable.value,
+        constraintName: finalConstraintName,
+        cascade:
+          foreignRadio.findIndex(
+            (foreignObj) =>
+              foreignObj.label === 'CASCADE' && foreignObj.checked,
+          ) !== -1
+            ? true
+            : false,
+        setNull:
+          foreignRadio.findIndex(
+            (foreignObj) =>
+              foreignObj.label === 'SET NULL' && foreignObj.checked,
+          ) !== -1,
+      };
+    });
 
     onRightSideBarAfterConfirmOrDelete(newMainTableDetails);
   }

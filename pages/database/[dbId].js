@@ -4,6 +4,7 @@ import MainGround from '../../src/components/MainGround/MainGround';
 import RightSideBar from '../../src/components/RightSidebar/RightSidebar';
 import LeftSideBar from '../../src/components/LeftSidebar/LeftSidebar';
 import CreateTableModal from '../../src/components/CreateTableModal/CreateTableModal';
+import produce from 'immer';
 import { useRouter } from 'next/router';
 import '../../src/utils/Types';
 import { ContextMenu, MenuItem, ContextMenuTrigger } from 'react-contextmenu';
@@ -71,9 +72,10 @@ export default function Database() {
    */
 
   function tableDndDetailsHandler(newTableDndDetails) {
-    const newDatabase = { ...database };
-    newDatabase.modifiedAt = new Date();
-    newDatabase.tableDndDetails = newTableDndDetails;
+    const newDatabase = produce(database, (draft) => {
+      draft.modifiedAt = new Date();
+      draft.tableDndDetails = newTableDndDetails;
+    });
     setDatabase(newDatabase);
   }
 
@@ -82,10 +84,11 @@ export default function Database() {
    * @param {newTableDndDetails[]} newTableDndDetails
    */
   function tableDndAndMainHandler(newMainTableDetails, newTableDndDetails) {
-    const newDatabase = cloneDeep(database);
-    newDatabase.modifiedAt = new Date();
-    newDatabase.tableDndDetails = newTableDndDetails;
-    newDatabase.mainTableDetails = newMainTableDetails;
+    const newDatabase = produce(database, (draft) => {
+      draft.modifiedAt = new Date();
+      draft.tableDndDetails = newTableDndDetails;
+      draft.mainTableDetails = newMainTableDetails;
+    });
     setDatabase(newDatabase);
   }
 
@@ -96,15 +99,17 @@ export default function Database() {
     updateShowModal(false);
   }
   function mainTableDetailsChangeHandler(newMainTableDetails) {
-    const newDatabase = { ...database };
-    newDatabase.modifiedAt = new Date();
-    newDatabase.mainTableDetails = newMainTableDetails;
+    const newDatabase = produce(database, (draft) => {
+      draft.modifiedAt = new Date();
+      draft.mainTableDetails = newMainTableDetails;
+    });
     setDatabase(newDatabase);
   }
   function databseNameChangeHandler(newDatabaseName) {
-    const newDatabase = { ...database };
-    newDatabase.modifiedAt = new Date();
-    newDatabase.databaseName = newDatabaseName;
+    const newDatabase = produce(database, (draft) => {
+      draft.modifiedAt = new Date();
+      draft.databaseName = newDatabaseName;
+    });
     setDatabase(newDatabase);
   }
 
@@ -116,10 +121,11 @@ export default function Database() {
     updateShowModal(false);
     const newDetails = [...database.mainTableDetails, newMainTableDetail];
     const newDndDetails = [...database.tableDndDetails, newTable];
-    const newDatabase = { ...database };
-    newDatabase.modifiedAt = new Date();
-    newDatabase.tableDndDetails = newDndDetails;
-    newDatabase.mainTableDetails = newDetails;
+    const newDatabase = produce(database, (draft) => {
+      draft.modifiedAt = new Date();
+      draft.tableDndDetails = newDndDetails;
+      draft.mainTableDetails = newDetails;
+    });
     setDatabase(newDatabase);
   }
 
@@ -296,9 +302,10 @@ export default function Database() {
   }
 
   function rightSideBarAfterConfirmOrDelete(newMainTableDetails) {
-    const newDatabase = { ...database };
-    newDatabase.modifiedAt = new Date();
-    newDatabase.mainTableDetails = newMainTableDetails;
+    const newDatabase = produce(database, (draft) => {
+      draft.modifiedAt = new Date();
+      draft.mainTableDetails = newMainTableDetails;
+    });
     setDatabase(newDatabase);
     cleanupRightSidebar();
   }
@@ -378,10 +385,10 @@ export default function Database() {
         delete attrObj.isPRIMARYKEY;
       }
     });
-
-    const newDatabase = { ...database };
-    newDatabase.modifiedAt = new Date();
-    newDatabase.mainTableDetails = newMainTableDetails;
+    const newDatabase = produce(database, (draft) => {
+      draft.modifiedAt = new Date();
+      draft.mainTableDetails = newMainTableDetails;
+    });
     setDatabase(newDatabase);
     cleanupRightSidebar();
   }
@@ -408,9 +415,10 @@ export default function Database() {
         },
       );
     });
-    const newDatabase = { ...database };
-    newDatabase.modifiedAt = new Date();
-    newDatabase.mainTableDetails = newMainTableDetails;
+    const newDatabase = produce(database, (draft) => {
+      draft.modifiedAt = new Date();
+      draft.mainTableDetails = newMainTableDetails;
+    });
     setDatabase(newDatabase);
     cleanupRightSidebar();
   }
@@ -424,8 +432,10 @@ export default function Database() {
     newMainTableDetails[tableIndex].attributes.forEach((attrObj) => {
       delete attrObj.isPRIMARYKEY;
     });
-    const newDatabase = { ...database };
-    newDatabase.modifiedAt = new Date();
+    const newDatabase = produce(database, (draft) => {
+      draft.modifiedAt = new Date();
+      draft.mainTableDetails = newMainTableDetails;
+    });
     newDatabase.mainTableDetails = newMainTableDetails;
     setDatabase(newDatabase);
     cleanupRightSidebar();

@@ -3,9 +3,9 @@ import Button from '../../UI/Button/Button';
 import Input from '../../UI/Input/Input';
 import { constraintError } from '../../../utils/helper-function/constraintError';
 import Styles from './EditCheckConstraint.module.scss';
-import cloneDeep from 'clone-deep';
 const parser = require('js-sql-parser');
 import DeleteConstraintModal from '../DeleteConstraintModal/DeleteConstraintModal';
+import produce from 'immer';
 /**
  * @param {{
  * onRightSideBarAfterConfirmOrDelete:Function,
@@ -127,37 +127,36 @@ function EditCheckConstraint({
     } else {
       finalConstraintName = checkConstraintName;
     }
-    const newMainTableDetails = cloneDeep(mainTableDetails);
-    const tableIndex = newMainTableDetails.findIndex(
-      (givenTable) => givenTable.id === table.id,
-    );
-    const constraintIndex = newMainTableDetails[
-      tableIndex
-    ].tableLevelConstraint?.CHECK.findIndex((checkObj) => {
-      return checkObj.constraintName === initialCheckConstraintName;
+    const newMainTableDetails = produce(mainTableDetails, (draft) => {
+      const tableIndex = draft.findIndex(
+        (givenTable) => givenTable.id === table.id,
+      );
+      const constraintIndex = draft[
+        tableIndex
+      ].tableLevelConstraint?.CHECK.findIndex((checkObj) => {
+        return checkObj.constraintName === initialCheckConstraintName;
+      });
+      draft[tableIndex].tableLevelConstraint.CHECK[constraintIndex] = {
+        constraintName: finalConstraintName,
+        AST: parser.parse(`select * from boom WHERE (${checkExpr})`),
+      };
     });
-    newMainTableDetails[tableIndex].tableLevelConstraint.CHECK[
-      constraintIndex
-    ] = {
-      constraintName: finalConstraintName,
-      AST: parser.parse(`select * from boom WHERE (${checkExpr})`),
-    };
+
     onRightSideBarAfterConfirmOrDelete(newMainTableDetails);
   }
   function deleteCheckConstraintClickHandler() {
-    const newMainTableDetails = cloneDeep(mainTableDetails);
-    const tableIndex = newMainTableDetails.findIndex(
-      (givenTable) => givenTable.id === table.id,
-    );
-    const constraintIndex = newMainTableDetails[
-      tableIndex
-    ].tableLevelConstraint?.CHECK.findIndex((checkObj) => {
-      return checkObj.constraintName === checkConstraintName;
+    const newMainTableDetails = produce(mainTableDetails, (draft) => {
+      const tableIndex = draft.findIndex(
+        (givenTable) => givenTable.id === table.id,
+      );
+      const constraintIndex = draft[
+        tableIndex
+      ].tableLevelConstraint?.CHECK.findIndex((checkObj) => {
+        return checkObj.constraintName === checkConstraintName;
+      });
+      draft[tableIndex].tableLevelConstraint.CHECK.splice(constraintIndex, 1);
     });
-    newMainTableDetails[tableIndex].tableLevelConstraint.CHECK.splice(
-      constraintIndex,
-      1,
-    );
+
     onRightSideBarAfterConfirmOrDelete(newMainTableDetails);
   }
   return (
