@@ -18,19 +18,15 @@ import Styles from './Button.module.scss';
  * @param {buttonRefType} ref
  */
 
-function Button(
-  {
-    children,
-    primary,
-    secondary,
-    darkPrimary,
-    danger,
-    dimension = 'medium',
-    inverted,
-    ...props
-  },
-  ref,
-) {
+function Button({
+  children,
+  secondary,
+  darkPrimary,
+  danger,
+  dimension = 'medium',
+  inverted,
+  ...props
+}) {
   const classes = [Styles.button];
 
   switch (dimension) {

@@ -57,15 +57,15 @@ export function code(mainTableDetails) {
     const tableArr = [];
     table.attributes.forEach((attrObj) => {
       tableArr.push(
-        `\n${attrObj.name} ${attrObj.dataType}${
+        `\n${attrObj.name} ${attrObj.dataType} ${
           attrObj.size
             ? attrObj.precision
-              ? `(${attrObj.size},${attrObj.precision}) `
-              : `(${attrObj.size}) `
+              ? `( ${attrObj.size}, ${attrObj.precision}) `
+              : ` (${attrObj.size}) `
             : ''
         }${attrObj.isNOTNULL ? 'NOT NULL ' : ''}${
-          attrObj.isUNIQUE ? 'UNIQUE ' : ''
-        }${attrObj.isAUTOINCREMENT ? 'AUTO_INCREMENT ' : ''}${
+          attrObj.isUNIQUE ? ' UNIQUE ' : ''
+        }${attrObj.isAUTOINCREMENT ? ' AUTO_INCREMENT ' : ''}${
           attrObj.DEFAULT ? ` DEFAULT ${attrObj.DEFAULT}` : ''
         },`,
       );

@@ -19,7 +19,7 @@ import Styles from './Input.module.scss';
  * usingFor:("Modal"|"sidebar")
  * label:string,
  * secondary:boolean,
- * primary:boolean,
+ * primary?:boolean,
  * dimension:("small"|"medium"|"large"|"huge"),
  * error:boolean,
  * errorMessage:string
@@ -131,7 +131,8 @@ function Input(
                 : dimension === 'large'
                 ? { fontSize: '20px' }
                 : null
-            }>
+            }
+          >
             {label}
           </span>
         </label>
