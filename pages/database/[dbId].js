@@ -548,6 +548,7 @@ export default function Database() {
             onRowClicked={explorerItemClickHandler}
             onTableDndAndMainChange={tableDndAndMainHandler}
             onForeignArrowClicked={explorerItemClickHandler}
+            database={database}
           />
           {showRightSidebar && (
             <RightSideBar
@@ -598,6 +599,7 @@ export default function Database() {
               }
               foreignRadio={radioArray}
               onForeignRadioChange={setRadioArray}
+              database={database}
             />
           )}
         </div>
@@ -612,7 +614,8 @@ export default function Database() {
         </MenuItem>
         <MenuItem
           onClick={() => code(database.mainTableDetails)}
-          className={'menuItem'}>
+          className={'menuItem'}
+        >
           export as code
           <span className={'shrotcut'}>alt + c</span>
         </MenuItem>

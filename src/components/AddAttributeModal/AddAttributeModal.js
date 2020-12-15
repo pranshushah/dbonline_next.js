@@ -1,3 +1,4 @@
+/* eslint-disable no-empty */
 import React, { useState, useEffect, useReducer } from 'react';
 import Modal from '../UI/Modal/Modal';
 import Input from '../UI/Input/Input';
@@ -29,14 +30,16 @@ import { oracleBanned } from '../../utils/helper-function/OracleBannedWords';
 import { useCheckExpr } from '../../utils/customHooks/useCheckExpr';
 const parser = require('js-sql-parser');
 
-/** @param {{
+/**
+ * @param {{
  * showModalState:boolean,
  * onModalConfirmed:Function,
  * onModalClosed:Function,
  * tableName:string,
  * allTableDndDetails:tableDndDetailsObj[],
  * mainTableDetails:mainTableDetailsType[],
- * givenTable:mainTableDetailsType
+ * givenTable:mainTableDetailsType,
+ * database:databaseType
  * }} props
  */
 function AddAttributeModal({
@@ -45,6 +48,7 @@ function AddAttributeModal({
   mainTableDetails,
   onModalConfirmed,
   givenTable,
+  database,
 }) {
   const [state, dispatch] = useReducer(AddAttributeReducer, AddObjModal);
   const [foreignRadioArray, setForeignRadioArray, radioReset] = useRadio(
@@ -519,7 +523,8 @@ function AddAttributeModal({
       confirmDisabled={modalError}
       title={`Add Attribute to ${givenTable.tableName}`}
       modalConfirmed={modalConfirmHandler}
-      modalClosed={ModalCloseHandler}>
+      modalClosed={ModalCloseHandler}
+    >
       <div className={Styles.container}>
         <Input
           label='Attribute Name'
@@ -535,6 +540,7 @@ function AddAttributeModal({
         <div className={Styles.dataTypeContainer}>
           <div style={{ width: '35%', marginRight: '8px' }}>
             <DataTypeDropDown
+              database={database}
               selectedValue={selectedDataType}
               onNewDataSelected={dataTypeSelectedHandler}
             />

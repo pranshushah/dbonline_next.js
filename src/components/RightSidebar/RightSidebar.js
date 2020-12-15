@@ -46,7 +46,8 @@ import EditAttribute from './EditAttribute/EditAttribute';
  * onDefaultValueChange:Function,
  * onRightSideBarAfterConfirmOrDelete:Function,
  * onForeignRadioChange:Function,
- * foreignRadio:Array
+ * foreignRadio:Array,
+ * database:databaseType,
  * }} props
  */
 
@@ -91,6 +92,7 @@ function SideBar({
   onRightSideBarAfterConfirmOrDelete,
   onForeignRadioChange,
   foreignRadio,
+  database,
 }) {
   const [width, setWidth] = useState(300);
 
@@ -113,7 +115,8 @@ function SideBar({
         bottomRight: false,
         bottomLeft: false,
         topLeft: false,
-      }}>
+      }}
+    >
       <div className={Styles.container}>
         <div className={Styles.close} onClick={onCancel} />
         <div className={Styles.contentContainer}>
@@ -202,6 +205,7 @@ function SideBar({
               onRightSideBarAfterConfirmOrDelete={
                 onRightSideBarAfterConfirmOrDelete
               }
+              database={database}
               mainTableDetails={mainTableDetails}
             />
           )}

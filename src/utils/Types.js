@@ -3,6 +3,10 @@
  */
 
 /**
+ * @typedef {("oracle" | "postgresql" | "mysql")} sqlType
+ */
+
+/**
  * @typedef {object} tableDndDetailsObj
  * @property {number} top
  * @property {number} left
@@ -79,6 +83,5 @@
  * @property {tableDndDetailsObj[]} tableDndDetails
  * @property {Date} createdAt
  * @property {Date} modifiedAt
- * @property {boolean} isSqlDatabase
- * @property {string} databaseType
+ * @property {sqlType} databaseType
  */

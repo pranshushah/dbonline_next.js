@@ -3,7 +3,7 @@ import Button from '../../UI/Button/Button';
 import Input from '../../UI/Input/Input';
 import Styles from './EditAttribute.module.scss';
 import { oracleBanned } from '../../../utils/helper-function/OracleBannedWords';
-import { dataTypes } from '../../../utils/attributeDataTypes';
+import { getDataTypeList } from '../../../utils/helper-function/getDataType';
 import { columnConstraintCheckboxList } from '../../../utils/checkedItemsForAddAttr';
 import ConstraintCheckBoxContainer from '../../AddAttributeModal/constraintCheckboxContainer';
 import DeleteAttrModal from '../../DeleteAttrModal/DeleteAttrModal';
@@ -35,6 +35,7 @@ import Select from 'react-select';
  * onDefaultValueChange:Function,
  * onRightSideBarAfterConfirmOrDelete:Function,
  * mainTableDetails:mainTableDetailsType[],
+ * database:databaseType
  * }} props
  */
 
@@ -56,6 +57,7 @@ function EditCheckConstraint({
   onDefaultValueChange,
   onRightSideBarAfterConfirmOrDelete,
   mainTableDetails,
+  database,
 }) {
   const [attributeError, setAttributeError] = useState(false);
   const [attributeErrorErrorMessage, setAttributeErrorErrorMessage] = useState(
@@ -304,7 +306,7 @@ function EditCheckConstraint({
         <Select
           value={dataType}
           styles={customStyles}
-          options={dataTypes}
+          options={getDataTypeList(database)}
           placeholder='Select DataType'
           onChange={onDataTypeChange}
         />
@@ -384,7 +386,8 @@ function EditCheckConstraint({
             onClick={confirmAttributeClickHandler}
             className={Styles.button}
             darkPrimary
-            disabled={containerError}>
+            disabled={containerError}
+          >
             Confirm
           </Button>
         </div>

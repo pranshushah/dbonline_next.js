@@ -1,11 +1,11 @@
 import React from 'react';
-import { dataTypes } from '../../utils/attributeDataTypes';
 import Select from 'react-select';
+import { getDataTypeList } from '../../utils/helper-function/getDataType';
 import { customStyles } from '../../utils/selectStyle';
 /**
- * @param {{onNewDataSelected:Function,selectedValue:string}} props
+ * @param {{onNewDataSelected:Function,selectedValue:string,database:databaseType}} props
  */
-function DataTypeDropDown({ onNewDataSelected, selectedValue }) {
+function DataTypeDropDown({ onNewDataSelected, selectedValue, database }) {
   function changeHandler(value) {
     onNewDataSelected(value.value);
   }
@@ -16,7 +16,7 @@ function DataTypeDropDown({ onNewDataSelected, selectedValue }) {
           selectedValue ? { label: selectedValue, value: selectedValue } : null
         }
         styles={customStyles}
-        options={dataTypes}
+        options={getDataTypeList(database)}
         placeholder='Select DataType'
         onChange={changeHandler}
       />

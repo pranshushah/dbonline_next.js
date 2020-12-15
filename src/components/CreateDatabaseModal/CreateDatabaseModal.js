@@ -7,16 +7,11 @@ import Styles from './CreateDatabaseModal.module.scss';
 import { set } from 'idb-keyval';
 import { useRouter } from 'next/router';
 import uuid from 'uuid/v1';
-import databaseConstant from '../../utils/constant/databaseTypes';
 const RandExp = require('randexp');
 
-import {
-  dataTypesRadioList,
-  sqlDatabaseRadioList,
-} from '../../utils/CreateDatabaseRadioList';
+import { sqlDatabaseRadioList } from '../../utils/CreateDatabaseRadioList';
 export default function CreateDatabaseModal({ show, modalCancel }) {
   const [inputValue, setInputValue] = useState('');
-  const [databaseRadio, setDatabaseRadio] = useRadio(dataTypesRadioList);
   const [sqlRadio, setSqlRadio] = useRadio(sqlDatabaseRadioList);
   const router = useRouter();
   const reg = /^[a-zA-Z_$][0-9a-zA-Z_$]*$/; // regex for valid dataabse name
@@ -52,11 +47,6 @@ export default function CreateDatabaseModal({ show, modalCancel }) {
       tableDndDetails: [],
       createdAt: date,
       modifiedAt: date,
-      isSqlDatabase: databaseRadio.some(
-        (radioObj) => radioObj.value === databaseConstant.SQL,
-      )
-        ? true
-        : false,
       databaseType: getDatabaseVariant(),
     };
     set(id, databaseObj).then(() => {
@@ -90,7 +80,8 @@ export default function CreateDatabaseModal({ show, modalCancel }) {
       modalClosed={modalCancel}
       modalConfirmed={confirmHandler}
       canConfirm
-      title='Please Select database'>
+      title='Please Select database'
+    >
       <div className={Styles.container}>
         <Input
           onChange={inputValueChangeHandler}
@@ -99,15 +90,6 @@ export default function CreateDatabaseModal({ show, modalCancel }) {
           label='database name'
           autoFocus
         />
-        <div className={Styles.radioContainer}>
-          <h1 className={Styles.header}>Select Database type</h1>
-          <Radio
-            valueObjectArray={databaseRadio}
-            nameForRadioContainer='database'
-            onChange={setDatabaseRadio}
-            inLine
-          />
-        </div>
         <div className={Styles.radioContainer}>
           <h1 className={Styles.header}>Select sql database type </h1>
           <Radio

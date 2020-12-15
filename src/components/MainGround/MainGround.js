@@ -22,7 +22,8 @@ import produce from 'immer';
  * onMainTableDetailsChange:Function,
  * onRowClicked:Function,
  * onForeignArrowClicked:Function,
- * onTableDndAndMainChange:Function
+ * onTableDndAndMainChange:Function,
+ * database:databaseType
  * }} props
  */
 function MainGround({
@@ -34,6 +35,7 @@ function MainGround({
   onTableDndDetailsChange,
   onMainTableDetailsChange,
   onForeignArrowClicked,
+  database,
 }) {
   /**
    * @param {tableDndDetailsObj} item
@@ -282,7 +284,8 @@ function MainGround({
             moveTable={moveTable}
             tableDndDetail={tableDndDetail}
             onEditClick={editTableHandler}
-            onDeleteClick={deleteTableHandler}>
+            onDeleteClick={deleteTableHandler}
+          >
             <MainTable
               mainTableDetails={mainTableDetails}
               tableName={tableDndDetail.tableName}
@@ -292,7 +295,8 @@ function MainGround({
             <AddAttributeLink
               tableDndDetail={tableDndDetail}
               onClick={AddAttributeLinkClickHandler}
-              fontColor={tableDndDetail.color}>
+              fontColor={tableDndDetail.color}
+            >
               Add Attribute
             </AddAttributeLink>
           </TableContainer>
@@ -314,6 +318,7 @@ function MainGround({
             allTableDndDetails={tableDndDetails}
             mainTableDetails={mainTableDetails}
             givenTable={selectedTableDetailsForAddModal}
+            database={database}
           />
         )}
         {showDeleteTableModal && (
