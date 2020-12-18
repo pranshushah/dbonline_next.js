@@ -1,4 +1,5 @@
-export function oracleSizeError(str) {
+import '../Types';
+function oracleSizeError(str) {
   if (str === 'VARCHAR2' || str === 'NVARCHAR2' || str === 'RAW') {
     return true;
   } else {
@@ -6,7 +7,7 @@ export function oracleSizeError(str) {
   }
 }
 
-export function oracleHasSize(str) {
+function oracleHasSize(str) {
   if (
     str === 'CHAR' ||
     str === 'NCHAR' ||
@@ -21,7 +22,7 @@ export function oracleHasSize(str) {
   }
 }
 
-export function oracleHasPre(str) {
+function oracleHasPre(str) {
   if (str === 'NUMBER') {
     return true;
   } else {
@@ -29,7 +30,7 @@ export function oracleHasPre(str) {
   }
 }
 
-export function mysqlSize(str) {
+function mysqlSize(str) {
   if (
     str === 'CHAR' ||
     str === 'VARCHAR' ||
@@ -45,7 +46,7 @@ export function mysqlSize(str) {
   }
 }
 
-export function mysqlHasPre(str) {
+function mysqlHasPre(str) {
   if (str === 'FLOAT' || str === 'DOUBLE' || str === 'DECIMAL') {
     return true;
   } else {
@@ -53,12 +54,13 @@ export function mysqlHasPre(str) {
   }
 }
 
-export function mySqlSizeError(str) {
+function mySqlSizeError(str) {
   if (
     str === 'CHAR' ||
     str === 'VARCHAR' ||
     str === 'BINARY' ||
-    str === 'VARBINARY'
+    str === 'VARBINARY' ||
+    str === 'DECIMAL'
   ) {
     return true;
   } else {
@@ -66,10 +68,72 @@ export function mySqlSizeError(str) {
   }
 }
 
-export function mySqlPreError(str) {
-  if (str === 'DECIMAL') {
+function postgresSizeError(str) {
+  if (str === 'CHAR' || str === 'VARCHAR') {
     return true;
   } else {
     return false;
+  }
+}
+
+function postgresHasSize(str) {
+  if (
+    str === 'CHAR' ||
+    str === 'VARCHAR' ||
+    str === 'NUMERIC' ||
+    str === 'BIT' ||
+    str === 'BIT VARYING'
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function postgresHasPre(str) {
+  if (str === 'NUMERIC') {
+    return true;
+  } else {
+    return false;
+  }
+}
+/**
+ * @param {databaseType} database
+ * @param {string} str
+ */
+export function getHasSize(database, str) {
+  if (database.databaseType === 'oracle') {
+    return oracleHasSize(str);
+  } else if (database.databaseType === 'mysql') {
+    return mysqlSize(str);
+  } else {
+    return postgresHasSize(str);
+  }
+}
+/**
+ * @param {databaseType} database
+ * @param {string} str
+ */
+export function getSizeError(database, str) {
+  if (database.databaseType === 'oracle') {
+    return oracleSizeError(str);
+  } else if (database.databaseType === 'mysql') {
+    return mySqlSizeError(str);
+  } else {
+    return postgresSizeError(str);
+  }
+}
+
+/**
+ * @param {databaseType} database
+ * @param {string} str
+ */
+export function getHasPre(database, str) {
+  if (database.databaseType === 'oracle') {
+    return oracleHasPre(str);
+  } else if (database.databaseType === 'mysql') {
+    return mysqlHasPre(str);
+  } else {
+    return postgresHasPre(str);
   }
 }

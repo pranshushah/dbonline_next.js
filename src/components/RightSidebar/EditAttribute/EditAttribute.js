@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Button from '../../UI/Button/Button';
 import Input from '../../UI/Input/Input';
 import Styles from './EditAttribute.module.scss';
-import { oracleBanned } from '../../../utils/helper-function/OracleBannedWords';
+import {
+  oracleBanned,
+  postgresql_mysqlBannedWords,
+} from '../../../utils/helper-function/bannedWords';
 import { getDataTypeList } from '../../../utils/helper-function/getDataType';
 import { columnConstraintCheckboxList } from '../../../utils/checkedItemsForAddAttr';
 import ConstraintCheckBoxContainer from '../../AddAttributeModal/constraintCheckboxContainer';
@@ -10,9 +13,9 @@ import DeleteAttrModal from '../../DeleteAttrModal/DeleteAttrModal';
 import { customStyles } from '../../../utils/selectStyle';
 import produce from 'immer';
 import {
-  oracleSizeError,
-  oracleHasPre,
-  oracleHasSize,
+  getHasPre,
+  getHasSize,
+  getSizeError,
 } from '../../../utils/helper-function/size-pre-error';
 import Select from 'react-select';
 
@@ -84,9 +87,14 @@ function EditCheckConstraint({
           setAttributeError(true);
           setAttributeErrorErrorMessage('attribute name already exist');
         } else {
-          const bool = oracleBanned.includes(
-            attributeName.toUpperCase().trim(),
-          );
+          let bool;
+          if (database.databaseType === 'oracle') {
+            bool = oracleBanned.includes(attributeName.toUpperCase().trim());
+          } else {
+            bool = postgresql_mysqlBannedWords.includes(
+              attributeName.toUpperCase().trim(),
+            );
+          }
           if (bool) {
             setAttributeError(true);
             setAttributeErrorErrorMessage('attribute reserved by oracle');
@@ -102,12 +110,12 @@ function EditCheckConstraint({
   }, [attributeName, table, initialAttriuteName]);
 
   useEffect(() => {
-    if (oracleHasPre(dataType.value)) {
+    if (getHasPre(database, dataType.value)) {
       setShowPre(true);
     } else {
       setShowPre(false);
     }
-    if (oracleHasSize(dataType.value)) {
+    if (getHasSize(database, dataType.value)) {
       setShowSize(true);
     } else {
       setShowSize(false);
@@ -119,7 +127,7 @@ function EditCheckConstraint({
   function sizeInputValueChangeHandler(e) {
     const val = e.target.value;
     if (val >= 0) {
-      if (val === '' && oracleSizeError(dataType.value)) {
+      if (val === '' && getSizeError(database, dataType.value)) {
         onSizeInputChange(val);
         setSizeError(true);
         setSizeErrorMessage("size can't be empty");
@@ -321,7 +329,7 @@ function EditCheckConstraint({
             label='size'
             error={sizeError}
             errorMessage={sizeErrorMessage}
-            required={oracleSizeError(dataType.value)}
+            required={getSizeError(database, dataType.value)}
           />
         </div>
       )}

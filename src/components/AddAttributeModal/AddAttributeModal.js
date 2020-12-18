@@ -16,7 +16,7 @@ import { useRadio } from '../../utils/customHooks/useRadio';
 import MultipleUniqueDropDown from './MultipleUniqueDropDown';
 import PrimaryKeyDropDown from './PrimaryDropDown';
 import { randomString } from '../../utils/helper-function/randomString';
-import { oracleSizeError } from '../../utils/helper-function/size-pre-error';
+import { getSizeError } from '../../utils/helper-function/size-pre-error';
 import {
   AddObjModal,
   AddAttributeReducer,
@@ -26,7 +26,10 @@ import {
   columnConstraintCheckboxList,
   getTableLevelCheckboxList,
 } from '../../utils/checkedItemsForAddAttr';
-import { oracleBanned } from '../../utils/helper-function/OracleBannedWords';
+import {
+  oracleBanned,
+  postgresql_mysqlBannedWords,
+} from '../../utils/helper-function/bannedWords';
 import { useCheckExpr } from '../../utils/customHooks/useCheckExpr';
 const parser = require('js-sql-parser');
 
@@ -269,7 +272,12 @@ function AddAttributeModal({
       if (attrIndex > -1) {
         dispatch({ type: 'ATTRIBUTENAME_ALREADY_EXIST', payload: { val } });
       } else {
-        const bool = oracleBanned.includes(val.toUpperCase().trim());
+        let bool;
+        if (database.databaseType === 'oracle') {
+          bool = oracleBanned.includes(val.toUpperCase().trim());
+        } else {
+          bool = postgresql_mysqlBannedWords.includes(val.toUpperCase().trim());
+        }
         if (bool) {
           dispatch({ type: 'ATTRIBUTENAME_IS_BANNED', payload: { val } });
         } else {
@@ -286,7 +294,7 @@ function AddAttributeModal({
   function dataTypeSelectedHandler(value) {
     dispatch({
       type: 'DATATYPE_SELECTED',
-      payload: { value },
+      payload: { value, database },
     });
   }
 
@@ -295,7 +303,7 @@ function AddAttributeModal({
   function sizeInputValueChangeHandler(e) {
     const val = e.target.value;
     if (val >= 0) {
-      if (val === '' && oracleSizeError(selectedDataType)) {
+      if (val === '' && getSizeError(database, selectedDataType)) {
         dispatch({ type: 'EMPTY_SIZE_INPUT', payload: { val } });
       } else {
         dispatch({ type: 'SIZE_INPUT_OK', payload: { val } });
@@ -555,7 +563,7 @@ function AddAttributeModal({
                 error={sizeInputValueDirty && sizeInputValueError}
                 errorMessage={sizeInputValueErrorMessage}
                 dimension='huge'
-                required={oracleSizeError(selectedDataType)}
+                required={getSizeError(database, selectedDataType)}
               />
             </div>
           )}

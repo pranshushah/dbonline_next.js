@@ -104,3 +104,113 @@ export const mysqlDataTypes = [
     options: mysqlSpatialDataType,
   },
 ];
+
+const postgreSqlBooleanType = [{ label: 'BOOLEAN', value: 'BOOLEAN' }];
+
+const postgreSqlStringType = [
+  { label: 'CHAR', value: 'CHAR' },
+  { label: 'VARCHAR', value: 'VARCHAR' },
+  { label: 'TEXT', value: 'TEXT' },
+];
+
+const postgresSqlNumericType = [
+  { label: 'SMALLINT', value: 'SMALLINT' },
+  { label: 'INTEGER', value: 'INTEGER' },
+  { label: 'BIGINT', value: 'BIGINT' },
+  { label: 'NUMERIC', value: 'NUMERIC' },
+  { label: 'REAL', value: 'REAL' },
+  { label: 'DOUBLE PRECISION', value: 'DOUBLE PRECISION' },
+  { label: 'SERIAL', value: 'SERIAL' },
+  { label: 'BIGSERIAL', value: 'BIGSERIAL' },
+];
+
+const postgreDateAndTimeTyps = [
+  { label: 'DATE', value: 'DATE' },
+  { label: 'TIME', value: 'TIME' },
+  { label: 'TIMESTAMP', value: 'TIMESTAMP' },
+  { label: 'TIMESTAMPTZ', value: 'TIMESTAMPTZ' },
+  { label: 'INTERVAL', value: 'INTERVAL' },
+];
+
+const postgresGeoTypes = [
+  { label: 'POINT', value: 'POINT' },
+  { label: 'LINE', value: 'LINE' },
+  { label: 'LSEG', value: 'LSEG' },
+  { label: 'BOX', value: 'BOX' },
+  { label: 'PATH', value: 'PATH' },
+  { label: 'CIRCLE', value: 'CIRCLE' },
+  { label: 'POLYGON', value: 'POLYGON' },
+];
+
+const postgresUUID = [{ label: 'UUID', value: 'UUID' }];
+const postgresMoney = [{ label: 'MONEY', value: 'MONEY' }];
+
+const postgresRangeTypes = [
+  { label: 'INT4RANGE', value: 'INT4RANGE' },
+  { label: 'INT8RANGE', value: 'INT8RANGE' },
+  { label: 'NUMRANGE', value: 'NUMRANGE' },
+  { label: 'TSRANGE', value: 'TSRANGE' },
+  { label: 'TSTZRANGE', value: 'TSTZRANGE' },
+  { label: 'DATERANGE', value: 'DATERANGE' },
+];
+
+const postgresNetworkTypes = [
+  { label: 'CIDR', value: 'CIDR' },
+  { label: 'INET', value: 'INET' },
+  { label: 'MACADDR', value: 'MACADDR' },
+  { label: 'MACADDR8', value: 'MACADDR8' },
+];
+
+const postgresBitStringTypes = [
+  { label: 'BIT', value: 'BIT' },
+  { label: 'BIT VARYING', value: 'BIT VARYING' },
+];
+
+const postgresBinaryTypes = [{ label: 'BYTEA', value: 'BYTEA' }];
+
+export const postgresTypes = [
+  {
+    label: 'string',
+    options: postgreSqlStringType,
+  },
+  {
+    label: 'Numeric',
+    options: postgresSqlNumericType,
+  },
+  {
+    label: 'Date and Time',
+    options: postgreDateAndTimeTyps,
+  },
+  {
+    label: 'Boolean',
+    options: postgreSqlBooleanType,
+  },
+  {
+    label: 'Geo',
+    options: postgresGeoTypes,
+  },
+  {
+    label: 'Ranges',
+    options: postgresRangeTypes,
+  },
+  {
+    label: 'Network',
+    options: postgresNetworkTypes,
+  },
+  {
+    label: 'Bit string',
+    options: postgresBitStringTypes,
+  },
+  {
+    label: 'UUID',
+    options: postgresUUID,
+  },
+  {
+    label: 'Money',
+    options: postgresMoney,
+  },
+  {
+    label: 'Binary',
+    options: postgresBinaryTypes,
+  },
+];

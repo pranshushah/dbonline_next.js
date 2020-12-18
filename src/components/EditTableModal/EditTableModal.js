@@ -3,7 +3,7 @@ import Input from '../../components/UI/Input/Input';
 import Modal from '../../components/UI/Modal/Modal';
 import TableColorPickerList from '../TableColorPickerList/TableColorPickerList';
 import Styles from './EditTableModal.module.scss';
-import { oracleBanned } from '../../utils/helper-function/OracleBannedWords';
+import { oracleBanned } from '../../utils/helper-function/bannedWords';
 import '../../utils/Types';
 /**
  * @param {{showModalState:boolean,
@@ -112,7 +112,8 @@ function EditTableModal({
       canCancel
       confirmDisabled={tableError}
       modalConfirmed={confirmModalHandler}
-      modalClosed={cancelModalHandler}>
+      modalClosed={cancelModalHandler}
+    >
       <div className={Styles.container}>
         <Input
           label='Table Name'

@@ -5,12 +5,16 @@ import TableColorPickerList from '../TableColorPickerList/TableColorPickerList';
 import Modal from '../UI/Modal/Modal';
 import '../../utils/Types';
 import Styles from './CreateTableModal.module.scss';
-import { oracleBanned } from '../../utils/helper-function/OracleBannedWords';
+import {
+  oracleBanned,
+  postgresql_mysqlBannedWords,
+} from '../../utils/helper-function/bannedWords';
 /**
  * @param {{showModalState:boolean,
  * onModalConfirmed:Function,
  * onModalClosed:Function,
- * allMainTableDetails:mainTableDetailsType[]
+ * allMainTableDetails:mainTableDetailsType[],
+ * database:databaseType
  * }} props
  */
 function CreateTableModal({
@@ -18,6 +22,7 @@ function CreateTableModal({
   onModalConfirmed,
   showModalState,
   allMainTableDetails,
+  database,
 }) {
   const [createTableInputValue, setCreateTableInputValue] = useState('');
   const [tableColor, updateTableColor] = useState('rgb(105,105,105)');
@@ -36,12 +41,19 @@ function CreateTableModal({
         (table) => table.tableName === createTableInputValue.trim(),
       );
       if (index === -1) {
-        const bool = oracleBanned.includes(
-          createTableInputValue.toUpperCase().trim(),
-        );
+        let bool;
+        if (database.databaseType === 'oracle') {
+          bool = oracleBanned.includes(
+            createTableInputValue.toUpperCase().trim(),
+          );
+        } else {
+          bool = postgresql_mysqlBannedWords.includes(
+            createTableInputValue.toUpperCase().trim(),
+          );
+        }
         if (bool) {
           setTableError(true);
-          setCreteTableMessage('this is reserved word by oracle');
+          setCreteTableMessage('this is reserved word');
         } else {
           setTableError(false);
         }
@@ -123,7 +135,8 @@ function CreateTableModal({
       canCancel
       modalConfirmed={confirmModalHandler}
       confirmDisabled={tableError}
-      modalClosed={cancelModalHandler}>
+      modalClosed={cancelModalHandler}
+    >
       <div className={[Styles.container, 'keypresss'].join(' ')}>
         <Input
           label='Table Name'

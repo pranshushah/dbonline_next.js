@@ -524,6 +524,7 @@ export default function Database() {
           allMainTableDetails={database.mainTableDetails}
           onModalClosed={cancelCreateTableModalHandler}
           onModalConfirmed={confirmCreateTableModalHandler}
+          database={database}
         />
       )}
       <ContextMenuTrigger id='same_unique_identifier' holdToDisplay={-1}>

@@ -1,7 +1,7 @@
 import {
-  oracleHasPre,
-  oracleHasSize,
-  oracleSizeError,
+  getHasPre,
+  getHasSize,
+  getSizeError,
 } from '../helper-function/size-pre-error';
 export const AddObjModal = {
   AddAttributeInputValue: '',
@@ -63,7 +63,7 @@ export function AddAttributeReducer(state, action) {
         AddAttributeInputValue: action.payload.val,
         attributeValueError: true,
         AddAttributeInputValueDirty: true,
-        AddAttributeInputValueErrorMessage: 'this is reserved word by oracle',
+        AddAttributeInputValueErrorMessage: 'this is reserved word',
       };
     }
     case 'ATTRIBUTENAME_ALL_OK': {
@@ -80,9 +80,18 @@ export function AddAttributeReducer(state, action) {
         ...state,
         selectedDataType: action.payload.value,
         selectDataTypeError: false,
-        showSizeInput: oracleHasSize(action.payload.value),
-        showprecisionAfterDecimalInput: oracleHasPre(action.payload.value),
-        sizeInputValueError: oracleSizeError(action.payload.value),
+        showSizeInput: getHasSize(
+          action.payload.database,
+          action.payload.value,
+        ),
+        showprecisionAfterDecimalInput: getHasPre(
+          action.payload.database,
+          action.payload.value,
+        ),
+        sizeInputValueError: getSizeError(
+          action.payload.database,
+          action.payload.value,
+        ),
         sizeInputValueDirty: false,
         sizeInputValue: '',
         precisionAfterDecimalInputValue: '',
