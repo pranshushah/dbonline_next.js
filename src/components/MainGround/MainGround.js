@@ -213,7 +213,7 @@ function MainGround({
       draft[dndIndex].tableName = newName;
       draft[dndIndex].color = newColor;
     });
-    const newMainTableDetails = produce(tableDndDetails, (draft) => {
+    const newMainTableDetails = produce(mainTableDetails, (draft) => {
       const mainIndex = draft.findIndex(
         (table) =>
           table.tableName === selectedTableDetailsForEditModal.tableName,

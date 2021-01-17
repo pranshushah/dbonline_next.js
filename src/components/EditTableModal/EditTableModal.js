@@ -96,9 +96,9 @@ function EditTableModal({
         }
       }
     }
-    document.addEventListener('keydown', doneOnEnterModalHandler);
-    return function cleanup() {
-      document.removeEventListener('keydown', doneOnEnterModalHandler);
+    document.addEventListener('keyup', doneOnEnterModalHandler);
+    return function cleanupInEditModal() {
+      document.removeEventListener('keyup', doneOnEnterModalHandler);
     };
   }, [tableName, tableError, tableColor]);
 
@@ -133,4 +133,4 @@ function EditTableModal({
     </Modal>
   );
 }
-export default React.memo(EditTableModal);
+export default EditTableModal;
