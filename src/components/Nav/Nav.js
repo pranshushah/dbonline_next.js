@@ -70,7 +70,13 @@ function Nav({ mainTableDetails, ...props }) {
         </NavLink>
         <NavLink text='download'>
           <SubMenuContiainer>
-            <SubNavLink text='export as PDF' shortcut={'ctrl + p'} />
+            <SubNavLink
+              text='export as PDF'
+              onClick={() => {
+                window.print();
+              }}
+              shortcut={'ctrl + p'}
+            />
             <SubNavLink
               text='export as Code'
               onClick={() => code(mainTableDetails)}

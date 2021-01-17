@@ -17,6 +17,7 @@ const TableCard = styled.div`
 
 const TableHeader = styled.h3`
   color: rgb(230, 230, 230);
+  cursor: grabbing;
   width: 100%;
   background: ${(props) => props.bgColor};
   text-align: left;
@@ -25,9 +26,6 @@ const TableHeader = styled.h3`
   letter-spacing: 0.5px;
   height: 15%;
   font-size: 1rem;
-  &:hover {
-    cursor: grab;
-  }
 `;
 
 const TableContentContainer = styled.div`

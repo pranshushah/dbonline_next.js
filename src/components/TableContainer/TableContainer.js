@@ -55,14 +55,16 @@ function TableContainer({
       bounds='main'
       position={{ x: tableDndDetail.left, y: tableDndDetail.top }}
       onStop={dragHandler}
-      onDrag={dragHandler}>
+      onDrag={dragHandler}
+    >
       <TableCard {...props}>
         <div
           style={{
             position: 'relative',
             borderRadius: '4px',
             borderTop: 'none',
-          }}>
+          }}
+        >
           <TableHeader className='.handle' bgColor={tableDndDetail.color}>
             {tableDndDetail.tableName}
           </TableHeader>
