@@ -42,13 +42,12 @@ const AttributeLink = styled.a`
   text-decoration: none;
   text-align: center;
   padding-bottom: 5px;
-  /* color: ${(props) => props.fontColor}; */
-  color:rgb(220, 220, 220);
-  font-weight:600;
+  color: rgb(220, 220, 220);
+  font-weight: 600;
   cursor: pointer;
-  transition:0.1s all ease;
-  &:hover{
-    opacity:0.8;  
+  transition: 0.1s all ease;
+  &:hover {
+    opacity: 0.8;
   }
 `;
 

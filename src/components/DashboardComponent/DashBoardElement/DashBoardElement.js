@@ -15,7 +15,8 @@ export default function DashBoardElement({ databaseObj }) {
       tabIndex='0'
       role='button'
       className={Styles.container}
-      onClick={DatabaseClickHandler}>
+      onClick={DatabaseClickHandler}
+    >
       <span className={Styles.databaseName}>{databaseObj.databaseName}</span>
       <span className={Styles.created}>{`Created ${format(
         databaseObj.createdAt,
@@ -23,9 +24,6 @@ export default function DashBoardElement({ databaseObj }) {
       <span className={Styles.modified}>{`Modified ${format(
         databaseObj.modifiedAt,
       )}`}</span>
-      <span className={Styles.sql}>
-        {databaseObj.isSqlDatabase ? 'SQL' : 'NO-SQL'}
-      </span>
       <span className={Styles.type}>{databaseObj.databaseType}</span>
     </button>
   );

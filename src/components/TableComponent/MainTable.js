@@ -77,7 +77,8 @@ function MainTable({ mainTableDetails, tableName, onRowClicked }) {
         height={tableData.length * 27}
         disableHeader
         width={tableWidth}
-        rowHeight={25}>
+        rowHeight={25}
+      >
         <Column
           label='primary'
           dataKey='isPrimaryKey'

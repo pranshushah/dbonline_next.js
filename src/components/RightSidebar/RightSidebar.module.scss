@@ -22,6 +22,11 @@
     transform: scale(1.05);
     opacity: 0.9;
   }
+  @media print {
+    & {
+      display: none;
+    }
+  }
 }
 
 .contentContainer {

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useReducer } from 'react';
 import Nav from '../../src/components/Nav/Nav';
+import { useRecoilState } from 'recoil';
+import { databaseState } from '../../src/atoms/databaseAtom';
 import MainGround from '../../src/components/MainGround/MainGround';
 import RightSideBar from '../../src/components/RightSidebar/RightSidebar';
 import LeftSideBar from '../../src/components/LeftSidebar/LeftSidebar';
@@ -8,7 +10,6 @@ import produce from 'immer';
 import { useRouter } from 'next/router';
 import '../../src/utils/Types';
 import { ContextMenu, MenuItem, ContextMenuTrigger } from 'react-contextmenu';
-import { useIdb } from '../../src/utils/customHooks/useIndexDb';
 import { useRadio } from '../../src/utils/customHooks/useRadio';
 import { code } from '../../src/utils/helper-function/createCode';
 import { EXPLORERCONSTANT } from '../../src/utils/constant/explorer';
@@ -59,13 +60,7 @@ export default function Database() {
   const router = useRouter();
   const { dbId } = router.query;
   const [radioArray, setRadioArray, , setInitialRadioArray] = useRadio();
-  /**
-   *@type {[databaseType,Function]} database
-   */
-  const [database, setDatabase] = useIdb(
-    { databaseName: '', mainTableDetails: [], tableDndDetails: [] },
-    dbId,
-  );
+  const [database, setDatabase] = useRecoilState(databaseState(dbId));
 
   /**
    * @param {tableDndDetailsObj[]} newTableDndDetails

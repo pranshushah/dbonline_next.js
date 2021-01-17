@@ -21,6 +21,8 @@ import {
   AddObjModal,
   AddAttributeReducer,
 } from '../../utils/reducers/AddAttributeReducer';
+import { useRouter } from 'next/router';
+
 import {
   foreignConstraintRadioList,
   columnConstraintCheckboxList,
@@ -31,6 +33,8 @@ import {
   postgresql_mysqlBannedWords,
 } from '../../utils/helper-function/bannedWords';
 import { useCheckExpr } from '../../utils/customHooks/useCheckExpr';
+import { useRecoilValue } from 'recoil';
+import { databaseState } from '../../atoms/databaseAtom';
 const parser = require('js-sql-parser');
 
 /**
@@ -51,8 +55,10 @@ function AddAttributeModal({
   mainTableDetails,
   onModalConfirmed,
   givenTable,
-  database,
 }) {
+  const router = useRouter();
+  const { dbId } = router.query;
+  const database = useRecoilValue(databaseState(dbId));
   const [state, dispatch] = useReducer(AddAttributeReducer, AddObjModal);
   const [foreignRadioArray, setForeignRadioArray, radioReset] = useRadio(
     foreignConstraintRadioList,
