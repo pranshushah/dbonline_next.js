@@ -1,4 +1,4 @@
-import HomePage from '../src/components/HomePage/HomePage';
+import HomePage from '../src/client/components/HomePage/HomePage';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { keys } from 'idb-keyval';

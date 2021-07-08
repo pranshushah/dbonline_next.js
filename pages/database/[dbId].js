@@ -1,22 +1,22 @@
 import React, { useState, useEffect, useReducer } from 'react';
-import Nav from '../../src/components/Nav/Nav';
+import Nav from '../../src/client/components/Nav/Nav';
 import { useRecoilState } from 'recoil';
-import { databaseState } from '../../src/atoms/databaseAtom';
-import MainGround from '../../src/components/MainGround/MainGround';
-import RightSideBar from '../../src/components/RightSidebar/RightSidebar';
-import LeftSideBar from '../../src/components/LeftSidebar/LeftSidebar';
-import CreateTableModal from '../../src/components/CreateTableModal/CreateTableModal';
+import { databaseState } from '../../src/client/atoms/databaseAtom';
+import MainGround from '../../src/client/components/MainGround/MainGround';
+import RightSideBar from '../../src/client/components/RightSidebar/RightSidebar';
+import LeftSideBar from '../../src/client/components/LeftSidebar/LeftSidebar';
+import CreateTableModal from '../../src/client/components/CreateTableModal/CreateTableModal';
 import produce from 'immer';
 import { useRouter } from 'next/router';
 import '../../src/utils/Types';
 import { ContextMenu, MenuItem, ContextMenuTrigger } from 'react-contextmenu';
-import { useRadio } from '../../src/utils/customHooks/useRadio';
-import { code } from '../../src/utils/helper-function/createCode';
-import { EXPLORERCONSTANT } from '../../src/utils/constant/explorer';
+import { useRadio } from '../../src/client/utils/customHooks/useRadio';
+import { code } from '../../src/client/utils/helper-function/createCode';
+import { EXPLORERCONSTANT } from '../../src/client/utils/constant/explorer';
 import {
   defaultRightSidebarState,
   rightSidebarReducer,
-} from '../../src/utils/reducers/AppReducer';
+} from '../../src/client/utils/reducers/AppReducer';
 import cloneDeep from 'clone-deep';
 const parser = require('js-sql-parser');
 
@@ -40,10 +40,8 @@ export default function Database() {
     selectedAttributeName,
   } = state;
   const [tempConstraintName, setTempConstraintName] = useState('');
-  const [
-    tempCheckConstraintExpression,
-    setTempCheckConstraintExpression,
-  ] = useState({});
+  const [tempCheckConstraintExpression, setTempCheckConstraintExpression] =
+    useState({});
   const [tempMultiSelect, setTempMultiSelect] = useState([]);
   const [tempSingleSelect, setTempSingleSelect] = useState({});
   const [referencingTable, setReferencingTable] = useState({});
@@ -161,9 +159,10 @@ export default function Database() {
       }
       case EXPLORERCONSTANT.UNIQUE: {
         const selectedOptions = [];
-        const uniqueIndex = table.tableLevelConstraint.UNIQUETABLELEVEL.findIndex(
-          (uniqObj) => uniqObj.constraintName === itemObj.constraintName,
-        );
+        const uniqueIndex =
+          table.tableLevelConstraint.UNIQUETABLELEVEL.findIndex(
+            (uniqObj) => uniqObj.constraintName === itemObj.constraintName,
+          );
         table.tableLevelConstraint.UNIQUETABLELEVEL[
           uniqueIndex
         ].attributes.forEach((uid) => {
@@ -404,11 +403,10 @@ export default function Database() {
       tableIndex
     ].tableLevelConstraint.UNIQUETABLELEVEL.splice(constraintIndex, 1);
     newMainTableDetails[tableIndex].attributes.forEach((attrObj) => {
-      attrObj.inTableLevelUniquConstraint = attrObj.inTableLevelUniquConstraint.filter(
-        (unique) => {
+      attrObj.inTableLevelUniquConstraint =
+        attrObj.inTableLevelUniquConstraint.filter((unique) => {
           return unique !== selectedUniqueConstraintName;
-        },
-      );
+        });
     });
     const newDatabase = produce(database, (draft) => {
       draft.modifiedAt = new Date();
