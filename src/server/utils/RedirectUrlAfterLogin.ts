@@ -1,8 +1,8 @@
 /**
- * do not include "/" in url.
+ * start with "/" in url.
  */
 export class RedirectAfterLogin {
-  private static _url = 'dashboard';
+  private static _url = '/dashboard';
 
   static get url(): string {
     return RedirectAfterLogin._url;

@@ -16,9 +16,8 @@ handler.get(
     session: false,
   }),
   (req, res) => {
-    JWT.CREATE_REFRESH_TOKEN(req.user, res);
-    JWT.CREATE_ACCESS_TOKEN(req.user, res);
-    res.redirect(`/${RedirectAfterLogin.url}`);
+    JWT.createAccessAndRefreshToken(req.user, res);
+    res.redirect(`${RedirectAfterLogin.url}`);
   },
 );
 

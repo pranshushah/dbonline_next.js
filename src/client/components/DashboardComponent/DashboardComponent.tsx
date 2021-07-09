@@ -6,16 +6,18 @@ import { useState, useEffect } from 'react';
 import HomeNav from '../HomeNav/HomeNav';
 import DashboardElement from './DashBoardElement/DashBoardElement';
 import produce from 'immer';
-export default function DashboardComponent() {
-  /**
-   *@type {[databaseType[],Function]} databaseArray
-   */
-  const [databaseArray, setDataBaseArray] = useState([]);
-  const [showModal, setShowModal] = useState();
+
+type props = {
+  authenticated: boolean;
+};
+
+export default function DashboardComponent({ authenticated }: props) {
+  const [databaseArray, setDataBaseArray] = useState<databaseType[]>([]);
+  const [showModal, setShowModal] = useState(false);
   useEffect(() => {
     keys().then((keys) => {
       keys.forEach((key) => {
-        get(key).then((val) => {
+        get(key).then((val: databaseType) => {
           setDataBaseArray((databaseArr) =>
             produce(databaseArr, (draft) => {
               draft.push(val);
@@ -34,14 +36,15 @@ export default function DashboardComponent() {
   if (databaseArray.length === 0) {
     return (
       <>
-        <HomeNav />
+        <HomeNav authenticated={authenticated} />
         <div className={Styles.container}>
           <div className={Styles.headerContainer}>
             <span className={Styles.recent}>Recently Used Database</span>
             <button
               tabIndex={0}
               className={Styles.new}
-              onClick={showCreateDatabaseModalHandler}>
+              onClick={showCreateDatabaseModalHandler}
+            >
               + New Database
             </button>
           </div>
@@ -58,14 +61,15 @@ export default function DashboardComponent() {
   } else {
     return (
       <>
-        <HomeNav />
+        <HomeNav authenticated />
         <div className={Styles.container}>
           <div className={Styles.headerContainer}>
             <span className={Styles.recent}>Recently Used Database</span>
             <button
               tabIndex={0}
               className={Styles.new}
-              onClick={showCreateDatabaseModalHandler}>
+              onClick={showCreateDatabaseModalHandler}
+            >
               + New Database
             </button>
           </div>

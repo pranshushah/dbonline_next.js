@@ -6,7 +6,7 @@ import { useRadio } from '../../utils/customHooks/useRadio';
 import Styles from './CreateDatabaseModal.module.scss';
 import { set } from 'idb-keyval';
 import { useRouter } from 'next/router';
-import uuid from 'uuid/v1';
+import { v1 as uuid } from 'uuid';
 const RandExp = require('randexp');
 
 import { sqlDatabaseRadioList } from '../../utils/CreateDatabaseRadioList';

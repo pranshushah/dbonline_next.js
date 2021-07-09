@@ -8,23 +8,22 @@ import Styles from './Button.module.scss';
 
 /**
  * @param {{
- * secondary:boolean,
- * primary:boolean,
+ * secondary?:boolean,
  * darkPrimary:boolean,
  * dimension:("small"|"medium"|"large"|"huge"),
- * danger:boolean,
- * inverted:boolean,
+ * danger?:boolean,
+ * inverted?:boolean,
  * } & buttonProps} props
  * @param {buttonRefType} ref
  */
 
 function Button({
   children,
-  secondary,
+  secondary = false,
   darkPrimary,
-  danger,
+  danger = false,
   dimension = 'medium',
-  inverted,
+  inverted = false,
   ...props
 }) {
   const classes = [Styles.button];

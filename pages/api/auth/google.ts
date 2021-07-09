@@ -33,11 +33,10 @@ async function googleDetailsCallback(
         id: updatedUser.id,
         email: updatedUser.email,
         name: updatedUser.name,
-        photo: updatedUser.photo,
         tokenVersion: updatedUser.tokenVersion,
       });
     } else {
-      const { googleId, ...newUser } = await prisma.user.create({
+      const { googleId, photo, ...newUser } = await prisma.user.create({
         data: {
           googleId: id,
           name,

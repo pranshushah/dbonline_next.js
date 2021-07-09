@@ -3,7 +3,11 @@ import Nav from '../HomeNav/HomeNav';
 import Styles from './HomePage.module.scss';
 import Button from '../UI/Button/Button';
 import CreatedatabaseModal from '../CreateDatabaseModal/CreateDatabaseModal';
-export default function HomePage() {
+
+type props = {
+  authenticated: boolean;
+};
+function HomePage({ authenticated }: props) {
   const [showModal, setShowModal] = useState(false);
 
   function showModalHandler() {
@@ -16,7 +20,7 @@ export default function HomePage() {
 
   return (
     <div className={Styles.container}>
-      <Nav />
+      <Nav authenticated={authenticated} />
       <h1 className={Styles.header}>Design Database Online</h1>
       <p className={Styles.headerContent}>
         create database without writing a single line of code
@@ -31,7 +35,8 @@ export default function HomePage() {
           darkPrimary
           dimension='medium'
           tabIndex={1}
-          onClick={showModalHandler}>
+          onClick={showModalHandler}
+        >
           CREATE DATABASE FOR FREE
         </Button>
       </div>
@@ -42,3 +47,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+export default React.memo(HomePage);

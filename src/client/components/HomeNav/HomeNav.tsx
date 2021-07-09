@@ -5,16 +5,19 @@ import NavLogo from '../UI/Navbar/NavLogo/NavLogo';
 import NavLinksContainer from '../UI/Navbar/NavLinksContainer/NavLinksContainer';
 import '../../utils/Types';
 
-/**
- * @param {{}} props
- */
-
-function Nav() {
+type props = {
+  authenticated: boolean;
+};
+function Nav({ authenticated }: props) {
   return (
     <NavbarContainer dark>
       <NavLogo text='DB ONLINE' />
       <NavLinksContainer>
-        <NavLink text='Documation' link='/documation' dark />
+        <NavLink
+          text={authenticated ? 'Log out' : 'Sing in'}
+          link={authenticated ? '/logout' : '/api/auth/google'}
+          dark
+        />
         <NavLink text='Dashboard' link='/dashboard' dark />
       </NavLinksContainer>
     </NavbarContainer>

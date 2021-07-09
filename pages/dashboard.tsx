@@ -1,11 +1,24 @@
 import DashboardComponent from '../src/client/components/DashboardComponent/DashboardComponent';
 import { GetServerSidePropsContext } from 'next';
-export default function dashboard() {
-  return <DashboardComponent />;
+import { checkAuthAndIfTokenIsexpiredGiveNewOne } from '../src/server/utils/checkAuthAndIfTokenIsExpiredGivenNewOne';
+
+type props = {
+  authenticated: boolean;
+};
+
+export default function dashboard({ authenticated }: props) {
+  return <DashboardComponent authenticated={authenticated} />;
 }
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
+export async function getServerSideProps({
+  req,
+  res,
+}: GetServerSidePropsContext) {
+  const authenticated = await checkAuthAndIfTokenIsexpiredGiveNewOne(req, res);
+  console.log(authenticated);
   return {
-    props: {}, // will be passed to the page component as props
+    props: {
+      authenticated,
+    },
   };
 }
