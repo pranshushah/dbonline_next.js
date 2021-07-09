@@ -1,0 +1,45 @@
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialActions"]
+}
+
+model User {
+  id                   String         @id @default(uuid())
+  email                String         @unique
+  name                 String
+  photo                String? //url
+  googleId             String         @unique
+  tokenVersion         Int            @default(1) // we will increment the version whenever user gets new refresh token so old tokens will be invalid.
+  originalDatabaseInfo DatabaseInfo[] @relation("database, user originally created")
+  modifiedDatabaseInfo DatabaseInfo[] @relation("database, user created by modifiying other database")
+}
+
+model DatabaseInfo {
+  id                 String          @id @default(uuid())
+  databaseName       String
+  mainTableDetails   Json
+  tableDndDetails    Json
+  databaseType       databaseType
+  createdAt          DateTime
+  modifiedAt         DateTime
+  originalAuthorId   String? // this is optional because if delete the user this will be set to null. 
+  originalAuthor     User?          @relation("database, user originally created", fields: [originalAuthorId], references: [id], onDelete: SetNull)
+  tables             String[]
+  modifiedAutohrId   String? // if you are original creator this will be null
+  modifiedAutohr     User?          @relation("database, user created by modifiying other database", fields: [modifiedAutohrId], references: [id], onDelete: SetNull)
+  views              Int            @default(1)
+  numberOfForks      Int            @default(1)
+}
+
+enum databaseType {
+  oracle
+  postgresql
+  mysql
+}
