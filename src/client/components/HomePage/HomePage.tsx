@@ -4,10 +4,7 @@ import Styles from './HomePage.module.scss';
 import Button from '../UI/Button/Button';
 import CreatedatabaseModal from '../CreateDatabaseModal/CreateDatabaseModal';
 
-type props = {
-  authenticated: boolean;
-};
-function HomePage({ authenticated }: props) {
+function HomePage() {
   const [showModal, setShowModal] = useState(false);
 
   function showModalHandler() {
@@ -20,7 +17,7 @@ function HomePage({ authenticated }: props) {
 
   return (
     <div className={Styles.container}>
-      <Nav authenticated={authenticated} />
+      <Nav />
       <h1 className={Styles.header}>Design Database Online</h1>
       <p className={Styles.headerContent}>
         create database without writing a single line of code

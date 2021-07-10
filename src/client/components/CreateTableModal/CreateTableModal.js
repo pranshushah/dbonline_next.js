@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import uuid from 'uuid/v1';
+import { v1 as uuid } from 'uuid';
 import Input from '../UI/Input/Input';
 import TableColorPickerList from '../TableColorPickerList/TableColorPickerList';
 import Modal from '../UI/Modal/Modal';

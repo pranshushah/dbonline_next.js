@@ -32,8 +32,8 @@ model DatabaseInfo {
   originalAuthorId   String? // this is optional because if delete the user this will be set to null. 
   originalAuthor     User?          @relation("database, user originally created", fields: [originalAuthorId], references: [id], onDelete: SetNull)
   tables             String[]
-  modifiedAutohrId   String? // if you are original creator this will be null
-  modifiedAutohr     User?          @relation("database, user created by modifiying other database", fields: [modifiedAutohrId], references: [id], onDelete: SetNull)
+  authorId   String? // it can be null because if we delete the user 
+  author     User?          @relation("database, user created by modifiying other database", fields: [authorId], references: [id], onDelete: SetNull)
   views              Int            @default(1)
   numberOfForks      Int            @default(1)
 }

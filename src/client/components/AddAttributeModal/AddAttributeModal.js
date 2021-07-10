@@ -7,7 +7,7 @@ import ConstraintCheckBoxContainer from './constraintCheckboxContainer';
 import DataTypeDropDown from './DataTypeDropDown';
 import TableNameDropDown from './SelectTableDropDown';
 import SelectReferencingAttr from './SelectReferencingAttr';
-import uuid from 'uuid/v1';
+import { v1 as uuid } from 'uuid';
 import ConstraintContainer from './ConstriantContainer';
 import Styles from './AddAttribute.module.scss';
 import '../../utils/Types';

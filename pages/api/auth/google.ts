@@ -34,6 +34,7 @@ async function googleDetailsCallback(
         email: updatedUser.email,
         name: updatedUser.name,
         tokenVersion: updatedUser.tokenVersion,
+        isSignup: false,
       });
     } else {
       const { googleId, photo, ...newUser } = await prisma.user.create({
@@ -44,7 +45,7 @@ async function googleDetailsCallback(
           email,
         },
       });
-      done(null, newUser);
+      done(null, { ...newUser, isSignup: true });
     }
   } catch {
     throw new Error('somthing went wrong while getting profile');

@@ -4,11 +4,11 @@ import NavbarContainer from '../UI/Navbar/NavContainer';
 import NavLogo from '../UI/Navbar/NavLogo/NavLogo';
 import NavLinksContainer from '../UI/Navbar/NavLinksContainer/NavLinksContainer';
 import '../../utils/Types';
+import { useRecoilValue } from 'recoil';
+import { authenticatedAtom } from '../../atoms/authenticatedAtom';
 
-type props = {
-  authenticated: boolean;
-};
-function Nav({ authenticated }: props) {
+function Nav() {
+  const authenticated = useRecoilValue(authenticatedAtom);
   return (
     <NavbarContainer dark>
       <NavLogo text='DB ONLINE' />

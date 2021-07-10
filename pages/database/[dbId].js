@@ -8,7 +8,7 @@ import LeftSideBar from '../../src/client/components/LeftSidebar/LeftSidebar';
 import CreateTableModal from '../../src/client/components/CreateTableModal/CreateTableModal';
 import produce from 'immer';
 import { useRouter } from 'next/router';
-import '../../src/utils/Types';
+import '../../src/client/utils/Types';
 import { ContextMenu, MenuItem, ContextMenuTrigger } from 'react-contextmenu';
 import { useRadio } from '../../src/client/utils/customHooks/useRadio';
 import { code } from '../../src/client/utils/helper-function/createCode';

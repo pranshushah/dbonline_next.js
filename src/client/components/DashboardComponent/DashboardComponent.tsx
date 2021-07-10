@@ -7,11 +7,7 @@ import HomeNav from '../HomeNav/HomeNav';
 import DashboardElement from './DashBoardElement/DashBoardElement';
 import produce from 'immer';
 
-type props = {
-  authenticated: boolean;
-};
-
-export default function DashboardComponent({ authenticated }: props) {
+export default function DashboardComponent() {
   const [databaseArray, setDataBaseArray] = useState<databaseType[]>([]);
   const [showModal, setShowModal] = useState(false);
   useEffect(() => {
@@ -36,7 +32,7 @@ export default function DashboardComponent({ authenticated }: props) {
   if (databaseArray.length === 0) {
     return (
       <>
-        <HomeNav authenticated={authenticated} />
+        <HomeNav />
         <div className={Styles.container}>
           <div className={Styles.headerContainer}>
             <span className={Styles.recent}>Recently Used Database</span>
@@ -61,7 +57,7 @@ export default function DashboardComponent({ authenticated }: props) {
   } else {
     return (
       <>
-        <HomeNav authenticated />
+        <HomeNav />
         <div className={Styles.container}>
           <div className={Styles.headerContainer}>
             <span className={Styles.recent}>Recently Used Database</span>
