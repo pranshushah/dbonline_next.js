@@ -80,7 +80,7 @@ export class JWT {
         const payload = verify(authToken, process.env.JWT_ACCESS_SECRET!, {
           ignoreExpiration,
         });
-        return payload as JwtPayload | JwtAccessUser;
+        return payload as JwtAccessUser;
       } catch (e) {
         if (strict) {
           throw new Error(e);

@@ -18,7 +18,6 @@ export async function checkAuthAndIfTokenIsexpiredGiveNewOne(
         if (Date.now() >= exp * 1000) {
           if (payload) {
             //access token was perfect but it was expired, so we will create new Refresh token and access token
-            console.log(1);
             await JWT.createNewAccessTokenAndRefreshTokenFromRefreshToken(
               refreshToken,
               res,
@@ -26,27 +25,22 @@ export async function checkAuthAndIfTokenIsexpiredGiveNewOne(
             return true;
           } else {
             // somthing was wrong with token other than exp date so we will delete the cookie.
-            console.log(-1);
             JWT.removeBothCookies(res);
             return false;
           }
         } else {
           // token was perfect so we check if user wants go to the home page from dashboard or database if it is we let them do that.
-          console.log(2);
           return true;
         }
       } catch (e) {
         JWT.removeBothCookies(res);
-        console.log(-2);
         return false;
       }
     } else {
-      console.log(-3);
       JWT.removeBothCookies(res);
       return false;
     }
   } else {
-    console.log(-4);
     return false;
   }
 }

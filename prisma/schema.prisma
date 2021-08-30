@@ -18,24 +18,24 @@ model User {
   googleId             String         @unique
   tokenVersion         Int            @default(1) // we will increment the version whenever user gets new refresh token so old tokens will be invalid.
   originalDatabaseInfo DatabaseInfo[] @relation("database, user originally created")
-  modifiedDatabaseInfo DatabaseInfo[] @relation("database, user created by modifiying other database")
+  allDatabaseInfo      DatabaseInfo[] @relation("database, user created by modifiying other database")
 }
 
 model DatabaseInfo {
-  id                 String          @id @default(uuid())
-  databaseName       String
-  mainTableDetails   Json
-  tableDndDetails    Json
-  databaseType       databaseType
-  createdAt          DateTime
-  modifiedAt         DateTime
-  originalAuthorId   String? // this is optional because if delete the user this will be set to null. 
-  originalAuthor     User?          @relation("database, user originally created", fields: [originalAuthorId], references: [id], onDelete: SetNull)
-  tables             String[]
-  authorId   String? // it can be null because if we delete the user 
-  author     User?          @relation("database, user created by modifiying other database", fields: [authorId], references: [id], onDelete: SetNull)
-  views              Int            @default(1)
-  numberOfForks      Int            @default(1)
+  id               String       @id @default(uuid())
+  databaseName     String
+  mainTableDetails Json
+  tableDndDetails  Json
+  databaseType     databaseType
+  createdAt        DateTime
+  modifiedAt       DateTime
+  originalAuthorId String? // this is optional because if delete the user this will be set to null. 
+  originalAuthor   User?        @relation("database, user originally created", fields: [originalAuthorId], references: [id], onDelete: SetNull)
+  tables           String[]
+  authorId         String // it can be null because if we delete the user 
+  author           User         @relation("database, user created by modifiying other database", fields: [authorId], references: [id], onDelete: Cascade)
+  views            Int          @default(1)
+  numberOfForks    Int          @default(1)
 }
 
 enum databaseType {

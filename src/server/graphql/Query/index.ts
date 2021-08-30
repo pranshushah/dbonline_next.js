@@ -5,7 +5,7 @@ export const greetings = queryField('greeting', {
   args: {
     name: nonNull(stringArg({ default: 'pranshu' })),
   },
-  resolve(_, { name }) {
+  resolve(_, { name }, { req }) {
     return `hello ${name}`;
   },
 });
