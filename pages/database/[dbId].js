@@ -502,7 +502,6 @@ export default function Database() {
         showLeftSidebar={showLeftSidebar}
         onGridClick={showGridHandler}
         onCreateTableClick={newTableCreatedHandler}
-        onRightSideBarClick={showRightSidebarHandler}
         onLeftSideBarClick={showLeftSidebarHandler}
         Main={MainGround}
         onCloseRightSidebar={cleanupRightSidebar}

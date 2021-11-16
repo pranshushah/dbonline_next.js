@@ -63,7 +63,7 @@ function Nav({ mainTableDetails, ...props }) {
             />
             <SubNavLink
               text={'close r-sidebar'}
-              onClick={props.onRightSideBarClick}
+              onClick={props.onCloseRightSidebar}
               shortcut={'shift + r'}
             />
           </SubMenuContiainer>

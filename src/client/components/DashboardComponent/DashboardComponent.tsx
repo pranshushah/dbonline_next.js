@@ -11,17 +11,21 @@ export default function DashboardComponent() {
   const [databaseArray, setDataBaseArray] = useState<databaseType[]>([]);
   const [showModal, setShowModal] = useState(false);
   useEffect(() => {
-    keys().then((keys) => {
-      keys.forEach((key) => {
-        get(key).then((val: databaseType) => {
-          setDataBaseArray((databaseArr) =>
-            produce(databaseArr, (draft) => {
-              draft.push(val);
-            }),
-          );
-        });
-      });
-    });
+    async function getDatabases() {
+      const databaseKeys = await keys();
+      let databases: databaseType[] = [];
+
+      for (let key of databaseKeys) {
+        const val = await get<databaseType>(key);
+        databases.push(val);
+      }
+      setDataBaseArray(
+        produce(databases, (draft) => {
+          draft.sort((a, b) => b.modifiedAt.getTime() - a.modifiedAt.getTime());
+        }),
+      );
+    }
+    getDatabases();
   }, []);
   function showCreateDatabaseModalHandler() {
     setShowModal(true);
