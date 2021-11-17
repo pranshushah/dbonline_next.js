@@ -147,6 +147,8 @@ export function AddAttributeReducer(state, action) {
         ...state,
         selectedReferencingAttrError: false,
         selectedReferencingTableError: false,
+        selectedReferencingAttr: null,
+        selectedReferencingTable: null,
       };
     }
     case 'TABLEVELCHECKEDITEMS_HAS_FOREIGNKEY_ERROR': {
@@ -160,6 +162,7 @@ export function AddAttributeReducer(state, action) {
       return {
         ...state,
         selectedReferencingTable: action.payload.value,
+        selectedReferencingAttr: null,
       };
     }
     case 'FOREIGNKEY_REFERENCING_ATTR_SELECTED': {

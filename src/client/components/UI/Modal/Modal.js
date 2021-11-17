@@ -69,12 +69,12 @@ function Modal({
         {canCancel && (
           <Button
             onClick={modalClosed ? modalClosed : null}
-            primary={primary}
             danger={danger}
             dimension='medium'
             inverted
             style={{ marginRight: '8px', marginBottom: '8px' }}
-            secondary={secondary}>
+            secondary={secondary}
+          >
             Cancel
           </Button>
         )}
@@ -90,7 +90,8 @@ function Modal({
               marginLeft: '8px',
             }}
             dimension='medium'
-            secondary={secondary}>
+            secondary={secondary}
+          >
             Confirm
           </Button>
         )}

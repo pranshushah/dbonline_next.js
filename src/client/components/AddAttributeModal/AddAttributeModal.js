@@ -706,6 +706,7 @@ function AddAttributeModal({
                   selectedTable={selectedReferencingTable}
                   mainTableDetails={mainTableDetails}
                   onAttrSelected={selectedReferencingAttrHandler}
+                  selectedReferencingAttr={selectedReferencingAttr}
                 />
               </div>
             )}
