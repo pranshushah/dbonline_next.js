@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import HomeNav from '../HomeNav/HomeNav';
 import DashboardElement from './DashBoardElement/DashBoardElement';
 import produce from 'immer';
+import { del } from 'idb-keyval';
 
 export default function DashboardComponent() {
   const [databaseArray, setDataBaseArray] = useState<databaseType[]>([]);
@@ -32,6 +33,27 @@ export default function DashboardComponent() {
   }
   function closeCreateDatabaseModalHandler() {
     setShowModal(false);
+  }
+  async function databaseDeleteHandler(id: string) {
+    let deletedDatabase = {
+      ...databaseArray.find((database) => database.id === id),
+    };
+    console.log(deletedDatabase);
+    try {
+      setDataBaseArray((databaseArray) =>
+        produce(databaseArray, (draft) => {
+          return draft.filter((database) => database.id !== id);
+        }),
+      );
+      await del(id);
+    } catch (e) {
+      setDataBaseArray((databaseArray) =>
+        produce(databaseArray, (draft) => {
+          draft.push(deletedDatabase);
+          draft.sort((a, b) => b.modifiedAt.getTime() - a.modifiedAt.getTime());
+        }),
+      );
+    }
   }
   if (databaseArray.length === 0) {
     return (
@@ -73,10 +95,13 @@ export default function DashboardComponent() {
               + New Database
             </button>
           </div>
-          {databaseArray.map((database, index) => {
+          {databaseArray.map((database) => {
             return (
-              <div key={index}>
-                <DashboardElement databaseObj={database} />
+              <div key={database.id}>
+                <DashboardElement
+                  databaseObj={database}
+                  onDatabaseDelete={databaseDeleteHandler}
+                />
               </div>
             );
           })}

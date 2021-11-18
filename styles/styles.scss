@@ -40,6 +40,17 @@
   width: 260px;
 }
 
+.menu_dashboard {
+  background-color: rgb(250, 250, 250);
+  color: $secondaryColor;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  text-transform: capitalize;
+  font-size: 1rem;
+  position: relative;
+  width: 260px;
+}
+
 .menuItem {
   padding: 8px;
   padding-left: 24px;
@@ -49,6 +60,10 @@
 
 .menuItem:hover {
   background-color: rgb(100, 100, 100);
+}
+
+.menuItem_dashboard:hover {
+  background-color: rgb(220, 220, 220);
 }
 
 .shrotcut {
