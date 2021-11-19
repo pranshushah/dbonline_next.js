@@ -526,7 +526,24 @@ function AddAttributeModal({
     tableLevelUniqueConstraintNameError,
     checkExprError,
   ]);
-
+  console.table([
+    ['attributeValueError', attributeValueError],
+    ['selectDataTypeError', selectDataTypeError],
+    ['selectedReferencingTableError', selectedReferencingTableError],
+    ['selectedReferencingAttrError', selectedReferencingTableError],
+    ['defaultValueError', defaultValueError],
+    ['tableLevelUniqueError', tableLevelUniqueError],
+    ['primaryKeyError', primaryKeyError],
+    ['sizeInputValueError', sizeInputValueError],
+    ['checkConstraintNameError', checkConstraintNameError],
+    ['primaryKeyConstraintNameError', primaryKeyConstraintNameError],
+    ['foreignkeyConstraintNameError', foreignkeyConstraintNameError],
+    [
+      'tableLevelUniqueConstraintNameError',
+      tableLevelUniqueConstraintNameError,
+    ],
+    ['checkExprError', checkExprError],
+  ]);
   return (
     <Modal
       canCancel
