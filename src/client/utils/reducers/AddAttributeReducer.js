@@ -186,6 +186,9 @@ export function AddAttributeReducer(state, action) {
           ? action.payload.newObj.preInputValue
           : state.precisionAfterDecimalInputValue,
         selectDataTypeError: false,
+        sizeInputValueError: false,
+        sizeInputValueDirty: true,
+        sizeInputValueErrorMessage: '',
       };
     }
     case 'NEW_TABLELEVEL_UNIQUE': {
