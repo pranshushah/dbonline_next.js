@@ -1,33 +1,40 @@
 @import '../../../utils/scss/variables';
-.Tooltip {
-  display: block;
-  max-width: 320px;
-  background-color: $darkPrimary;
-  color: $textColor;
-  border-radius: 2px;
-  padding: 8px;
-  position: fixed;
-  z-index: 1;
-  margin-left: -20px;
+
+.tooltipContainer {
+	position: relative;
+	left: -50%;
+	background: $darkPrimary;
+	font-size: 14px;
+	color: $textColor;
+	border-radius: 2px;
+	padding: 8px 16px;
+	z-index: 1;
+	box-shadow: 0px 1px 7px 0px rgba(50, 50, 50, 0.75);
+}
+
+.arrow {
+	position: absolute;
+	bottom: -10px;
+	left: calc(50% - 5px);
+	border-width: 5px;
+	border-style: solid;
+	border-color: $darkPrimary transparent transparent transparent;
 }
 
 .Tooltip::after {
-  border: solid;
-  border-color: $darkPrimary transparent;
-  border-width: 12px 6px 0 6px;
-  content: '';
-  left: 45%;
-  bottom: -10px;
-  position: absolute;
-}
-
-.rel {
-  position: relative;
+	border: solid;
+	border-color: $darkPrimary transparent;
+	border-width: 12px 6px 0 6px;
+	content: '';
+	left: 45%;
+	bottom: -10px;
+	position: absolute;
 }
 
 .text {
-  padding: 2px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+	padding: 2px 0;
+	letter-spacing: 1px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
