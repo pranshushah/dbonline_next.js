@@ -61,16 +61,16 @@ function ToolTip({ dataObj, mainTableDetails, givenTable, children }) {
 						style={{
 							position: 'absolute',
 							left: xcord,
-							top: ycord - 80,
+							top: ycord - 75,
 						}}
 					>
 						<div className={Styles.tooltipContainer}>
 							<div>
 								<div className={Styles.text}>
-									referenced attribute : {referencedAttText}
+									Referenced attribute : {referencedAttText}
 								</div>
 								<div className={Styles.text}>
-									referencing attribute : {referencingAttText}
+									Referencing attribute : {referencingAttText}
 								</div>
 							</div>
 							<span className={Styles.arrow} />
